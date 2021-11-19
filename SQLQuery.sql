@@ -31,7 +31,6 @@ Select * from Usuarios where UserName = @Usuario and Password=@Contraseña
 insert into Usuarios values('Jose', 'Cayetano', 'Cayetano@gmail.com','JCaye','123','0')
 
 
-
 Create procedure SP_Agregar
 @Nombre nvarchar(50),
 @Apellido nvarchar(50),
@@ -40,4 +39,10 @@ Create procedure SP_Agregar
 @Password nvarchar(30),
 @TipoDeUsuario int
 as
-insert into Usuarios values(@Nombre, @Correo, @Correo,@UserName,@Password,@TipoDeUsuario)
+
+insert into Usuarios values('Jose', 'Perez', 'JC@gmail.com','JP','123','2')
+Select @@IDENTITY from Usuarios
+
+truncate table Usuarios
+
+create procedure SP_SeleccionCorreo

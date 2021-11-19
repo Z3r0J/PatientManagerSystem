@@ -1,5 +1,7 @@
 ﻿using BusinessLayer;
+using DataLayer;
 using DataLayer.Modelos;
+using EmailLayer;
 using PatientManagerSystem.CustomComboBoxItem;
 using System;
 using System.Collections.Generic;
@@ -18,12 +20,15 @@ namespace PatientManagerSystem
         private ServiceUsuarios usuarios;
 
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+
+        private EnviarCorreo _enviarCorreo;
         public FrmAgregarEditarUsuarios()
         {
             InitializeComponent();
 
             SqlConnection conexion = new SqlConnection(connectionString);
             usuarios = new ServiceUsuarios(conexion);
+            _enviarCorreo = new EnviarCorreo();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -109,11 +114,52 @@ namespace PatientManagerSystem
             CbxTipoUsuario.SelectedIndex = 0;
         }
 
+        private void EnviarCorreo()
+        {
+            Usuarios users = usuarios.SeleccionCorreo(RepositorioID.Instancia.Id);
+
+
+            string Body = "<table style = 'width:100%' bgcolor = '#0000'>" +
+                   "<tr>" +
+                   "<th bgcolor = '#000'>" +
+                   $"<img width='200px' height='200px' align ='center' src='{Properties.Resources.LOGO_BLACK}' />" +
+                   "</th>" +
+                   "</tr>" +
+                   "<tr>" +
+                   "<td bgcolor='#fff'>" +
+                   "<br>" +
+                   "<p align=center>" +
+                   "<font color='#2d8a13' size=5>" +
+                   "<b> Saludos!,</b>" +
+                   "</font>" +
+                   "<br><br><font color='#299187' size=3><b>" +
+                   "Hola "+ users.Nombre + " usted acaba de crear una nueva cuenta.  le generara automaticamente y de manera aleatoria." +
+                   "<br><br> Nombre de Usuario: " + users.Usuario + "" +
+                   "<br>" +
+                   "<br>" +
+                   "Desde que inicie en el sistema debe de colocar su usuario y su respectiva contraseña." +
+                   "</b>" +
+                   "</font>" +
+                   "</p>" +
+                   "<footer>" +
+                   "<font color='#ccc'><i> © " +
+                   "2021" +
+                " Z3R0 COMPANY BY Denisse Furcal and Jean Carlos Reyes" +
+                "</font></i>" +
+                   "</footer>" +
+                   "<br>" +
+                   "</td>" +
+                   "</tr>" +
+                   "</table>";
+            _enviarCorreo.Enviando(users.Correo,"Bienvenid@s a Sistema Gestor de paciente",Body);
+        }
+
         private void BtnRegistrarse_Click(object sender, EventArgs e)
         {
             if (Agregar())
             {
                 Clear();
+                EnviarCorreo();
                 MessageBox.Show("Agregado Correctamente");
             }
         }

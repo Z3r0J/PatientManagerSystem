@@ -12,6 +12,33 @@ namespace DataLayer
         {
             _conexion = conexion;
         }
+
+        public Usuarios SeleccionCorreo(decimal Id)
+        {
+            _conexion.Open();
+            SqlCommand comando = new SqlCommand("SP_SeleccionCorreo", _conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.AddWithValue("@Id", Convert.ToInt32(Id));
+
+            Usuarios datos = new Usuarios();
+
+            SqlDataReader LeerDatos = comando.ExecuteReader();
+
+            if (LeerDatos.Read())
+            {
+                datos.Id = LeerDatos.IsDBNull(0) ? 0 : LeerDatos.GetInt32(0);
+                datos.Nombre = LeerDatos.IsDBNull(1) ? "" : LeerDatos.GetString(1);
+                datos.Apellido = LeerDatos.IsDBNull(2) ? "" : LeerDatos.GetString(2);
+                datos.Usuario = LeerDatos.IsDBNull(3) ? "" : LeerDatos.GetString(3);
+                datos.Correo = LeerDatos.IsDBNull(4) ? "" : LeerDatos.GetString(4);
+            }
+
+            _conexion.Close();
+            return datos;
+
+        }
+
         public Usuarios Login(string Usuario, string Contraseña)
         {
             try
@@ -49,8 +76,10 @@ namespace DataLayer
 
         public bool Agregar(Usuarios usuarios)
         {
+            bool add;
             SqlCommand cmd = new SqlCommand("SP_Agregar", _conexion);
             cmd.CommandType = CommandType.StoredProcedure;
+
 
             cmd.Parameters.AddWithValue("@Nombre", usuarios.Nombre);
             cmd.Parameters.AddWithValue("@Apellido", usuarios.Apellido);
@@ -59,7 +88,43 @@ namespace DataLayer
             cmd.Parameters.AddWithValue("@Password", usuarios.Contraseña);
             cmd.Parameters.AddWithValue("@TipoDeUsuario", usuarios.TipoDeUsuario);
 
-            return ExecuteProc(cmd);
+            try
+            {
+                add = true;
+                _conexion.Open();
+                cmd.ExecuteNonQuery();
+                RepositorioID.Instancia.Id=TomarIDInsertado();
+                _conexion.Close();
+                return add;
+            }
+            catch (Exception)
+            {
+                add = false;
+                _conexion.Close();
+                return add;
+                
+            }
+
+        }
+
+        public decimal TomarIDInsertado()
+        {
+
+            decimal id;
+            SqlCommand comando = new SqlCommand("SELECT @@IDENTITY from Usuarios",_conexion);
+
+            SqlDataReader LeerID = comando.ExecuteReader();
+
+            if (LeerID.Read())
+            {
+                id = LeerID.IsDBNull(0) ? 0 : LeerID.GetDecimal(0);
+                return id;
+            }
+            else
+            {
+                return 0;
+            }
+
         }
 
 
@@ -74,8 +139,9 @@ namespace DataLayer
                 _conexion.Close();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                _conexion.Close();
                 return false;
             }
         }

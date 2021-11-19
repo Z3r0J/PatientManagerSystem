@@ -23,5 +23,10 @@ namespace BusinessLayer
         {
             return data.Agregar(item);
         }
+
+        public Usuarios SeleccionCorreo(decimal Id)
+        {
+            return data.SeleccionCorreo(Id);
+        }
     }
 }
