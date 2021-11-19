@@ -38,5 +38,15 @@ namespace PatientManagerSystem
             Restaurar_vlogin.Visible = false;
             Maximizar_vlogin.Visible = true;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
