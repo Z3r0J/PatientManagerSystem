@@ -37,6 +37,7 @@ namespace PatientManagerSystem
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.LblCambiarTema = new System.Windows.Forms.Label();
             this.BtnClaroOscuro = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@ namespace PatientManagerSystem
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tmHora = new System.Windows.Forms.Timer(this.components);
-            this.panel5 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -95,6 +95,8 @@ namespace PatientManagerSystem
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
@@ -109,6 +111,8 @@ namespace PatientManagerSystem
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.White;
@@ -138,6 +142,8 @@ namespace PatientManagerSystem
             // button3
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.White;
@@ -159,6 +165,15 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.SetRowSpan(this.panel2, 8);
             this.panel2.Size = new System.Drawing.Size(1060, 640);
             this.panel2.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 630);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1060, 10);
+            this.panel5.TabIndex = 0;
             // 
             // panel3
             // 
@@ -182,6 +197,8 @@ namespace PatientManagerSystem
             // 
             // BtnClaroOscuro
             // 
+            this.BtnClaroOscuro.FlatAppearance.BorderSize = 0;
+            this.BtnClaroOscuro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
             this.BtnClaroOscuro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClaroOscuro.Font = new System.Drawing.Font("Constantia", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnClaroOscuro.ForeColor = System.Drawing.Color.White;
@@ -195,6 +212,8 @@ namespace PatientManagerSystem
             // button6
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button6.ForeColor = System.Drawing.Color.White;
@@ -209,6 +228,8 @@ namespace PatientManagerSystem
             // button7
             // 
             this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button7.ForeColor = System.Drawing.Color.White;
@@ -252,15 +273,6 @@ namespace PatientManagerSystem
             this.label1.Size = new System.Drawing.Size(107, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "UserName";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 630);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1060, 10);
-            this.panel5.TabIndex = 0;
             // 
             // FrmPrincipal
             // 
