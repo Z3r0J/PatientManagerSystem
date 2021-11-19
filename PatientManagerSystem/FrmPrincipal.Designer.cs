@@ -32,20 +32,20 @@ namespace PatientManagerSystem
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.BtnClaroOscuro = new System.Windows.Forms.Button();
             this.LblCambiarTema = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnClaroOscuro = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tmHora = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -53,6 +53,7 @@ namespace PatientManagerSystem
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -88,31 +89,18 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 642);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // button7
+            // button1
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(3, 494);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(192, 65);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Resultados de Laboratorios";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(3, 424);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(192, 64);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Pacientes";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(3, 565);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(192, 74);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Citas";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -172,6 +160,15 @@ namespace PatientManagerSystem
             this.panel3.Size = new System.Drawing.Size(192, 64);
             this.panel3.TabIndex = 8;
             // 
+            // LblCambiarTema
+            // 
+            this.LblCambiarTema.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblCambiarTema.Location = new System.Drawing.Point(3, 8);
+            this.LblCambiarTema.Name = "LblCambiarTema";
+            this.LblCambiarTema.Size = new System.Drawing.Size(71, 65);
+            this.LblCambiarTema.TabIndex = 3;
+            this.LblCambiarTema.Text = "Cambiar Tema:";
+            // 
             // BtnClaroOscuro
             // 
             this.BtnClaroOscuro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -183,27 +180,31 @@ namespace PatientManagerSystem
             this.BtnClaroOscuro.Text = "Claro 🔆";
             this.BtnClaroOscuro.UseVisualStyleBackColor = true;
             // 
-            // LblCambiarTema
+            // button6
             // 
-            this.LblCambiarTema.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblCambiarTema.Location = new System.Drawing.Point(3, 8);
-            this.LblCambiarTema.Name = "LblCambiarTema";
-            this.LblCambiarTema.Size = new System.Drawing.Size(71, 65);
-            this.LblCambiarTema.TabIndex = 3;
-            this.LblCambiarTema.Text = "Cambiar Tema:";
+            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(3, 424);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(192, 64);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Pacientes";
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button7
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 565);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 74);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Citas";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(3, 494);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(192, 65);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "Resultados de Laboratorios";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -215,16 +216,6 @@ namespace PatientManagerSystem
             this.panel4.Size = new System.Drawing.Size(192, 128);
             this.panel4.TabIndex = 10;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(43, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "UserName";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -235,6 +226,16 @@ namespace PatientManagerSystem
             this.label2.TabIndex = 1;
             this.label2.Text = "Hora";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(43, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 36);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "UserName";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -243,6 +244,7 @@ namespace PatientManagerSystem
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPrincipal";
             this.Text = "FrmPrincipal";
             this.tableLayoutPanel1.ResumeLayout(false);
