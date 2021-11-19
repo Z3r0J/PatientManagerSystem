@@ -17,7 +17,7 @@ namespace PatientManagerSystem
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPruebaLogin());
+            Application.Run(new FrmLoading());
         }
     }
 }
