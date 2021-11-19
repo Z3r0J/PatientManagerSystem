@@ -47,6 +47,7 @@ namespace PatientManagerSystem
             this.TxtContraseña = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.BtnLogin = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Restaurar_vlogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar_vlogin)).BeginInit();
@@ -184,13 +185,15 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.TxtContraseña, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 39);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.77573F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.78667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.43759F));
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.46767F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.5912F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.41432F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.161125F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(482, 391);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -200,7 +203,7 @@ namespace PatientManagerSystem
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(246, 153);
+            this.panel2.Size = new System.Drawing.Size(235, 143);
             this.panel2.TabIndex = 5;
             // 
             // lblUsuario
@@ -208,7 +211,7 @@ namespace PatientManagerSystem
             this.lblUsuario.BackColor = System.Drawing.Color.White;
             this.lblUsuario.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUsuario.ForeColor = System.Drawing.Color.Black;
-            this.lblUsuario.Location = new System.Drawing.Point(145, 57);
+            this.lblUsuario.Location = new System.Drawing.Point(107, 55);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(98, 32);
             this.lblUsuario.TabIndex = 1;
@@ -218,7 +221,7 @@ namespace PatientManagerSystem
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.Location = new System.Drawing.Point(255, 63);
+            this.textBox1.Location = new System.Drawing.Point(244, 58);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(211, 32);
@@ -228,9 +231,9 @@ namespace PatientManagerSystem
             // 
             this.panel3.Controls.Add(this.lblContraseña);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 162);
+            this.panel3.Location = new System.Drawing.Point(3, 152);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(246, 145);
+            this.panel3.Size = new System.Drawing.Size(235, 136);
             this.panel3.TabIndex = 6;
             // 
             // lblContraseña
@@ -239,16 +242,16 @@ namespace PatientManagerSystem
             this.lblContraseña.BackColor = System.Drawing.Color.White;
             this.lblContraseña.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblContraseña.ForeColor = System.Drawing.Color.Black;
-            this.lblContraseña.Location = new System.Drawing.Point(116, 57);
+            this.lblContraseña.Location = new System.Drawing.Point(107, 53);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(127, 30);
+            this.lblContraseña.Size = new System.Drawing.Size(128, 30);
             this.lblContraseña.TabIndex = 1;
             this.lblContraseña.Text = "Contraseña:";
             // 
             // TxtContraseña
             // 
             this.TxtContraseña.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TxtContraseña.Location = new System.Drawing.Point(255, 219);
+            this.TxtContraseña.Location = new System.Drawing.Point(244, 205);
             this.TxtContraseña.Multiline = true;
             this.TxtContraseña.Name = "TxtContraseña";
             this.TxtContraseña.Size = new System.Drawing.Size(211, 30);
@@ -259,9 +262,9 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.SetColumnSpan(this.panel4, 2);
             this.panel4.Controls.Add(this.BtnLogin);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 313);
+            this.panel4.Location = new System.Drawing.Point(3, 294);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(499, 75);
+            this.panel4.Size = new System.Drawing.Size(476, 65);
             this.panel4.TabIndex = 7;
             // 
             // BtnLogin
@@ -272,13 +275,23 @@ namespace PatientManagerSystem
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogin.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.BtnLogin.Location = new System.Drawing.Point(119, 9);
+            this.BtnLogin.Location = new System.Drawing.Point(166, 0);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(241, 57);
+            this.BtnLogin.Size = new System.Drawing.Size(204, 62);
             this.BtnLogin.TabIndex = 4;
             this.BtnLogin.Text = "Iniciar Sesion";
             this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.tableLayoutPanel1.SetColumnSpan(this.panel5, 2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(3, 373);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(476, 15);
+            this.panel5.TabIndex = 8;
             // 
             // FrmLogin
             // 
@@ -328,5 +341,6 @@ namespace PatientManagerSystem
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
     }
 }
