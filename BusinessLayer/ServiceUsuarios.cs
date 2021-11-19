@@ -8,11 +8,10 @@ namespace BusinessLayer
     public class ServiceUsuarios
     {
 
-        private SqlConnection _conexion;
         private DataUsuarios data;
-        public ServiceUsuarios(SqlConnection conexion)
+        public ServiceUsuarios(SqlConnection _conexion)
         {
-            _conexion = conexion;
+            data = new DataUsuarios(_conexion);
         }
 
         public Usuarios Login(string Usuarios, string Contraseña)

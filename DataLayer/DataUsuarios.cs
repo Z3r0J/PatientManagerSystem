@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using DataLayer.Modelos;
 
@@ -15,7 +16,9 @@ namespace DataLayer
         {
             try
             {
+                _conexion.Open();
                 SqlCommand comando = new SqlCommand("SP_Login",_conexion);
+                comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@Usuario", Usuario);
                 comando.Parameters.AddWithValue("@Contraseña",Contraseña);
@@ -30,10 +33,14 @@ namespace DataLayer
                     datos.Nombre = LeerDatos.IsDBNull(1) ? "" : LeerDatos.GetString(1);
                 }
 
+                _conexion.Close();
                 return datos;
+
             }
             catch (Exception ex)
             {
+                _conexion.Close();
+
                 return null;
             }
         }
