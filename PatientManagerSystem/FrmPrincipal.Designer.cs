@@ -79,7 +79,7 @@ namespace PatientManagerSystem
             // 
             this.restaurar_v2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.restaurar_v2.Image = global::PatientManagerSystem.Properties.Resources.minimizar__6_;
-            this.restaurar_v2.Location = new System.Drawing.Point(1205, 3);
+            this.restaurar_v2.Location = new System.Drawing.Point(1146, 0);
             this.restaurar_v2.Name = "restaurar_v2";
             this.restaurar_v2.Size = new System.Drawing.Size(25, 25);
             this.restaurar_v2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,7 +104,7 @@ namespace PatientManagerSystem
             // 
             this.maximizar_v2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizar_v2.Image = global::PatientManagerSystem.Properties.Resources.maximizar__1_;
-            this.maximizar_v2.Location = new System.Drawing.Point(1207, 3);
+            this.maximizar_v2.Location = new System.Drawing.Point(1205, 3);
             this.maximizar_v2.Name = "maximizar_v2";
             this.maximizar_v2.Size = new System.Drawing.Size(25, 25);
             this.maximizar_v2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
