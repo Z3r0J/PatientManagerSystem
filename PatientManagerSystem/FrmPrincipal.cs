@@ -14,5 +14,29 @@ namespace PatientManagerSystem
         {
             InitializeComponent();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Restaurar_v2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+          restaurar_v2.Visible = false;
+            maximizar_v2.Visible = true;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+           maximizar_v2.Visible = false;
+            restaurar_v2.Visible = true;
+        }
     }
 }

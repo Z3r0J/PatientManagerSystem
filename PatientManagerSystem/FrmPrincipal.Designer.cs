@@ -31,6 +31,10 @@ namespace PatientManagerSystem
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.restaurar_v2 = new System.Windows.Forms.PictureBox();
+            this.pminizar_v2 = new System.Windows.Forms.PictureBox();
+            this.maximizar_v2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -47,6 +51,11 @@ namespace PatientManagerSystem
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tmHora = new System.Windows.Forms.Timer(this.components);
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.restaurar_v2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pminizar_v2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maximizar_v2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -56,11 +65,64 @@ namespace PatientManagerSystem
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.panel1.Controls.Add(this.restaurar_v2);
+            this.panel1.Controls.Add(this.pminizar_v2);
+            this.panel1.Controls.Add(this.maximizar_v2);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1264, 35);
             this.panel1.TabIndex = 0;
+            // 
+            // restaurar_v2
+            // 
+            this.restaurar_v2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.restaurar_v2.Image = global::PatientManagerSystem.Properties.Resources.minimizar__6_;
+            this.restaurar_v2.Location = new System.Drawing.Point(1205, 3);
+            this.restaurar_v2.Name = "restaurar_v2";
+            this.restaurar_v2.Size = new System.Drawing.Size(25, 25);
+            this.restaurar_v2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.restaurar_v2.TabIndex = 3;
+            this.restaurar_v2.TabStop = false;
+            this.restaurar_v2.Visible = false;
+            this.restaurar_v2.Click += new System.EventHandler(this.Restaurar_v2_Click);
+            // 
+            // pminizar_v2
+            // 
+            this.pminizar_v2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pminizar_v2.Image = global::PatientManagerSystem.Properties.Resources.signo_menos;
+            this.pminizar_v2.Location = new System.Drawing.Point(1177, 3);
+            this.pminizar_v2.Name = "pminizar_v2";
+            this.pminizar_v2.Size = new System.Drawing.Size(25, 25);
+            this.pminizar_v2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pminizar_v2.TabIndex = 2;
+            this.pminizar_v2.TabStop = false;
+            this.pminizar_v2.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // maximizar_v2
+            // 
+            this.maximizar_v2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizar_v2.Image = global::PatientManagerSystem.Properties.Resources.maximizar__1_;
+            this.maximizar_v2.Location = new System.Drawing.Point(1207, 3);
+            this.maximizar_v2.Name = "maximizar_v2";
+            this.maximizar_v2.Size = new System.Drawing.Size(25, 25);
+            this.maximizar_v2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.maximizar_v2.TabIndex = 1;
+            this.maximizar_v2.TabStop = false;
+            this.maximizar_v2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::PatientManagerSystem.Properties.Resources.x;
+            this.pictureBox1.Location = new System.Drawing.Point(1236, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -200,13 +262,13 @@ namespace PatientManagerSystem
             this.BtnClaroOscuro.FlatAppearance.BorderSize = 0;
             this.BtnClaroOscuro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
             this.BtnClaroOscuro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClaroOscuro.Font = new System.Drawing.Font("Constantia", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnClaroOscuro.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnClaroOscuro.ForeColor = System.Drawing.Color.White;
             this.BtnClaroOscuro.Location = new System.Drawing.Point(75, 8);
             this.BtnClaroOscuro.Name = "BtnClaroOscuro";
             this.BtnClaroOscuro.Size = new System.Drawing.Size(113, 52);
             this.BtnClaroOscuro.TabIndex = 2;
-            this.BtnClaroOscuro.Text = "Claro 🔆";
+            this.BtnClaroOscuro.Text = "OSCURO 🌙";
             this.BtnClaroOscuro.UseVisualStyleBackColor = true;
             // 
             // button6
@@ -285,6 +347,11 @@ namespace PatientManagerSystem
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPrincipal";
             this.Text = "FrmPrincipal";
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.restaurar_v2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pminizar_v2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maximizar_v2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -313,5 +380,9 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer tmHora;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox restaurar_v2;
+        private System.Windows.Forms.PictureBox pminizar_v2;
+        private System.Windows.Forms.PictureBox maximizar_v2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
