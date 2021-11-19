@@ -47,6 +47,11 @@ namespace PatientManagerSystem
                 this.BackColor = Color.White;
                 pictureBox1.Image = Properties.Resources.LOGO_WHITE;
                 timer1.Stop();
+
+                FrmPrincipal frm = new FrmPrincipal();
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
             }
         }
     }
