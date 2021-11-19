@@ -48,7 +48,7 @@ namespace PatientManagerSystem
                 pictureBox1.Image = Properties.Resources.LOGO_WHITE;
                 timer1.Stop();
 
-                FrmPrincipal frm = new FrmPrincipal();
+                FrmLogin frm = new FrmLogin();
                 this.Hide();
                 frm.ShowDialog();
                 this.Close();
