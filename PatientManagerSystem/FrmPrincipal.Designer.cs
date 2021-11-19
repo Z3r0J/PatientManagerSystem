@@ -72,7 +72,7 @@ namespace PatientManagerSystem
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1264, 35);
+            this.panel1.Size = new System.Drawing.Size(1264, 39);
             this.panel1.TabIndex = 0;
             // 
             // restaurar_v2
@@ -140,7 +140,7 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.Controls.Add(this.button7, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 35);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 39);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.90343F));
@@ -151,7 +151,7 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.90343F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.05919F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.3053F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 646);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 642);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // button1
@@ -163,9 +163,9 @@ namespace PatientManagerSystem
             this.button1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 566);
+            this.button1.Location = new System.Drawing.Point(3, 565);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 77);
+            this.button1.Size = new System.Drawing.Size(192, 74);
             this.button1.TabIndex = 9;
             this.button1.Text = "Citas";
             this.button1.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@ namespace PatientManagerSystem
             this.button5.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(3, 355);
+            this.button5.Location = new System.Drawing.Point(3, 354);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(192, 64);
             this.button5.TabIndex = 5;
@@ -195,7 +195,7 @@ namespace PatientManagerSystem
             this.button4.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 285);
+            this.button4.Location = new System.Drawing.Point(3, 284);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(192, 64);
             this.button4.TabIndex = 4;
@@ -211,7 +211,7 @@ namespace PatientManagerSystem
             this.button3.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 208);
+            this.button3.Location = new System.Drawing.Point(3, 207);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(192, 71);
             this.button3.TabIndex = 3;
@@ -226,14 +226,14 @@ namespace PatientManagerSystem
             this.panel2.Location = new System.Drawing.Point(201, 3);
             this.panel2.Name = "panel2";
             this.tableLayoutPanel1.SetRowSpan(this.panel2, 8);
-            this.panel2.Size = new System.Drawing.Size(1060, 640);
+            this.panel2.Size = new System.Drawing.Size(1060, 636);
             this.panel2.TabIndex = 0;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 630);
+            this.panel5.Location = new System.Drawing.Point(0, 626);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1060, 10);
             this.panel5.TabIndex = 0;
@@ -265,7 +265,7 @@ namespace PatientManagerSystem
             this.BtnClaroOscuro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClaroOscuro.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnClaroOscuro.ForeColor = System.Drawing.Color.White;
-            this.BtnClaroOscuro.Location = new System.Drawing.Point(75, 8);
+            this.BtnClaroOscuro.Location = new System.Drawing.Point(75, 7);
             this.BtnClaroOscuro.Name = "BtnClaroOscuro";
             this.BtnClaroOscuro.Size = new System.Drawing.Size(113, 52);
             this.BtnClaroOscuro.TabIndex = 2;
@@ -281,7 +281,7 @@ namespace PatientManagerSystem
             this.button6.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(3, 425);
+            this.button6.Location = new System.Drawing.Point(3, 424);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(192, 64);
             this.button6.TabIndex = 6;
@@ -297,7 +297,7 @@ namespace PatientManagerSystem
             this.button7.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(3, 495);
+            this.button7.Location = new System.Drawing.Point(3, 494);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(192, 65);
             this.button7.TabIndex = 7;
@@ -312,7 +312,7 @@ namespace PatientManagerSystem
             this.panel4.ForeColor = System.Drawing.Color.White;
             this.panel4.Location = new System.Drawing.Point(3, 73);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(192, 129);
+            this.panel4.Size = new System.Drawing.Size(192, 128);
             this.panel4.TabIndex = 10;
             // 
             // label2
