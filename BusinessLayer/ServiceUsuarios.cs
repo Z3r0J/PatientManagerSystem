@@ -18,5 +18,10 @@ namespace BusinessLayer
         {
             return data.Login(Usuarios,Contraseña);
         }
+
+        public bool Agregar(Usuarios item)
+        {
+            return data.Agregar(item);
+        }
     }
 }

@@ -44,5 +44,40 @@ namespace DataLayer
                 return null;
             }
         }
+
+
+
+        public bool Agregar(Usuarios usuarios)
+        {
+            SqlCommand cmd = new SqlCommand("SP_Agregar", _conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Nombre", usuarios.Nombre);
+            cmd.Parameters.AddWithValue("@Apellido", usuarios.Apellido);
+            cmd.Parameters.AddWithValue("@Correo", usuarios.Correo);
+            cmd.Parameters.AddWithValue("@UserName", usuarios.Usuario);
+            cmd.Parameters.AddWithValue("@Password", usuarios.Contraseña);
+            cmd.Parameters.AddWithValue("@TipoDeUsuario", usuarios.TipoDeUsuario);
+
+            return ExecuteProc(cmd);
+        }
+
+
+
+
+        public bool ExecuteProc(SqlCommand comando)
+        {
+            try
+            {
+                _conexion.Open();
+                comando.ExecuteNonQuery();
+                _conexion.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

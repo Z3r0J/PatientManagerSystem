@@ -41,10 +41,10 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LblNombre = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblContraseña = new System.Windows.Forms.Label();
-            this.TxtContraseña = new System.Windows.Forms.TextBox();
+            this.TxtApellido = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,10 +54,14 @@ namespace PatientManagerSystem
             this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.BtnLogin = new System.Windows.Forms.Button();
+            this.BtnRegistrarse = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.CbxTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.TxtCorreo = new System.Windows.Forms.TextBox();
+            this.TxtUsuario = new System.Windows.Forms.TextBox();
+            this.TxtContraseña = new System.Windows.Forms.TextBox();
+            this.TxtConfirmarContraseña = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Restaurar_vlogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar_vlogin)).BeginInit();
@@ -195,17 +199,21 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.TxtNombre, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.TxtContraseña, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.TxtApellido, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.panel8, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.BtnLogin, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.BtnRegistrarse, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.panel9, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.CbxTipoUsuario, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.TxtCorreo, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.TxtUsuario, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.TxtContraseña, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.TxtConfirmarContraseña, 1, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 39);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -219,6 +227,7 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.86042F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.86401F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.113799F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(451, 391);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -242,13 +251,13 @@ namespace PatientManagerSystem
             this.LblNombre.TabIndex = 1;
             this.LblNombre.Text = "Nombre:";
             // 
-            // textBox1
+            // TxtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(228, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(211, 32);
-            this.textBox1.TabIndex = 2;
+            this.TxtNombre.Location = new System.Drawing.Point(228, 3);
+            this.TxtNombre.Multiline = true;
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(211, 32);
+            this.TxtNombre.TabIndex = 2;
             // 
             // panel3
             // 
@@ -265,19 +274,19 @@ namespace PatientManagerSystem
             this.lblContraseña.BackColor = System.Drawing.Color.White;
             this.lblContraseña.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblContraseña.ForeColor = System.Drawing.Color.Black;
-            this.lblContraseña.Location = new System.Drawing.Point(122, 14);
+            this.lblContraseña.Location = new System.Drawing.Point(122, 15);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(94, 30);
             this.lblContraseña.TabIndex = 1;
             this.lblContraseña.Text = "Apellido:";
             // 
-            // TxtContraseña
+            // TxtApellido
             // 
-            this.TxtContraseña.Location = new System.Drawing.Point(228, 49);
-            this.TxtContraseña.Multiline = true;
-            this.TxtContraseña.Name = "TxtContraseña";
-            this.TxtContraseña.Size = new System.Drawing.Size(211, 30);
-            this.TxtContraseña.TabIndex = 3;
+            this.TxtApellido.Location = new System.Drawing.Point(228, 49);
+            this.TxtApellido.Multiline = true;
+            this.TxtApellido.Name = "TxtApellido";
+            this.TxtApellido.Size = new System.Drawing.Size(211, 30);
+            this.TxtApellido.TabIndex = 3;
             // 
             // panel5
             // 
@@ -304,7 +313,7 @@ namespace PatientManagerSystem
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(122, 14);
+            this.label1.Location = new System.Drawing.Point(122, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 30);
             this.label1.TabIndex = 2;
@@ -325,7 +334,7 @@ namespace PatientManagerSystem
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(9, 5);
+            this.label2.Location = new System.Drawing.Point(9, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(207, 30);
             this.label2.TabIndex = 2;
@@ -346,7 +355,7 @@ namespace PatientManagerSystem
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(94, -4);
+            this.label3.Location = new System.Drawing.Point(94, -3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 30);
             this.label3.TabIndex = 2;
@@ -367,27 +376,28 @@ namespace PatientManagerSystem
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(3, -4);
+            this.label4.Location = new System.Drawing.Point(3, -3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(225, 30);
             this.label4.TabIndex = 2;
             this.label4.Text = "Confirmar Contraseña:";
             // 
-            // BtnLogin
+            // BtnRegistrarse
             // 
-            this.BtnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnLogin.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.SetColumnSpan(this.BtnLogin, 2);
-            this.BtnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLogin.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.BtnLogin.Location = new System.Drawing.Point(125, 325);
-            this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(200, 40);
-            this.BtnLogin.TabIndex = 9;
-            this.BtnLogin.Text = "Iniciar Sesion";
-            this.BtnLogin.UseVisualStyleBackColor = false;
+            this.BtnRegistrarse.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnRegistrarse.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.SetColumnSpan(this.BtnRegistrarse, 2);
+            this.BtnRegistrarse.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRegistrarse.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnRegistrarse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.BtnRegistrarse.Location = new System.Drawing.Point(125, 325);
+            this.BtnRegistrarse.Name = "BtnRegistrarse";
+            this.BtnRegistrarse.Size = new System.Drawing.Size(200, 40);
+            this.BtnRegistrarse.TabIndex = 9;
+            this.BtnRegistrarse.Text = "Registrarse";
+            this.BtnRegistrarse.UseVisualStyleBackColor = false;
+            this.BtnRegistrarse.Click += new System.EventHandler(this.BtnRegistrarse_Click);
             // 
             // panel9
             // 
@@ -416,6 +426,38 @@ namespace PatientManagerSystem
             this.CbxTipoUsuario.Name = "CbxTipoUsuario";
             this.CbxTipoUsuario.Size = new System.Drawing.Size(211, 33);
             this.CbxTipoUsuario.TabIndex = 15;
+            // 
+            // TxtCorreo
+            // 
+            this.TxtCorreo.Location = new System.Drawing.Point(228, 95);
+            this.TxtCorreo.Multiline = true;
+            this.TxtCorreo.Name = "TxtCorreo";
+            this.TxtCorreo.Size = new System.Drawing.Size(211, 32);
+            this.TxtCorreo.TabIndex = 16;
+            // 
+            // TxtUsuario
+            // 
+            this.TxtUsuario.Location = new System.Drawing.Point(228, 141);
+            this.TxtUsuario.Multiline = true;
+            this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.Size = new System.Drawing.Size(211, 32);
+            this.TxtUsuario.TabIndex = 17;
+            // 
+            // TxtContraseña
+            // 
+            this.TxtContraseña.Location = new System.Drawing.Point(228, 187);
+            this.TxtContraseña.Multiline = true;
+            this.TxtContraseña.Name = "TxtContraseña";
+            this.TxtContraseña.Size = new System.Drawing.Size(211, 32);
+            this.TxtContraseña.TabIndex = 18;
+            // 
+            // TxtConfirmarContraseña
+            // 
+            this.TxtConfirmarContraseña.Location = new System.Drawing.Point(228, 233);
+            this.TxtConfirmarContraseña.Multiline = true;
+            this.TxtConfirmarContraseña.Name = "TxtConfirmarContraseña";
+            this.TxtConfirmarContraseña.Size = new System.Drawing.Size(211, 32);
+            this.TxtConfirmarContraseña.TabIndex = 19;
             // 
             // FrmAgregarEditarUsuarios
             // 
@@ -463,13 +505,13 @@ namespace PatientManagerSystem
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblContraseña;
-        private System.Windows.Forms.TextBox TxtContraseña;
+        private System.Windows.Forms.TextBox TxtApellido;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LblNombre;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button BtnLogin;
+        private System.Windows.Forms.Button BtnRegistrarse;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel6;
@@ -481,5 +523,9 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox CbxTipoUsuario;
+        private System.Windows.Forms.TextBox TxtCorreo;
+        private System.Windows.Forms.TextBox TxtUsuario;
+        private System.Windows.Forms.TextBox TxtContraseña;
+        private System.Windows.Forms.TextBox TxtConfirmarContraseña;
     }
 }

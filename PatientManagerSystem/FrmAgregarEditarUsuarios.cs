@@ -1,8 +1,12 @@
-﻿using PatientManagerSystem.CustomComboBoxItem;
+﻿using BusinessLayer;
+using DataLayer.Modelos;
+using PatientManagerSystem.CustomComboBoxItem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -11,9 +15,15 @@ namespace PatientManagerSystem
 {
     public partial class FrmAgregarEditarUsuarios : Form
     {
+        private ServiceUsuarios usuarios;
+
+        public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         public FrmAgregarEditarUsuarios()
         {
             InitializeComponent();
+
+            SqlConnection conexion = new SqlConnection(connectionString);
+            usuarios = new ServiceUsuarios(conexion);
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -68,6 +78,44 @@ namespace PatientManagerSystem
         private void FrmAgregarEditarUsuarios_Load(object sender, EventArgs e)
         {
             LoadCbx();
+        }
+
+        private bool Agregar()
+        {
+
+            ComboBoxItem item = CbxTipoUsuario.SelectedItem as ComboBoxItem;
+            Usuarios user = new Usuarios()
+            {
+                Nombre = TxtNombre.Text,
+            Apellido = TxtApellido.Text,
+            Correo = TxtCorreo.Text,
+            Usuario = TxtUsuario.Text,
+            Contraseña = TxtContraseña.Text,
+            TipoDeUsuario = (int)item.Value
+            };
+            bool add = usuarios.Agregar(user);
+                return add;
+
+        }
+
+        private void Clear()
+        {
+            TxtNombre.Clear();
+            TxtApellido.Clear();
+            TxtCorreo.Clear();
+            TxtContraseña.Clear();
+            TxtUsuario.Clear();
+            TxtConfirmarContraseña.Clear();
+            CbxTipoUsuario.SelectedIndex = 0;
+        }
+
+        private void BtnRegistrarse_Click(object sender, EventArgs e)
+        {
+            if (Agregar())
+            {
+                Clear();
+                MessageBox.Show("Agregado Correctamente");
+            }
         }
     }
 }
