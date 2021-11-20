@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using DataLayer;
 using DataLayer.Modelos;
@@ -33,6 +34,11 @@ namespace BusinessLayer
         public Usuarios SeleccionCorreo(decimal Id)
         {
             return data.SeleccionCorreo(Id);
+        }
+
+        public DataTable ListadoUsuarios()
+        {
+            return data.ListarUsuarios();
         }
     }
 }

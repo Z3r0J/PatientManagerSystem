@@ -56,6 +56,22 @@ namespace DataLayer
 
         }
 
+        public DataTable ListarUsuarios()
+        {
+            SqlCommand comando = new SqlCommand("SP_ListadoUsuarios",_conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            _conexion.Open();
+
+            DataTable ListarFilas = new DataTable();
+            SqlDataReader Datos = comando.ExecuteReader();
+            ListarFilas.Load(Datos);
+            Datos.Close();
+            Datos.Dispose();
+            _conexion.Close();
+
+            return ListarFilas;
+        }
+
 
         public bool Eliminar(Usuarios usuarios)
         {

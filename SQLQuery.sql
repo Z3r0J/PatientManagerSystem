@@ -95,6 +95,13 @@ Estados_Resultados int foreign key references Estados_Resultados(Id)
 primary key(Id)
 )
 
+<<<<<<< HEAD
+=======
+create procedure SP_ListadoUsuarios
+as
+select us.Id as codigo, us.Nombre, us.Apellido,us.Correo,us.UserName as Usuario, us.Password as Contraseña, tu.Nombre as 'Tipo Usuario' from Usuarios us inner join
+TipoUsuario tu on tu.Id=us.TipoDeUsuario
+>>>>>>> ba2988bd5ac06aa74ebc1255ec09f140afa0812f
 
 Create procedure SP_Login
 @Usuario nvarchar(150),

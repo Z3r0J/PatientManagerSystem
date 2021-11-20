@@ -50,7 +50,7 @@ namespace PatientManagerSystem
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DtgvUsuarios = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@ namespace PatientManagerSystem
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgvUsuarios)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
@@ -93,7 +93,7 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.DtgvUsuarios, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -327,8 +327,9 @@ namespace PatientManagerSystem
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // DtgvUsuarios
             // 
+<<<<<<< HEAD
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 6);
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -337,6 +338,16 @@ namespace PatientManagerSystem
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(1380, 358);
             this.dataGridView1.TabIndex = 0;
+=======
+            this.DtgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel1.SetColumnSpan(this.DtgvUsuarios, 6);
+            this.DtgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DtgvUsuarios.Location = new System.Drawing.Point(3, 193);
+            this.DtgvUsuarios.Name = "DtgvUsuarios";
+            this.DtgvUsuarios.RowTemplate.Height = 25;
+            this.DtgvUsuarios.Size = new System.Drawing.Size(1380, 358);
+            this.DtgvUsuarios.TabIndex = 0;
+>>>>>>> ba2988bd5ac06aa74ebc1255ec09f140afa0812f
             // 
             // panel6
             // 
@@ -407,6 +418,7 @@ namespace PatientManagerSystem
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmListadoUsuarios";
             this.Text = "ventanaclose";
+            this.Load += new System.EventHandler(this.FrmListadoUsuarios_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
@@ -418,7 +430,7 @@ namespace PatientManagerSystem
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgvUsuarios)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
@@ -439,7 +451,7 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DtgvUsuarios;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
