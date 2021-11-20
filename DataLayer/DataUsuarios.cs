@@ -93,7 +93,7 @@ namespace DataLayer
                 return datos;
 
             }
-            catch (Exception ex)
+            catch 
             {
                 _conexion.Close();
 
@@ -165,7 +165,7 @@ namespace DataLayer
                 _conexion.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
                 _conexion.Close();
                 return false;

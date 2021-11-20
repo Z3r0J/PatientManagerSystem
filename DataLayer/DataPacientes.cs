@@ -18,7 +18,6 @@ namespace DataLayer
         public bool AgregarPaciente(Pacientes paciente)
         {
 
-
             SqlCommand comando = new SqlCommand("SP_AgregarPaciente", _conexion);
             comando.CommandType = CommandType.StoredProcedure;
 
@@ -85,7 +84,7 @@ namespace DataLayer
                 _conexion.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
                 _conexion.Close();
                 return false;

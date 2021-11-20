@@ -1,7 +1,7 @@
 ﻿
 namespace PatientManagerSystem
 {
-    partial class frmPacientes
+    partial class FrmListadoUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -103,17 +103,17 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.29053F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.25838F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.45108F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 515);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1386, 554);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.White;
             this.panel12.Controls.Add(this.label6);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(1143, 112);
+            this.panel12.Location = new System.Drawing.Point(1153, 120);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(224, 62);
+            this.panel12.Size = new System.Drawing.Size(230, 67);
             this.panel12.TabIndex = 14;
             // 
             // label6
@@ -130,9 +130,9 @@ namespace PatientManagerSystem
             this.panel11.BackColor = System.Drawing.Color.White;
             this.panel11.Controls.Add(this.label8);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(915, 112);
+            this.panel11.Location = new System.Drawing.Point(923, 120);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(222, 62);
+            this.panel11.Size = new System.Drawing.Size(224, 67);
             this.panel11.TabIndex = 13;
             // 
             // label8
@@ -149,9 +149,9 @@ namespace PatientManagerSystem
             this.panel10.BackColor = System.Drawing.Color.White;
             this.panel10.Controls.Add(this.label7);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(687, 112);
+            this.panel10.Location = new System.Drawing.Point(693, 120);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(222, 62);
+            this.panel10.Size = new System.Drawing.Size(224, 67);
             this.panel10.TabIndex = 12;
             // 
             // label7
@@ -168,9 +168,9 @@ namespace PatientManagerSystem
             this.panel9.BackColor = System.Drawing.Color.White;
             this.panel9.Controls.Add(this.label5);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(459, 112);
+            this.panel9.Location = new System.Drawing.Point(463, 120);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(222, 62);
+            this.panel9.Size = new System.Drawing.Size(224, 67);
             this.panel9.TabIndex = 11;
             // 
             // label5
@@ -187,9 +187,9 @@ namespace PatientManagerSystem
             this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.Controls.Add(this.label4);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(231, 112);
+            this.panel8.Location = new System.Drawing.Point(233, 120);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(222, 62);
+            this.panel8.Size = new System.Drawing.Size(224, 67);
             this.panel8.TabIndex = 10;
             // 
             // label4
@@ -207,10 +207,10 @@ namespace PatientManagerSystem
             this.panel5.Controls.Add(this.button5);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.ForeColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(912, 0);
+            this.panel5.Location = new System.Drawing.Point(920, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(228, 109);
+            this.panel5.Size = new System.Drawing.Size(230, 117);
             this.panel5.TabIndex = 7;
             // 
             // button5
@@ -232,10 +232,10 @@ namespace PatientManagerSystem
             this.panel4.Controls.Add(this.button4);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.ForeColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(684, 0);
+            this.panel4.Location = new System.Drawing.Point(690, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(228, 109);
+            this.panel4.Size = new System.Drawing.Size(230, 117);
             this.panel4.TabIndex = 6;
             // 
             // button4
@@ -248,7 +248,7 @@ namespace PatientManagerSystem
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(177, 53);
             this.button4.TabIndex = 0;
-            this.button4.Text = "Deseleccionar";
+            this.button4.Text = "Quitar Fila";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // panel3
@@ -257,10 +257,10 @@ namespace PatientManagerSystem
             this.panel3.Controls.Add(this.button3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.ForeColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(456, 0);
+            this.panel3.Location = new System.Drawing.Point(460, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(228, 109);
+            this.panel3.Size = new System.Drawing.Size(230, 117);
             this.panel3.TabIndex = 5;
             // 
             // button3
@@ -282,10 +282,10 @@ namespace PatientManagerSystem
             this.panel2.Controls.Add(this.button2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(228, 0);
+            this.panel2.Location = new System.Drawing.Point(230, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(228, 109);
+            this.panel2.Size = new System.Drawing.Size(230, 117);
             this.panel2.TabIndex = 4;
             // 
             // button2
@@ -310,7 +310,7 @@ namespace PatientManagerSystem
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 109);
+            this.panel1.Size = new System.Drawing.Size(230, 117);
             this.panel1.TabIndex = 3;
             // 
             // button1
@@ -325,16 +325,17 @@ namespace PatientManagerSystem
             this.button1.TabIndex = 0;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 6);
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 180);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 193);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1364, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(1380, 358);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel6
@@ -343,9 +344,9 @@ namespace PatientManagerSystem
             this.panel6.Controls.Add(this.pictureBox1);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(1143, 3);
+            this.panel6.Location = new System.Drawing.Point(1153, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(224, 103);
+            this.panel6.Size = new System.Drawing.Size(230, 111);
             this.panel6.TabIndex = 8;
             // 
             // pictureBox1
@@ -374,9 +375,9 @@ namespace PatientManagerSystem
             this.panel7.Controls.Add(this.label3);
             this.panel7.Controls.Add(this.label2);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(3, 112);
+            this.panel7.Location = new System.Drawing.Point(3, 120);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(222, 62);
+            this.panel7.Size = new System.Drawing.Size(224, 67);
             this.panel7.TabIndex = 9;
             // 
             // label3
@@ -397,15 +398,15 @@ namespace PatientManagerSystem
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo";
             // 
-            // frmPacientes
+            // FrmListadoUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 515);
+            this.ClientSize = new System.Drawing.Size(1386, 554);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmPacientes";
-            this.Text = "frmPacientes";
+            this.Name = "FrmListadoUsuarios";
+            this.Text = "ventanaclose";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
@@ -428,16 +429,6 @@ namespace PatientManagerSystem
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel4;
@@ -450,8 +441,18 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

@@ -103,7 +103,7 @@ as
 Select * from Usuarios where UserName = @Usuario and Password=@Contraseña
 
 
-Create procedure SP_Agregar
+create procedure SP_Agregar
 @Nombre nvarchar(50),
 @Apellido nvarchar(50),
 @Correo nvarchar(50),
@@ -111,7 +111,7 @@ Create procedure SP_Agregar
 @Password nvarchar(30),
 @TipoDeUsuario int
 as
-insert into Usuarios values(@Nombre, @Correo, @Correo,@UserName,@Password,@TipoDeUsuario)
+insert into Usuarios values(@Nombre, @Apellido, @Correo,@UserName,@Password,@TipoDeUsuario)
 
 create procedure SP_SeleccionCorreo
 @Id int
@@ -139,3 +139,63 @@ Delete Usuarios where Id=@Id
 
 
 insert into Usuarios values('Jose', 'Cayetano', 'Cayetano@gmail.com','JCaye','123','0')
+
+create procedure SP_AgregarPaciente 
+@Nombre nvarchar(70),
+@Apellido nvarchar(70),
+@Telefono nvarchar(25),
+@Direccion nvarchar(60),
+@Cedula nvarchar(40),
+@Fecha_Nacimiento datetime,
+@Fumador bit,
+@Alergias text,
+@Foto nvarchar (max)
+as
+begin
+	insert into 
+		Pacientes 
+		(Nombre,Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento,Fumador,Alergias,Foto) 
+	values 
+		(@Nombre,@Apellido,@Telefono,@Direccion,@Cedula,@Fecha_Nacimiento,@Fumador,@Alergias,@Foto)
+end
+
+create procedure SP_ObtenerPacientes
+as
+begin
+	select Nombre,Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento 'Fecha Nacimiento',Fumador,Alergias,Foto from Pacientes
+end
+
+create procedure SP_EliminarPaciente 
+@Id int
+as
+begin
+	delete Pacientes where Id = @Id
+end
+
+create procedure SP_ActualizarPaciente
+@Id int,
+@Nombre nvarchar(70),
+@Apellido nvarchar(70),
+@Telefono nvarchar(25),
+@Direccion nvarchar(60),
+@Cedula nvarchar(40),
+@Fecha_Nacimiento datetime,
+@Fumador bit,
+@Alergias text,
+@Foto nvarchar (max)
+as
+begin
+	update Pacientes
+	set 
+		Nombre = @Nombre, 
+		Apellido = @Apellido,
+		Telefono = @Telefono,
+		Direccion = @Direccion,
+		Cedula = @Cedula,
+		Fecha_Nacimiento = @Fecha_Nacimiento,
+		Fumador = @Fumador,
+		Alergias = @Alergias,
+		Foto = @Foto 
+	where
+		Id = @Id
+end

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-
 namespace DataLayer.Modelos
 {
-    
+
     public class Pacientes
     {
         public int Id { get; set; }
@@ -18,9 +17,5 @@ namespace DataLayer.Modelos
         public bool Fumador { get; set; }
         public string Alergias { get; set; }
         public string Foto { get; set; }
-
-
-
-       
     }
 }
