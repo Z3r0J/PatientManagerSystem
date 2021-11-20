@@ -14,8 +14,7 @@ namespace PatientManagerSystem
 {
     public partial class FrmPruebaLogin : Form
     {
-        
-        private ServiceUsuarios usuarios;
+       private ServiceUsuarios usuarios;
 
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         public FrmPruebaLogin()
@@ -25,7 +24,8 @@ namespace PatientManagerSystem
             SqlConnection conexion = new SqlConnection(connectionString);
             usuarios = new ServiceUsuarios(conexion);
         }
-
+  
+       
         private void button1_Click(object sender, EventArgs e)
         {
             Usuarios datos = usuarios.Login(textBox1.Text, textBox2.Text);
