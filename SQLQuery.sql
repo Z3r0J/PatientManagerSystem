@@ -96,16 +96,9 @@ primary key(Id)
 )
 
 create procedure SP_ListadoUsuarios
-@Id int,
-@Nombre nvarchar(50),
-@Apellido nvarchar(50),
-@Correo nvarchar(50),
-@UserName nvarchar(150),
-@Password nvarchar(30),
-@TipoDeUsuario int
 as
 select us.Id as codigo, us.Nombre, us.Apellido,us.Correo,us.UserName as Usuario, us.Password as Contraseña, tu.Nombre as 'Tipo Usuario' from Usuarios us inner join
-TipoUsuario tu on us.Id = tu.Id
+TipoUsuario tu on tu.Id=us.TipoDeUsuario
 
 Create procedure SP_Login
 @Usuario nvarchar(150),
