@@ -95,6 +95,17 @@ Estados_Resultados int foreign key references Estados_Resultados(Id)
 primary key(Id)
 )
 
+create procedure SP_ListadoUsuarios
+@Id int,
+@Nombre nvarchar(50),
+@Apellido nvarchar(50),
+@Correo nvarchar(50),
+@UserName nvarchar(150),
+@Password nvarchar(30),
+@TipoDeUsuario int
+as
+select us.Id as codigo, us.Nombre, us.Apellido,us.Correo,us.UserName as Usuario, us.Password as Contraseña, tu.Nombre as 'Tipo Usuario' from Usuarios us inner join
+TipoUsuario tu on us.Id = tu.Id
 
 Create procedure SP_Login
 @Usuario nvarchar(150),
@@ -103,7 +114,7 @@ as
 Select * from Usuarios where UserName = @Usuario and Password=@Contraseña
 
 
-Create procedure SP_Agregar
+create procedure SP_Agregar
 @Nombre nvarchar(50),
 @Apellido nvarchar(50),
 @Correo nvarchar(50),
@@ -111,7 +122,7 @@ Create procedure SP_Agregar
 @Password nvarchar(30),
 @TipoDeUsuario int
 as
-insert into Usuarios values(@Nombre, @Correo, @Correo,@UserName,@Password,@TipoDeUsuario)
+insert into Usuarios values(@Nombre, @Apellido, @Correo,@UserName,@Password,@TipoDeUsuario)
 
 create procedure SP_SeleccionCorreo
 @Id int

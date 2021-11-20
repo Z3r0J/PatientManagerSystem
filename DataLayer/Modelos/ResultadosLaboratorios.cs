@@ -10,7 +10,6 @@ namespace DataLayer.Modelos
         public Medicos Medicos { get; set; }
         public Pacientes Pacientes { get; set; }
         public Citas Citas { get; set; }
-
         public PruebasLaboratorios PruebasLaboratorios { get; set; }
 
     }
