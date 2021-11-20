@@ -119,10 +119,10 @@ namespace PatientManagerSystem
             Usuarios users = usuarios.SeleccionCorreo(RepositorioID.Instancia.Id);
 
 
-            string Body = "<table style = 'width:100%' bgcolor = '#0000'>" +
+            string Body = "<table style = 'width:100%' bgcolor = '#282F38'>" +
                    "<tr>" +
-                   "<th bgcolor = '#000'>" +
-                   $"<img width='200px' height='200px' align ='center' src='{Properties.Resources.LOGO_BLACK}' />" +
+                   "<th bgcolor = '#282F38'>" +
+                   "<img width='200px' height='200px' align ='center' src='https://i.imgur.com/ntNdCPg.png' />" +
                    "</th>" +
                    "</tr>" +
                    "<tr>" +
@@ -133,7 +133,7 @@ namespace PatientManagerSystem
                    "<b> Saludos!,</b>" +
                    "</font>" +
                    "<br><br><font color='#299187' size=3><b>" +
-                   "Hola "+ users.Nombre + " usted acaba de crear una nueva cuenta.  le generara automaticamente y de manera aleatoria." +
+                   "Atención "+ users.Nombre + ", se acaba de crear una nueva cuenta en el Sistema Gestor de Pacientes. Este correo se genero automaticamente y es un mensaje de seguridad." +
                    "<br><br> Nombre de Usuario: " + users.Usuario + "" +
                    "<br>" +
                    "<br>" +
@@ -151,7 +151,7 @@ namespace PatientManagerSystem
                    "</td>" +
                    "</tr>" +
                    "</table>";
-            _enviarCorreo.Enviando(users.Correo,"Bienvenid@s a Sistema Gestor de paciente",Body);
+            _enviarCorreo.Enviando(users.Correo,$"Bienvenid@s a Sistema Gestor de paciente {users.Nombre}",Body);
         }
 
         private void BtnRegistrarse_Click(object sender, EventArgs e)
