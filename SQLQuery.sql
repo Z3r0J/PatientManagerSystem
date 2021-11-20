@@ -113,13 +113,29 @@ Create procedure SP_Agregar
 as
 insert into Usuarios values(@Nombre, @Correo, @Correo,@UserName,@Password,@TipoDeUsuario)
 
-
-Select @@IDENTITY from Usuarios
-
 create procedure SP_SeleccionCorreo
 @Id int
 as
 Select Id,Nombre,Apellido,UserName,Correo from Usuarios where Id=@Id
+
+
+create procedure SP_Actualizar
+@Id int,
+@Nombre nvarchar(50),
+@Apellido nvarchar(50),
+@Correo nvarchar(50),
+@UserName nvarchar(150),
+@Password nvarchar(30),
+@TipoDeUsuario int
+as
+Update Usuarios set Nombre=@Nombre, Apellido=@Apellido,Correo=@Correo,UserName=@UserName,Password=@Password,TipoDeUsuario=@TipoDeUsuario
+where Id=@Id
+
+
+create procedure SP_Eliminar
+@Id int
+as
+Delete Usuarios where Id=@Id
 
 
 insert into Usuarios values('Jose', 'Cayetano', 'Cayetano@gmail.com','JCaye','123','0')

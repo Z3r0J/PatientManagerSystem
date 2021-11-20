@@ -39,6 +39,35 @@ namespace DataLayer
 
         }
 
+        public bool Actualizar(Usuarios usuarios)
+        {
+            SqlCommand comando = new SqlCommand("SP_Actualizar", _conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.AddWithValue("@Id", usuarios.Id);
+            comando.Parameters.AddWithValue("@Nombre", usuarios.Nombre);
+            comando.Parameters.AddWithValue("@Apellido", usuarios.Apellido);
+            comando.Parameters.AddWithValue("@Correo", usuarios.Correo);
+            comando.Parameters.AddWithValue("@UserName", usuarios.Usuario);
+            comando.Parameters.AddWithValue("@Password", usuarios.Contraseña);
+            comando.Parameters.AddWithValue("@TipoDeUsuario", usuarios.TipoDeUsuario);
+
+            return ExecuteProc(comando);
+
+        }
+
+
+        public bool Eliminar(Usuarios usuarios)
+        {
+            SqlCommand comando = new SqlCommand("SP_Eliminar", _conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.AddWithValue("@Id",usuarios.Id);
+            return ExecuteProc(comando);
+        }
+
+
+
         public Usuarios Login(string Usuario, string Contraseña)
         {
             try
@@ -126,9 +155,6 @@ namespace DataLayer
             }
 
         }
-
-
-
 
         public bool ExecuteProc(SqlCommand comando)
         {

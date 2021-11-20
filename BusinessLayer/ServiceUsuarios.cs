@@ -13,17 +13,23 @@ namespace BusinessLayer
         {
             data = new DataUsuarios(_conexion);
         }
-
         public Usuarios Login(string Usuarios, string Contraseña)
         {
             return data.Login(Usuarios,Contraseña);
         }
-
         public bool Agregar(Usuarios item)
         {
             return data.Agregar(item);
         }
+        public bool Actualizar(Usuarios item)
+        {
 
+            return data.Actualizar(item);
+        }
+        public bool Eliminar(Usuarios item)
+        {
+            return data.Eliminar(item);
+        }
         public Usuarios SeleccionCorreo(decimal Id)
         {
             return data.SeleccionCorreo(Id);
