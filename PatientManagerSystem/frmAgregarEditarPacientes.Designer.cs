@@ -198,7 +198,6 @@ namespace PatientManagerSystem
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(464, 7);
             this.panel11.TabIndex = 20;
-            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
             // 
             // panel2
             // 
@@ -230,7 +229,6 @@ namespace PatientManagerSystem
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(229, 29);
             this.TxtNombre.TabIndex = 2;
-            this.TxtNombre.TextChanged += new System.EventHandler(this.TxtNombre_TextChanged);
             // 
             // panel3
             // 
@@ -262,7 +260,6 @@ namespace PatientManagerSystem
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(229, 30);
             this.TxtApellido.TabIndex = 3;
-            this.TxtApellido.TextChanged += new System.EventHandler(this.TxtApellido_TextChanged);
             // 
             // panel4
             // 
@@ -521,7 +518,6 @@ namespace PatientManagerSystem
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Visible = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox3
             // 

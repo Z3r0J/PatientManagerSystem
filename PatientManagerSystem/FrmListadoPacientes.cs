@@ -16,8 +16,7 @@ namespace PatientManagerSystem
     public partial class FrmListadoPacientes : Form
     {
         ServicePacientes _servicioPacientes;
-        public string connectionString = ConfigurationManager.ConnectionStrings
-["Default"].ConnectionString;
+        public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         private int id;
         public FrmListadoPacientes()
         {

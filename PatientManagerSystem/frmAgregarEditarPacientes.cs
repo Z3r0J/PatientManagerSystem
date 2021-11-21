@@ -16,8 +16,7 @@ namespace PatientManagerSystem
     public partial class frmAgregarEditarPacientes : Form
     {
         ServicePacientes _servicioPacientes;
-        public string connectionString = ConfigurationManager.ConnectionStrings
-["Default"].ConnectionString;
+        public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
 
         public string _filename;
         public int _id;
@@ -32,21 +31,7 @@ namespace PatientManagerSystem
             _id = 0;
             _filename = "";
             _paciente = new Pacientes();
-
-
         }
-
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void AddPhoto()
         {
             DialogResult result = FotoDialog.ShowDialog();
@@ -56,7 +41,6 @@ namespace PatientManagerSystem
                 string file = FotoDialog.FileName;
 
                 _filename = file;
-
 
             }
         }
@@ -88,7 +72,6 @@ namespace PatientManagerSystem
 
 
         }
-
         private void CreateDirectory(string directory)
         {
             if (!Directory.Exists(directory))
@@ -121,6 +104,7 @@ namespace PatientManagerSystem
             {
                 SavePhoto();
                 MessageBox.Show("Se agrego el paciente con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarCampos();
             }
             else
             {
@@ -152,6 +136,7 @@ namespace PatientManagerSystem
             {
                 SavePhoto();
                 MessageBox.Show("Se edito el paciente con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarCampos();
             }
             else
             {
@@ -176,16 +161,6 @@ namespace PatientManagerSystem
             paciente.Id = _id;
 
             return paciente;
-        }
-
-        private void TxtApellido_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtNombre_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
