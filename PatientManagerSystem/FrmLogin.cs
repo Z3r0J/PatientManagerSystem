@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using DataLayer;
+using DataLayer.Modelos;
 
 namespace PatientManagerSystem
 {
@@ -47,6 +50,54 @@ namespace PatientManagerSystem
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void validar()
+        {
+            try
+            {
+
+                if (string.IsNullOrEmpty(txtNombreUsuario.Text))
+                {
+                    MessageBox.Show("Debe poner su nombre de usuario", "Advertencia");
+                }
+                else if (string.IsNullOrEmpty(txtContraseña.Text))
+                {
+                    MessageBox.Show("Debe poner su contraseña", "Advertencia");
+                }
+                else
+                {
+                     SqlConnection conexion = new SqlConnection();
+
+                    var datau = new DataUsuarios(conexion);
+                    Usuarios datos = datau.Login(txtNombreUsuario.Text, txtContraseña.Text);
+
+                    if (datos != null)
+                    {
+
+                        /*Contactos contactos = new Contactos();
+                        contactos.UsuarioLogueado = datos.Id;
+                        this.Hide();
+                        contactos.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error");
+                    }
+                }*/
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error"+ex);
+
+            }
         }
     }
 }
