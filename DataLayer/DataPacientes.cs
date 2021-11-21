@@ -28,9 +28,10 @@ namespace DataLayer
             comando.Parameters.AddWithValue("@Fecha_Nacimiento", paciente.FechaNacimiento);
             comando.Parameters.AddWithValue("@Fumador", paciente.Fumador);
             comando.Parameters.AddWithValue("@Alergias", paciente.Alergias);
+            comando.Parameters.AddWithValue("@Foto", paciente.Foto);
 
             return ExecuteProc(comando);
-        } // escribe aqui bien no puedo abrir el mic sube el volumen que?si como diab?
+        }
 
         public DataTable ObtenerPacientes()
         {
