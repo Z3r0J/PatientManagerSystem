@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using BusinessLayer;
 using DataLayer;
 using DataLayer.Modelos;
 
@@ -13,9 +15,14 @@ namespace PatientManagerSystem
 {
     public partial class FrmLogin : Form
     {
+        private ServiceUsuarios usuarios;
+
+        public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         public FrmLogin()
         {
             InitializeComponent();
+            SqlConnection conexion = new SqlConnection(connectionString);
+            usuarios = new ServiceUsuarios(conexion);
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -71,25 +78,20 @@ namespace PatientManagerSystem
                 }
                 else
                 {
-                     SqlConnection conexion = new SqlConnection();
-
-                    var datau = new DataUsuarios(conexion);
-                    Usuarios datos = datau.Login(txtNombreUsuario.Text, txtContraseña.Text);
+                    Usuarios datos = usuarios.Login(txtNombreUsuario.Text, txtContraseña.Text);
 
                     if (datos != null)
                     {
-
-                        /*Contactos contactos = new Contactos();
-                        contactos.UsuarioLogueado = datos.Id;
+                        FrmPrincipal frm = new FrmPrincipal();
                         this.Hide();
-                        contactos.ShowDialog();
+                        frm.ShowDialog();
                         this.Show();
                     }
                     else
                     {
                         MessageBox.Show("Ocurrio un error");
                     }
-                }*/
+                }
 
             }
             catch (Exception ex)
