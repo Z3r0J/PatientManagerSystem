@@ -145,7 +145,7 @@ Delete Usuarios where Id=@Id
 
 insert into Usuarios values('Jose', 'Cayetano', 'Cayetano@gmail.com','JCaye','123','0')
 
-create procedure SP_AgregarPaciente 
+alter procedure SistemaGestorPacientes.dbo.SP_AgregarPaciente 
 @Nombre nvarchar(70),
 @Apellido nvarchar(70),
 @Telefono nvarchar(25),
@@ -153,21 +153,20 @@ create procedure SP_AgregarPaciente
 @Cedula nvarchar(40),
 @Fecha_Nacimiento datetime,
 @Fumador bit,
-@Alergias text,
-@Foto nvarchar (max)
+@Alergias text
 as
 begin
 	insert into 
 		Pacientes 
-		(Nombre,Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento,Fumador,Alergias,Foto) 
+		(Nombre,Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento,Fumador,Alergias) 
 	values 
-		(@Nombre,@Apellido,@Telefono,@Direccion,@Cedula,@Fecha_Nacimiento,@Fumador,@Alergias,@Foto)
+		(@Nombre,@Apellido,@Telefono,@Direccion,@Cedula,@Fecha_Nacimiento,@Fumador,@Alergias)
 end
 
 create procedure SP_ObtenerPacientes
 as
 begin
-	select Nombre,Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento 'Fecha Nacimiento',Fumador,Alergias,Foto from Pacientes
+	select Id, Nombre,Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento 'Fecha Nacimiento',Fumador,Alergias,Foto from Pacientes
 end
 
 create procedure SP_EliminarPaciente 
@@ -204,3 +203,9 @@ begin
 	where
 		Id = @Id
 end
+
+select * from Pacientes
+SELECT max(ID) from Pacientes
+
+
+exec SP_ObtenerPacientes

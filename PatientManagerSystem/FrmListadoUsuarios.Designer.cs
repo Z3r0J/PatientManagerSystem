@@ -329,16 +329,8 @@ namespace PatientManagerSystem
             // 
             // DtgvUsuarios
             // 
-<<<<<<< HEAD
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 6);
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 193);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1380, 358);
-            this.dataGridView1.TabIndex = 0;
-=======
+
+
             this.DtgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.DtgvUsuarios, 6);
             this.DtgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -347,7 +339,6 @@ namespace PatientManagerSystem
             this.DtgvUsuarios.RowTemplate.Height = 25;
             this.DtgvUsuarios.Size = new System.Drawing.Size(1380, 358);
             this.DtgvUsuarios.TabIndex = 0;
->>>>>>> ba2988bd5ac06aa74ebc1255ec09f140afa0812f
             // 
             // panel6
             // 

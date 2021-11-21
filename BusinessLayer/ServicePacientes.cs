@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace BusinessLayer
 {
-    class ServicePacientes
+    public class ServicePacientes
     {
         DataPacientes data;
 
@@ -33,9 +33,18 @@ namespace BusinessLayer
             return data.EliminarPaciente(Id);
         }
 
-        public bool ActualizarPaciente(Pacientes paciente)
+        public bool EditarPaciente(Pacientes paciente)
         {
-            return data.ActualizarPaciente(paciente);
+            return data.EditarPaciente(paciente);
+        }
+        public int GetLastId()
+        {
+            return data.TomarIDInsertado();
+        }
+
+        public bool SavePhoto(int id, string destination)
+        {
+            return data.SavePhoto(id, destination);
         }
 
     }
