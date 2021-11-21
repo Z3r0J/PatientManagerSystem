@@ -8,7 +8,6 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using BusinessLayer;
-using DataLayer;
 using DataLayer.Modelos;
 
 namespace PatientManagerSystem
