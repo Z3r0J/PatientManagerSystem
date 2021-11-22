@@ -209,7 +209,7 @@ namespace PatientManagerSystem
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(211, 62);
             this.BtnLogin.TabIndex = 9;
-            this.BtnLogin.Text = "0";
+            this.BtnLogin.Text = "Iniciar Sesión";
             this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 

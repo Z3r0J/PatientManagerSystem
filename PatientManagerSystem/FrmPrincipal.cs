@@ -10,9 +10,13 @@ namespace PatientManagerSystem
 {
     public partial class FrmPrincipal : Form
     {
+        public int Rol { get; set; }
+        public string Nombre { get; set; }
         public FrmPrincipal()
         {
             InitializeComponent();
+            Rols();
+            LblName.Text = Nombre;
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -22,7 +26,7 @@ namespace PatientManagerSystem
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void Restaurar_v2_Click(object sender, EventArgs e)
@@ -37,6 +41,47 @@ namespace PatientManagerSystem
             this.WindowState = FormWindowState.Maximized;
            maximizar_v2.Visible = false;
             restaurar_v2.Visible = true;
+        }
+
+
+        private Form FormActivado = null;
+        private void AbrirFormularioEnWrapper(Form FormHijo)
+        {
+            if (FormActivado != null)
+                FormActivado.Close();
+            FormActivado = FormHijo;
+            FormHijo.TopLevel = false;
+            FormHijo.Dock = DockStyle.Fill;
+            Wrapper.Controls.Add(FormHijo);
+            Wrapper.Tag = FormHijo;
+            FormHijo.BringToFront();
+            FormHijo.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnWrapper(new FrmListadoUsuarios());
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnWrapper(new FrmListadoPacientes());
+        }
+
+
+        private void Rols()
+        {
+            if (Rol==1)
+            {
+
+            }
+            else
+            {
+                BtnMantUsuario.Visible = false;
+                BtnMantMedico.Visible = false;
+                BtnMantPruebaLab.Visible = false;
+            }
         }
     }
 }

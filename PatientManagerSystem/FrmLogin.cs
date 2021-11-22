@@ -60,12 +60,11 @@ namespace PatientManagerSystem
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            Validar();
 
         }
-        private void validar()
+        private void Validar()
         {
-            try
-            {
 
                 if (string.IsNullOrEmpty(txtNombreUsuario.Text))
                 {
@@ -82,6 +81,8 @@ namespace PatientManagerSystem
                     if (datos != null)
                     {
                         FrmPrincipal frm = new FrmPrincipal();
+                    frm.Rol = datos.TipoDeUsuario;
+                    frm.Nombre = $"{datos.Nombre} {datos.Apellido}";
                         this.Hide();
                         frm.ShowDialog();
                         this.Show();
@@ -91,14 +92,6 @@ namespace PatientManagerSystem
                         MessageBox.Show("Ocurrio un error");
                     }
                 }
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error"+ex);
-
-            }
         }
     }
 }

@@ -29,6 +29,7 @@ namespace PatientManagerSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,13 +44,13 @@ namespace PatientManagerSystem
             this.panel5 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.BtnDeseleccionar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BtnEliminar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnEditar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
             this.DtgvUsuarios = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -221,7 +222,7 @@ namespace PatientManagerSystem
             this.button5.ForeColor = System.Drawing.Color.Black;
             this.button5.Location = new System.Drawing.Point(25, 29);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(177, 53);
+            this.button5.Size = new System.Drawing.Size(190, 67);
             this.button5.TabIndex = 0;
             this.button5.Text = "Claro";
             this.button5.UseVisualStyleBackColor = true;
@@ -229,7 +230,7 @@ namespace PatientManagerSystem
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.BtnDeseleccionar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.ForeColor = System.Drawing.Color.Black;
             this.panel4.Location = new System.Drawing.Point(690, 0);
@@ -238,23 +239,25 @@ namespace PatientManagerSystem
             this.panel4.Size = new System.Drawing.Size(230, 117);
             this.panel4.TabIndex = 6;
             // 
-            // button4
+            // BtnDeseleccionar
             // 
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(25, 29);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(177, 53);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Quitar Fila";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BtnDeseleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.BtnDeseleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeseleccionar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnDeseleccionar.ForeColor = System.Drawing.Color.Black;
+            this.BtnDeseleccionar.Location = new System.Drawing.Point(25, 29);
+            this.BtnDeseleccionar.Name = "BtnDeseleccionar";
+            this.BtnDeseleccionar.Size = new System.Drawing.Size(190, 67);
+            this.BtnDeseleccionar.TabIndex = 0;
+            this.BtnDeseleccionar.Text = "Deseleccionar";
+            this.BtnDeseleccionar.UseVisualStyleBackColor = true;
+            this.BtnDeseleccionar.Visible = false;
+            this.BtnDeseleccionar.Click += new System.EventHandler(this.BtnDeseleccionar_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.BtnEliminar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.ForeColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(460, 0);
@@ -263,23 +266,23 @@ namespace PatientManagerSystem
             this.panel3.Size = new System.Drawing.Size(230, 117);
             this.panel3.TabIndex = 5;
             // 
-            // button3
+            // BtnEliminar
             // 
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(25, 29);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(177, 53);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BtnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEliminar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnEliminar.ForeColor = System.Drawing.Color.Black;
+            this.BtnEliminar.Location = new System.Drawing.Point(25, 29);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(190, 67);
+            this.BtnEliminar.TabIndex = 0;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.BtnEditar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(230, 0);
@@ -288,23 +291,24 @@ namespace PatientManagerSystem
             this.panel2.Size = new System.Drawing.Size(230, 117);
             this.panel2.TabIndex = 4;
             // 
-            // button2
+            // BtnEditar
             // 
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(25, 29);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 53);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Editar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEditar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnEditar.ForeColor = System.Drawing.Color.Black;
+            this.BtnEditar.Location = new System.Drawing.Point(25, 29);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(190, 67);
+            this.BtnEditar.TabIndex = 0;
+            this.BtnEditar.Text = "Editar";
+            this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.BtnAgregar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -313,32 +317,54 @@ namespace PatientManagerSystem
             this.panel1.Size = new System.Drawing.Size(230, 117);
             this.panel1.TabIndex = 3;
             // 
-            // button1
+            // BtnAgregar
             // 
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(25, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 53);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAgregar.ForeColor = System.Drawing.Color.Black;
+            this.BtnAgregar.Location = new System.Drawing.Point(12, 29);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(190, 67);
+            this.BtnAgregar.TabIndex = 0;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // DtgvUsuarios
             // 
-
-
+            this.DtgvUsuarios.AllowUserToAddRows = false;
+            this.DtgvUsuarios.AllowUserToDeleteRows = false;
+            this.DtgvUsuarios.AllowUserToResizeColumns = false;
+            this.DtgvUsuarios.AllowUserToResizeRows = false;
+            this.DtgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DtgvUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DtgvUsuarios.BackgroundColor = System.Drawing.Color.White;
+            this.DtgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DtgvUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DtgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgvUsuarios.ColumnHeadersVisible = false;
             this.tableLayoutPanel1.SetColumnSpan(this.DtgvUsuarios, 6);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DtgvUsuarios.DefaultCellStyle = dataGridViewCellStyle1;
             this.DtgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DtgvUsuarios.Location = new System.Drawing.Point(3, 193);
+            this.DtgvUsuarios.MultiSelect = false;
             this.DtgvUsuarios.Name = "DtgvUsuarios";
+            this.DtgvUsuarios.ReadOnly = true;
+            this.DtgvUsuarios.RowHeadersVisible = false;
             this.DtgvUsuarios.RowTemplate.Height = 25;
+            this.DtgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DtgvUsuarios.Size = new System.Drawing.Size(1380, 358);
             this.DtgvUsuarios.TabIndex = 0;
+            this.DtgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgvUsuarios_CellContentClick);
             // 
             // panel6
             // 
@@ -435,13 +461,13 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BtnDeseleccionar;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.DataGridView DtgvUsuarios;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;

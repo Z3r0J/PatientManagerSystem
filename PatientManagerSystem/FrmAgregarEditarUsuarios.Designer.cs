@@ -395,7 +395,7 @@ namespace PatientManagerSystem
             this.BtnRegistrarse.Name = "BtnRegistrarse";
             this.BtnRegistrarse.Size = new System.Drawing.Size(200, 40);
             this.BtnRegistrarse.TabIndex = 9;
-            this.BtnRegistrarse.Text = "Registrarse";
+            this.BtnRegistrarse.Text = "Confirmar";
             this.BtnRegistrarse.UseVisualStyleBackColor = false;
             this.BtnRegistrarse.Click += new System.EventHandler(this.BtnRegistrarse_Click);
             // 
@@ -505,10 +505,8 @@ namespace PatientManagerSystem
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblContraseña;
-        private System.Windows.Forms.TextBox TxtApellido;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LblNombre;
-        private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button BtnRegistrarse;
@@ -522,10 +520,12 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox CbxTipoUsuario;
-        private System.Windows.Forms.TextBox TxtCorreo;
-        private System.Windows.Forms.TextBox TxtUsuario;
-        private System.Windows.Forms.TextBox TxtContraseña;
-        private System.Windows.Forms.TextBox TxtConfirmarContraseña;
+        public System.Windows.Forms.TextBox TxtApellido;
+        public System.Windows.Forms.TextBox TxtNombre;
+        public System.Windows.Forms.ComboBox CbxTipoUsuario;
+        public System.Windows.Forms.TextBox TxtCorreo;
+        public System.Windows.Forms.TextBox TxtUsuario;
+        public System.Windows.Forms.TextBox TxtContraseña;
+        public System.Windows.Forms.TextBox TxtConfirmarContraseña;
     }
 }
