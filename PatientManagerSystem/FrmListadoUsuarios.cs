@@ -16,12 +16,13 @@ namespace PatientManagerSystem
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
 
         private EnviarCorreo _enviarCorreo;
-        public FrmListadoUsuarios()
+        public FrmListadoUsuarios(string Nombre)
         {
             InitializeComponent();
             SqlConnection conexion = new SqlConnection(connectionString);
             usuarios = new ServiceUsuarios(conexion);
             _enviarCorreo = new EnviarCorreo();
+            LblWelcome.Text = Nombre;
             Deseleccionar();
         }
 
@@ -42,6 +43,7 @@ namespace PatientManagerSystem
         private void FrmListadoUsuarios_Load(object sender, EventArgs e)
         {
             ListarUsuarios();
+            DataStyle();
             DtgvUsuarios.ClearSelection();
         }
 
@@ -77,6 +79,16 @@ namespace PatientManagerSystem
         #endregion
 
         #region Metodos
+
+        private void DataStyle()
+        {
+            DtgvUsuarios.Columns[0].Width = 100;
+            DtgvUsuarios.Columns[1].Width = 160;
+            DtgvUsuarios.Columns[2].Width = 220;
+            DtgvUsuarios.Columns[3].Width = 290;
+            DtgvUsuarios.Columns[4].Width = 300;
+
+        }
         private void ListarUsuarios()
         {
             DtgvUsuarios.DataSource = usuarios.ListadoUsuarios();

@@ -56,6 +56,7 @@ namespace PatientManagerSystem
         private void FrmListadoPacientes_Load(object sender, EventArgs e)
         {
             CargarPacientes();
+            DtgStyle();
             Deseleccionar();
         }
 
@@ -74,8 +75,16 @@ namespace PatientManagerSystem
 
         #endregion
 
-        #region Eventos
-        public void CargarPacientes()
+        #region Metodos
+
+        private void DtgStyle()
+        {
+            dgvPacientes.Columns[0].Width = 70;
+            dgvPacientes.Columns[1].Width = 160;
+            dgvPacientes.Columns[2].Width = 220;
+            dgvPacientes.Columns[3].Width = 270;
+        }
+        private void CargarPacientes()
         {
 
             dgvPacientes.DataSource = _servicioPacientes.ObtenerPacientes();
@@ -146,6 +155,7 @@ namespace PatientManagerSystem
             btnDeseleccionar.Visible = false;
         }
         #endregion
+
 
     }
 }

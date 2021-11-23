@@ -10,7 +10,7 @@ namespace PatientManagerSystem
 {
     public partial class FrmPrincipal : Form
     {
-        public int Rol { get; set; }
+        public int Rol { get; set; } = 1;
         public string Nombre { get; set; }
         public FrmPrincipal()
         {
@@ -58,7 +58,7 @@ namespace PatientManagerSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnWrapper(new FrmListadoUsuarios());
+            AbrirFormularioEnWrapper(new FrmListadoUsuarios($"Welcome, {Nombre}"));
 
         }
 
@@ -87,5 +87,6 @@ namespace PatientManagerSystem
             Rols();
             LblName.Text = Nombre;
         }
+
     }
 }

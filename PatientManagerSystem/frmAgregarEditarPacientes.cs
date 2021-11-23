@@ -41,6 +41,7 @@ namespace PatientManagerSystem
                 string file = FotoDialog.FileName;
 
                 _filename = file;
+                PbxFoto.ImageLocation = _filename;
 
             }
         }
@@ -160,15 +161,21 @@ namespace PatientManagerSystem
             paciente.Foto = _filename;
             paciente.Id = _id;
 
+
             return paciente;
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (_id == 0) AgregarPaciente();
+            if (_id == 0)
+            {
+                AgregarPaciente();
+                this.Close();
+            }
             else
             {
                 EditarPaciente();
+                this.Close();
             }
         }
 
@@ -190,6 +197,7 @@ namespace PatientManagerSystem
                 txtDireccion.Text = _paciente.Direccion;
                 chkFumador.Checked = _paciente.Fumador;
                 txtAlergias.Text = _paciente.Alergias;
+                PbxFoto.ImageLocation = _filename;
 
             }
         }
@@ -202,6 +210,7 @@ namespace PatientManagerSystem
             txtDireccion.Clear();
             txtTelefono.Clear();
             txtAlergias.Clear();
+            PbxFoto.ImageLocation="";
             dtFecha_Nacimiento.Value = DateTime.Now;
             chkFumador.Checked = false;
             _id = 0;

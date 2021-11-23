@@ -151,7 +151,7 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.90343F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.05919F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.3053F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 727);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 550);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // BtnMantCitas
@@ -163,9 +163,9 @@ namespace PatientManagerSystem
             this.BtnMantCitas.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnMantCitas.ForeColor = System.Drawing.Color.White;
             this.BtnMantCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMantCitas.Location = new System.Drawing.Point(3, 637);
+            this.BtnMantCitas.Location = new System.Drawing.Point(3, 483);
             this.BtnMantCitas.Name = "BtnMantCitas";
-            this.BtnMantCitas.Size = new System.Drawing.Size(209, 87);
+            this.BtnMantCitas.Size = new System.Drawing.Size(209, 64);
             this.BtnMantCitas.TabIndex = 9;
             this.BtnMantCitas.Text = "Citas";
             this.BtnMantCitas.UseVisualStyleBackColor = true;
@@ -179,9 +179,9 @@ namespace PatientManagerSystem
             this.BtnMantPruebaLab.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnMantPruebaLab.ForeColor = System.Drawing.Color.White;
             this.BtnMantPruebaLab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMantPruebaLab.Location = new System.Drawing.Point(3, 399);
+            this.BtnMantPruebaLab.Location = new System.Drawing.Point(3, 303);
             this.BtnMantPruebaLab.Name = "BtnMantPruebaLab";
-            this.BtnMantPruebaLab.Size = new System.Drawing.Size(209, 73);
+            this.BtnMantPruebaLab.Size = new System.Drawing.Size(209, 54);
             this.BtnMantPruebaLab.TabIndex = 5;
             this.BtnMantPruebaLab.Text = "Pruebas de Laboratorios";
             this.BtnMantPruebaLab.UseVisualStyleBackColor = true;
@@ -195,9 +195,9 @@ namespace PatientManagerSystem
             this.BtnMantMedico.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnMantMedico.ForeColor = System.Drawing.Color.White;
             this.BtnMantMedico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMantMedico.Location = new System.Drawing.Point(3, 320);
+            this.BtnMantMedico.Location = new System.Drawing.Point(3, 243);
             this.BtnMantMedico.Name = "BtnMantMedico";
-            this.BtnMantMedico.Size = new System.Drawing.Size(209, 73);
+            this.BtnMantMedico.Size = new System.Drawing.Size(209, 54);
             this.BtnMantMedico.TabIndex = 4;
             this.BtnMantMedico.Text = "Medicos";
             this.BtnMantMedico.UseVisualStyleBackColor = true;
@@ -211,9 +211,9 @@ namespace PatientManagerSystem
             this.BtnMantUsuario.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnMantUsuario.ForeColor = System.Drawing.Color.White;
             this.BtnMantUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMantUsuario.Location = new System.Drawing.Point(3, 233);
+            this.BtnMantUsuario.Location = new System.Drawing.Point(3, 177);
             this.BtnMantUsuario.Name = "BtnMantUsuario";
-            this.BtnMantUsuario.Size = new System.Drawing.Size(209, 81);
+            this.BtnMantUsuario.Size = new System.Drawing.Size(209, 60);
             this.BtnMantUsuario.TabIndex = 3;
             this.BtnMantUsuario.Text = "Usuarios";
             this.BtnMantUsuario.UseVisualStyleBackColor = true;
@@ -227,14 +227,14 @@ namespace PatientManagerSystem
             this.Wrapper.Location = new System.Drawing.Point(218, 3);
             this.Wrapper.Name = "Wrapper";
             this.tableLayoutPanel1.SetRowSpan(this.Wrapper, 8);
-            this.Wrapper.Size = new System.Drawing.Size(1149, 721);
+            this.Wrapper.Size = new System.Drawing.Size(1149, 544);
             this.Wrapper.TabIndex = 0;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 711);
+            this.panel5.Location = new System.Drawing.Point(0, 534);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1149, 10);
             this.panel5.TabIndex = 0;
@@ -246,7 +246,7 @@ namespace PatientManagerSystem
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(209, 73);
+            this.panel3.Size = new System.Drawing.Size(209, 54);
             this.panel3.TabIndex = 8;
             // 
             // LblCambiarTema
@@ -282,9 +282,9 @@ namespace PatientManagerSystem
             this.BtnMantPacientes.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnMantPacientes.ForeColor = System.Drawing.Color.White;
             this.BtnMantPacientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMantPacientes.Location = new System.Drawing.Point(3, 478);
+            this.BtnMantPacientes.Location = new System.Drawing.Point(3, 363);
             this.BtnMantPacientes.Name = "BtnMantPacientes";
-            this.BtnMantPacientes.Size = new System.Drawing.Size(209, 73);
+            this.BtnMantPacientes.Size = new System.Drawing.Size(209, 54);
             this.BtnMantPacientes.TabIndex = 6;
             this.BtnMantPacientes.Text = "Pacientes";
             this.BtnMantPacientes.UseVisualStyleBackColor = true;
@@ -299,9 +299,9 @@ namespace PatientManagerSystem
             this.BtnMantResultadoLab.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnMantResultadoLab.ForeColor = System.Drawing.Color.White;
             this.BtnMantResultadoLab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMantResultadoLab.Location = new System.Drawing.Point(3, 557);
+            this.BtnMantResultadoLab.Location = new System.Drawing.Point(3, 423);
             this.BtnMantResultadoLab.Name = "BtnMantResultadoLab";
-            this.BtnMantResultadoLab.Size = new System.Drawing.Size(209, 74);
+            this.BtnMantResultadoLab.Size = new System.Drawing.Size(209, 54);
             this.BtnMantResultadoLab.TabIndex = 7;
             this.BtnMantResultadoLab.Text = "Resultados de Laboratorios";
             this.BtnMantResultadoLab.UseVisualStyleBackColor = true;
@@ -312,9 +312,9 @@ namespace PatientManagerSystem
             this.panel4.Controls.Add(this.LblName);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(3, 82);
+            this.panel4.Location = new System.Drawing.Point(3, 63);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(209, 145);
+            this.panel4.Size = new System.Drawing.Size(209, 108);
             this.panel4.TabIndex = 10;
             // 
             // label2
@@ -343,7 +343,7 @@ namespace PatientManagerSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 766);
+            this.ClientSize = new System.Drawing.Size(1370, 589);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
