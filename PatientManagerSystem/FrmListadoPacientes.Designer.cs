@@ -100,7 +100,7 @@ namespace PatientManagerSystem
             this.btnClaro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClaro.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnClaro.ForeColor = System.Drawing.Color.Black;
-            this.btnClaro.Location = new System.Drawing.Point(25, 29);
+            this.btnClaro.Location = new System.Drawing.Point(25, 18);
             this.btnClaro.Name = "btnClaro";
             this.btnClaro.Size = new System.Drawing.Size(163, 64);
             this.btnClaro.TabIndex = 0;
@@ -125,7 +125,7 @@ namespace PatientManagerSystem
             this.btnDeseleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeseleccionar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDeseleccionar.ForeColor = System.Drawing.Color.Black;
-            this.btnDeseleccionar.Location = new System.Drawing.Point(25, 29);
+            this.btnDeseleccionar.Location = new System.Drawing.Point(25, 18);
             this.btnDeseleccionar.Name = "btnDeseleccionar";
             this.btnDeseleccionar.Size = new System.Drawing.Size(163, 64);
             this.btnDeseleccionar.TabIndex = 0;
@@ -152,7 +152,7 @@ namespace PatientManagerSystem
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Location = new System.Drawing.Point(19, 29);
+            this.btnEliminar.Location = new System.Drawing.Point(19, 18);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(163, 64);
             this.btnEliminar.TabIndex = 0;
@@ -178,7 +178,7 @@ namespace PatientManagerSystem
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEditar.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Location = new System.Drawing.Point(15, 29);
+            this.btnEditar.Location = new System.Drawing.Point(15, 18);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(163, 64);
             this.btnEditar.TabIndex = 0;

@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DataLayer.Modelos;
 using EmailLayer;
 using System;
 using System.Configuration;
@@ -24,12 +25,8 @@ namespace PatientManagerSystem
             Deseleccionar();
         }
 
-        private void ListarUsuarios()
-        {
-            DtgvUsuarios.DataSource = usuarios.ListadoUsuarios();
-        }
 
-
+        #region Eventos
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             FrmAgregarEditarUsuarios frm = new FrmAgregarEditarUsuarios();
@@ -48,6 +45,42 @@ namespace PatientManagerSystem
             DtgvUsuarios.ClearSelection();
         }
 
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            Editar();
+        }
+
+        private void DtgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                BtnDeseleccionar.Visible = true;
+            }
+        }
+
+        private void BtnDeseleccionar_Click(object sender, EventArgs e)
+        {
+            Deseleccionar();
+            BtnDeseleccionar.Visible = false;
+        }
+
+        private void DtgvUsuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DtgvUsuarios.Rows[0].Selected = false;
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        #endregion
+
+        #region Metodos
+        private void ListarUsuarios()
+        {
+            DtgvUsuarios.DataSource = usuarios.ListadoUsuarios();
+        }
         private void Deseleccionar()
         {
             DtgvUsuarios.ClearSelection();
@@ -91,28 +124,31 @@ namespace PatientManagerSystem
                 MessageBox.Show("Seleccione una fila", "Notificacion");
             }
         }
-        private void BtnEditar_Click(object sender, EventArgs e)
-        {
-            Editar();     
-        }
 
-        private void DtgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Eliminar()
         {
-            if (e.RowIndex>=0)
+            if (DtgvUsuarios.SelectedRows.Count > 0)
             {
-                BtnDeseleccionar.Visible = true;
+                Usuarios us = new Usuarios();
+                us.Id= Convert.ToInt32(DtgvUsuarios.CurrentRow.Cells[0].Value.ToString());
+
+                bool Eliminar = usuarios.Eliminar(us);
+
+                if (Eliminar)
+                {
+                    MessageBox.Show("Eliminado correctamente", "Notificacion");
+                }
+                else
+                {
+                    MessageBox.Show("Oops, ha ocurrido error", "Notificacion");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila", "Notificacion");
             }
         }
-
-        private void BtnDeseleccionar_Click(object sender, EventArgs e)
-        {
-            Deseleccionar();
-            BtnDeseleccionar.Visible = false;
-        }
-
-        private void DtgvUsuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            DtgvUsuarios.Rows[0].Selected = false;
-        }
+        #endregion
     }
 }

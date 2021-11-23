@@ -25,14 +25,25 @@ namespace PatientManagerSystem
             _servicioPacientes = new ServicePacientes(_conexion);
             id = 0;
         }
+        frmAgregarEditarPacientes paciente;
 
-        public void CargarPacientes()
+
+        #region Eventos
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-           
-            dgvPacientes.DataSource = _servicioPacientes.ObtenerPacientes();
+            Eliminar();
         }
 
-        frmAgregarEditarPacientes paciente;
+        private void btnDeseleccionar_Click(object sender, EventArgs e)
+        {
+            Deseleccionar();
+        }
+
+        private void dgvPacientes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvPacientes.Rows[0].Selected = false;
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Deseleccionar();
@@ -61,7 +72,15 @@ namespace PatientManagerSystem
             }
         }
 
-        public void Editar()
+        #endregion
+
+        #region Eventos
+        public void CargarPacientes()
+        {
+
+            dgvPacientes.DataSource = _servicioPacientes.ObtenerPacientes();
+        }
+        private void Editar()
         {
             if (dgvPacientes.SelectedRows.Count > 0)
             {
@@ -94,16 +113,9 @@ namespace PatientManagerSystem
             }
         }
 
-        private void Deseleccionar()
+        private void Eliminar()
         {
-            dgvPacientes.ClearSelection();
-            dgvPacientes.CurrentCell = null;
-            btnDeseleccionar.Visible = false;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (dgvPacientes.SelectedRows.Count>0)
+            if (dgvPacientes.SelectedRows.Count > 0)
             {
                 if (DialogResult.Yes == MessageBox.Show("Esta seguro que desea eliminar el paciente?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                 {
@@ -118,23 +130,22 @@ namespace PatientManagerSystem
                     {
                         MessageBox.Show("No se ha podido eliminar el paciente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                }           
+                }
 
             }
             else
             {
-                MessageBox.Show("Seleccione una fila","Notificacion");
+                MessageBox.Show("Seleccione una fila", "Notificacion");
             }
         }
 
-        private void btnDeseleccionar_Click(object sender, EventArgs e)
+        private void Deseleccionar()
         {
-            Deseleccionar();
+            dgvPacientes.ClearSelection();
+            dgvPacientes.CurrentCell = null;
+            btnDeseleccionar.Visible = false;
         }
+        #endregion
 
-        private void dgvPacientes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dgvPacientes.Rows[0].Selected = false;
-        }
     }
 }
