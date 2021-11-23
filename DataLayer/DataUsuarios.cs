@@ -128,10 +128,14 @@ namespace DataLayer
                     datos.Apellido = LeerDatos.IsDBNull(2) ? "" : LeerDatos.GetString(2);
                     datos.Usuario = LeerDatos.IsDBNull(3) ? "" : LeerDatos.GetString(3);
                     datos.TipoDeUsuario = LeerDatos.IsDBNull(6) ? 0 : LeerDatos.GetInt32(6);
+                    _conexion.Close();
+                    return datos;
                 }
-
-                _conexion.Close();
-                return datos;
+                else
+                {
+                    _conexion.Close();
+                    return null;
+                }
 
             }
             catch 

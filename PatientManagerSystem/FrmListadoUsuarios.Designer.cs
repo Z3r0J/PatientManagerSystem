@@ -220,7 +220,7 @@ namespace PatientManagerSystem
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(25, 29);
+            this.button5.Location = new System.Drawing.Point(25, 18);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(190, 67);
             this.button5.TabIndex = 0;
@@ -245,7 +245,7 @@ namespace PatientManagerSystem
             this.BtnDeseleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDeseleccionar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnDeseleccionar.ForeColor = System.Drawing.Color.Black;
-            this.BtnDeseleccionar.Location = new System.Drawing.Point(25, 29);
+            this.BtnDeseleccionar.Location = new System.Drawing.Point(25, 18);
             this.BtnDeseleccionar.Name = "BtnDeseleccionar";
             this.BtnDeseleccionar.Size = new System.Drawing.Size(190, 67);
             this.BtnDeseleccionar.TabIndex = 0;
@@ -272,7 +272,7 @@ namespace PatientManagerSystem
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.BtnEliminar.Location = new System.Drawing.Point(25, 29);
+            this.BtnEliminar.Location = new System.Drawing.Point(25, 18);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(190, 67);
             this.BtnEliminar.TabIndex = 0;
@@ -297,7 +297,7 @@ namespace PatientManagerSystem
             this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnEditar.ForeColor = System.Drawing.Color.Black;
-            this.BtnEditar.Location = new System.Drawing.Point(25, 29);
+            this.BtnEditar.Location = new System.Drawing.Point(25, 18);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(190, 67);
             this.BtnEditar.TabIndex = 0;
@@ -323,7 +323,7 @@ namespace PatientManagerSystem
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAgregar.ForeColor = System.Drawing.Color.Black;
-            this.BtnAgregar.Location = new System.Drawing.Point(12, 29);
+            this.BtnAgregar.Location = new System.Drawing.Point(12, 18);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(190, 67);
             this.BtnAgregar.TabIndex = 0;
@@ -365,6 +365,7 @@ namespace PatientManagerSystem
             this.DtgvUsuarios.Size = new System.Drawing.Size(1380, 358);
             this.DtgvUsuarios.TabIndex = 0;
             this.DtgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgvUsuarios_CellContentClick);
+            this.DtgvUsuarios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DtgvUsuarios_DataBindingComplete);
             // 
             // panel6
             // 

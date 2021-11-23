@@ -15,8 +15,6 @@ namespace PatientManagerSystem
         public FrmPrincipal()
         {
             InitializeComponent();
-            Rols();
-            LblName.Text = Nombre;
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -82,6 +80,12 @@ namespace PatientManagerSystem
                 BtnMantMedico.Visible = false;
                 BtnMantPruebaLab.Visible = false;
             }
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            Rols();
+            LblName.Text = Nombre;
         }
     }
 }

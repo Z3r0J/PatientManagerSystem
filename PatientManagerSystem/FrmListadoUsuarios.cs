@@ -21,6 +21,7 @@ namespace PatientManagerSystem
             SqlConnection conexion = new SqlConnection(connectionString);
             usuarios = new ServiceUsuarios(conexion);
             _enviarCorreo = new EnviarCorreo();
+            Deseleccionar();
         }
 
         private void ListarUsuarios()
@@ -37,8 +38,8 @@ namespace PatientManagerSystem
 
             this.Hide();
             frm.ShowDialog();
-            Deseleccionar();
             ListarUsuarios();
+            Deseleccionar();
             this.Show();
         }
         private void FrmListadoUsuarios_Load(object sender, EventArgs e)
@@ -80,8 +81,8 @@ namespace PatientManagerSystem
                 frm.CbxTipoUsuario.SelectedIndex = a;
                 this.Hide();
                 frm.ShowDialog();
-                Deseleccionar();
                 ListarUsuarios();
+                Deseleccionar();
                 this.Show();
             }
 
@@ -109,5 +110,9 @@ namespace PatientManagerSystem
             BtnDeseleccionar.Visible = false;
         }
 
+        private void DtgvUsuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DtgvUsuarios.Rows[0].Selected = false;
+        }
     }
 }
