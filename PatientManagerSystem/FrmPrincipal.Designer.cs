@@ -201,6 +201,7 @@ namespace PatientManagerSystem
             this.BtnMantMedico.TabIndex = 4;
             this.BtnMantMedico.Text = "Medicos";
             this.BtnMantMedico.UseVisualStyleBackColor = true;
+            this.BtnMantMedico.Click += new System.EventHandler(this.BtnMantMedico_Click);
             // 
             // BtnMantUsuario
             // 

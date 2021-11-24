@@ -11,7 +11,7 @@ namespace DataLayer.Modelos
         public string Apellido { get; set; }
         public string Correo { get; set; }
         public string Telefono { get; set; }
-        public int Cedula { get; set; }
+        public string Cedula { get; set; }
         public string Foto { get; set; }
     }
 }
