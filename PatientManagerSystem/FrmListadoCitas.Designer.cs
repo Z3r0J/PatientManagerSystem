@@ -1,7 +1,7 @@
 ﻿
 namespace PatientManagerSystem
 {
-    partial class FrmListadoDoctor
+    partial class FrmListadoCitas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace PatientManagerSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -46,12 +46,12 @@ namespace PatientManagerSystem
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnDeseleccionar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.BtnConsultar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.DtgvDoctor = new System.Windows.Forms.DataGridView();
+            this.DtgvCitas = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -71,7 +71,7 @@ namespace PatientManagerSystem
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DtgvDoctor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgvCitas)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFoto)).BeginInit();
             this.panel7.SuspendLayout();
@@ -96,7 +96,7 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.DtgvDoctor, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.DtgvCitas, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -259,7 +259,7 @@ namespace PatientManagerSystem
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.btnEliminar);
+            this.panel3.Controls.Add(this.BtnConsultar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.ForeColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(456, 0);
@@ -268,24 +268,23 @@ namespace PatientManagerSystem
             this.panel3.Size = new System.Drawing.Size(228, 109);
             this.panel3.TabIndex = 5;
             // 
-            // btnEliminar
+            // BtnConsultar
             // 
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Location = new System.Drawing.Point(19, 18);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(163, 64);
-            this.btnEliminar.TabIndex = 0;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.BtnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.BtnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConsultar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnConsultar.ForeColor = System.Drawing.Color.Black;
+            this.BtnConsultar.Location = new System.Drawing.Point(30, 18);
+            this.BtnConsultar.Name = "BtnConsultar";
+            this.BtnConsultar.Size = new System.Drawing.Size(163, 64);
+            this.BtnConsultar.TabIndex = 1;
+            this.BtnConsultar.Text = "Consultar";
+            this.BtnConsultar.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btnEditar);
+            this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(228, 0);
@@ -294,19 +293,19 @@ namespace PatientManagerSystem
             this.panel2.Size = new System.Drawing.Size(228, 109);
             this.panel2.TabIndex = 4;
             // 
-            // btnEditar
+            // btnEliminar
             // 
-            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEditar.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Location = new System.Drawing.Point(15, 18);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(163, 64);
-            this.btnEditar.TabIndex = 0;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminar.Location = new System.Drawing.Point(28, 18);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(163, 64);
+            this.btnEliminar.TabIndex = 0;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // panel1
             // 
@@ -330,45 +329,45 @@ namespace PatientManagerSystem
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(163, 64);
             this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Text = "Nueva Citas";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // DtgvDoctor
+            // DtgvCitas
             // 
-            this.DtgvDoctor.AllowUserToAddRows = false;
-            this.DtgvDoctor.AllowUserToDeleteRows = false;
-            this.DtgvDoctor.AllowUserToResizeColumns = false;
-            this.DtgvDoctor.AllowUserToResizeRows = false;
-            this.DtgvDoctor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DtgvDoctor.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DtgvDoctor.BackgroundColor = System.Drawing.Color.White;
-            this.DtgvDoctor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DtgvDoctor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DtgvDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgvDoctor.ColumnHeadersVisible = false;
-            this.tableLayoutPanel1.SetColumnSpan(this.DtgvDoctor, 6);
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DtgvDoctor.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DtgvDoctor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DtgvDoctor.Location = new System.Drawing.Point(3, 180);
-            this.DtgvDoctor.MultiSelect = false;
-            this.DtgvDoctor.Name = "DtgvDoctor";
-            this.DtgvDoctor.ReadOnly = true;
-            this.DtgvDoctor.RowHeadersVisible = false;
-            this.DtgvDoctor.RowTemplate.Height = 25;
-            this.DtgvDoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtgvDoctor.Size = new System.Drawing.Size(1364, 332);
-            this.DtgvDoctor.TabIndex = 0;
-            this.DtgvDoctor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacientes_CellContentClick);
-            this.DtgvDoctor.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DtgvDoctor_DataBindingComplete);
+            this.DtgvCitas.AllowUserToAddRows = false;
+            this.DtgvCitas.AllowUserToDeleteRows = false;
+            this.DtgvCitas.AllowUserToResizeColumns = false;
+            this.DtgvCitas.AllowUserToResizeRows = false;
+            this.DtgvCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DtgvCitas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DtgvCitas.BackgroundColor = System.Drawing.Color.White;
+            this.DtgvCitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DtgvCitas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DtgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgvCitas.ColumnHeadersVisible = false;
+            this.tableLayoutPanel1.SetColumnSpan(this.DtgvCitas, 6);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DtgvCitas.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DtgvCitas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DtgvCitas.Location = new System.Drawing.Point(3, 180);
+            this.DtgvCitas.MultiSelect = false;
+            this.DtgvCitas.Name = "DtgvCitas";
+            this.DtgvCitas.ReadOnly = true;
+            this.DtgvCitas.RowHeadersVisible = false;
+            this.DtgvCitas.RowTemplate.Height = 25;
+            this.DtgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DtgvCitas.Size = new System.Drawing.Size(1364, 332);
+            this.DtgvCitas.TabIndex = 0;
+            this.DtgvCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPacientes_CellContentClick);
+            this.DtgvCitas.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DtgvCitas_DataBindingComplete);
             // 
             // panel6
             // 
@@ -449,16 +448,16 @@ namespace PatientManagerSystem
             this.label2.TabIndex = 0;
             this.label2.Text = "Cod.";
             // 
-            // FrmListadoDoctor
+            // FrmListadoCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 515);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmListadoDoctor";
+            this.Name = "FrmListadoCitas";
             this.Text = "frmPacientes";
-            this.Load += new System.EventHandler(this.FrmListadoDoctor_Load);
+            this.Load += new System.EventHandler(this.FrmListadoPacientes_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
@@ -475,7 +474,7 @@ namespace PatientManagerSystem
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DtgvDoctor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgvCitas)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFoto)).EndInit();
@@ -495,10 +494,9 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridView DtgvDoctor;
+        private System.Windows.Forms.DataGridView DtgvCitas;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox ptbFoto;
         private System.Windows.Forms.Label label1;
@@ -520,5 +518,6 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button BtnConsultar;
     }
 }

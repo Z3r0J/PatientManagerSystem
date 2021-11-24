@@ -169,6 +169,7 @@ namespace PatientManagerSystem
             this.BtnMantCitas.TabIndex = 9;
             this.BtnMantCitas.Text = "Citas";
             this.BtnMantCitas.UseVisualStyleBackColor = true;
+            this.BtnMantCitas.Click += new System.EventHandler(this.BtnMantCitas_Click);
             // 
             // BtnMantPruebaLab
             // 

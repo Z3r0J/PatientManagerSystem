@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using BusinessLayer;
+using System;
 using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using BusinessLayer;
-using DataLayer.Modelos;
 using System.Data.SqlClient;
-using System.IO;
+using System.Windows.Forms;
 
 namespace PatientManagerSystem
 {
@@ -52,7 +45,7 @@ namespace PatientManagerSystem
             paciente = new frmAgregarEditarPacientes();
             paciente._id = 0;
             paciente.Show();
-            
+
         }
 
         private void FrmListadoPacientes_Load(object sender, EventArgs e)
@@ -60,6 +53,7 @@ namespace PatientManagerSystem
             CargarPacientes();
             DtgStyle();
             Deseleccionar();
+            EstaEnCitas();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -69,12 +63,25 @@ namespace PatientManagerSystem
 
         private void BtnSiguiente_Click(object sender, EventArgs e)
         {
-            Editar();
+            if (dgvPacientes.SelectedRows.Count > 0)
+            {
+                FrmListadoDoctor frm = new FrmListadoDoctor();
+                frm.IdPaciente = Convert.ToInt32(dgvPacientes.CurrentRow.Cells[0].Value.ToString());
+                frm.NombreApellidoPacientes = $"{dgvPacientes.CurrentRow.Cells[1].Value.ToString()} {dgvPacientes.CurrentRow.Cells[2].Value.ToString()}";
+                frm.IsOnCitas = true;
+                this.Hide();
+                frm.ShowDialog();
+                this.Close();
+            }
         }
         public void dgvPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex>=0)
+            if (e.RowIndex >= 0)
             {
+                if (IsOnCitas)
+                {
+                    btnAgregar.Visible = true;
+                }
                 btnDeseleccionar.Visible = true;
             }
         }
@@ -166,7 +173,12 @@ namespace PatientManagerSystem
             if (IsOnCitas)
             {
                 btnAgregar.Text = "Siguiente";
+                btnAgregar.Click -= new EventHandler(btnAgregar_Click);
                 btnAgregar.Click += new EventHandler(BtnSiguiente_Click);
+                btnAgregar.Visible = false;
+                btnEditar.Visible = false;
+                btnEliminar.Visible = false;
+
             }
         }
 
