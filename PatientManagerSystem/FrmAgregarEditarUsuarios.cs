@@ -168,6 +168,7 @@ namespace PatientManagerSystem
                 {
                     Clear();
                     EnviarCorreo();
+                    RepositorioID.Instancia.Id = 0;
                     MessageBox.Show("Agregado Correctamente");
                     this.Close();
                 }

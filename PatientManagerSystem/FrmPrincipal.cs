@@ -95,5 +95,10 @@ namespace PatientManagerSystem
         {
             AbrirFormularioEnWrapper(new FrmListadosResultados());
         }
+
+        private void BtnMantMedico_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnWrapper(new FrmListadoDoctor());
+        }
     }
 }

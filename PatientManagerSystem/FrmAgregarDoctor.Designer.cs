@@ -1,7 +1,7 @@
 ﻿
 namespace PatientManagerSystem
 {
-    partial class FrmAgragarDoctor
+    partial class FrmAgregarDoctor
     {
         /// <summary>
         /// Required designer variable.
@@ -33,37 +33,33 @@ namespace PatientManagerSystem
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl1 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lbl2 = new System.Windows.Forms.Label();
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.lbl3 = new System.Windows.Forms.Label();
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.lbl4 = new System.Windows.Forms.Label();
-            this.txt_telefono = new System.Windows.Forms.TextBox();
+            this.txt_telefono = new System.Windows.Forms.MaskedTextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lbl = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.lbl5 = new System.Windows.Forms.Label();
-            this.txt_cedula = new System.Windows.Forms.TextBox();
+            this.txt_cedula = new System.Windows.Forms.MaskedTextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl6 = new System.Windows.Forms.Label();
             this.pictureU = new System.Windows.Forms.PictureBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.FotoDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -77,9 +73,9 @@ namespace PatientManagerSystem
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureU)).BeginInit();
             this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -138,7 +134,6 @@ namespace PatientManagerSystem
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.lbl1);
             this.panel2.Controls.Add(this.txt_nombre);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(398, 0);
@@ -146,15 +141,6 @@ namespace PatientManagerSystem
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(398, 62);
             this.panel2.TabIndex = 1;
-            // 
-            // lbl1
-            // 
-            this.lbl1.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl1.ForeColor = System.Drawing.Color.Red;
-            this.lbl1.Location = new System.Drawing.Point(320, 15);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(28, 23);
-            this.lbl1.TabIndex = 1;
             // 
             // txt_nombre
             // 
@@ -187,7 +173,6 @@ namespace PatientManagerSystem
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.lbl2);
             this.panel4.Controls.Add(this.txt_apellido);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(398, 62);
@@ -195,15 +180,6 @@ namespace PatientManagerSystem
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(398, 62);
             this.panel4.TabIndex = 3;
-            // 
-            // lbl2
-            // 
-            this.lbl2.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl2.ForeColor = System.Drawing.Color.Red;
-            this.lbl2.Location = new System.Drawing.Point(320, 12);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(28, 23);
-            this.lbl2.TabIndex = 2;
             // 
             // txt_apellido
             // 
@@ -236,7 +212,6 @@ namespace PatientManagerSystem
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.lbl3);
             this.panel6.Controls.Add(this.txt_correo);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(398, 124);
@@ -244,15 +219,6 @@ namespace PatientManagerSystem
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(398, 62);
             this.panel6.TabIndex = 5;
-            // 
-            // lbl3
-            // 
-            this.lbl3.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl3.ForeColor = System.Drawing.Color.Red;
-            this.lbl3.Location = new System.Drawing.Point(320, 12);
-            this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(28, 23);
-            this.lbl3.TabIndex = 2;
             // 
             // txt_correo
             // 
@@ -286,7 +252,6 @@ namespace PatientManagerSystem
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Controls.Add(this.lbl4);
             this.panel8.Controls.Add(this.txt_telefono);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(398, 186);
@@ -295,21 +260,13 @@ namespace PatientManagerSystem
             this.panel8.Size = new System.Drawing.Size(398, 62);
             this.panel8.TabIndex = 7;
             // 
-            // lbl4
-            // 
-            this.lbl4.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl4.ForeColor = System.Drawing.Color.Red;
-            this.lbl4.Location = new System.Drawing.Point(320, 16);
-            this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(28, 23);
-            this.lbl4.TabIndex = 2;
-            // 
             // txt_telefono
             // 
-            this.txt_telefono.Location = new System.Drawing.Point(3, 16);
-            this.txt_telefono.Multiline = true;
+            this.txt_telefono.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_telefono.Location = new System.Drawing.Point(6, 14);
+            this.txt_telefono.Mask = "(999) 000-0000";
             this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(311, 33);
+            this.txt_telefono.Size = new System.Drawing.Size(308, 35);
             this.txt_telefono.TabIndex = 1;
             // 
             // panel9
@@ -335,7 +292,6 @@ namespace PatientManagerSystem
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.White;
-            this.panel10.Controls.Add(this.lbl5);
             this.panel10.Controls.Add(this.txt_cedula);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(398, 248);
@@ -344,22 +300,14 @@ namespace PatientManagerSystem
             this.panel10.Size = new System.Drawing.Size(398, 62);
             this.panel10.TabIndex = 9;
             // 
-            // lbl5
-            // 
-            this.lbl5.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl5.ForeColor = System.Drawing.Color.Red;
-            this.lbl5.Location = new System.Drawing.Point(320, 16);
-            this.lbl5.Name = "lbl5";
-            this.lbl5.Size = new System.Drawing.Size(28, 23);
-            this.lbl5.TabIndex = 3;
-            // 
             // txt_cedula
             // 
-            this.txt_cedula.Location = new System.Drawing.Point(3, 16);
-            this.txt_cedula.Multiline = true;
+            this.txt_cedula.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_cedula.Location = new System.Drawing.Point(6, 14);
+            this.txt_cedula.Mask = "000-0000000-0";
             this.txt_cedula.Name = "txt_cedula";
-            this.txt_cedula.Size = new System.Drawing.Size(311, 33);
-            this.txt_cedula.TabIndex = 1;
+            this.txt_cedula.Size = new System.Drawing.Size(308, 35);
+            this.txt_cedula.TabIndex = 0;
             // 
             // panel11
             // 
@@ -384,6 +332,7 @@ namespace PatientManagerSystem
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.Controls.Add(this.pictureBox1);
             this.panel12.Controls.Add(this.lbl6);
             this.panel12.Controls.Add(this.pictureU);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -392,6 +341,15 @@ namespace PatientManagerSystem
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(398, 62);
             this.panel12.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(174, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(212, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // lbl6
             // 
@@ -411,6 +369,7 @@ namespace PatientManagerSystem
             this.pictureU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureU.TabIndex = 0;
             this.pictureU.TabStop = false;
+            this.pictureU.Click += new System.EventHandler(this.pictureU_Click);
             // 
             // panel13
             // 
@@ -437,7 +396,6 @@ namespace PatientManagerSystem
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.White;
-            this.panel14.Controls.Add(this.label11);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(398, 372);
             this.panel14.Margin = new System.Windows.Forms.Padding(0);
@@ -445,25 +403,20 @@ namespace PatientManagerSystem
             this.panel14.Size = new System.Drawing.Size(398, 64);
             this.panel14.TabIndex = 13;
             // 
-            // label11
+            // FotoDialog
             // 
-            this.label11.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(190, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(208, 23);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Campos en Blancos";
+            this.FotoDialog.DefaultExt = "png,gif,jpg,jpeg";
             // 
-            // FrmAgragarDoctor
+            // FrmAgregarDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 436);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmAgragarDoctor";
+            this.Name = "FrmAgregarDoctor";
             this.Text = "FrmAgragarDoctor";
+            this.Load += new System.EventHandler(this.FrmAgregarDoctor_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -482,9 +435,10 @@ namespace PatientManagerSystem
             this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureU)).EndInit();
             this.panel13.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -495,7 +449,6 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
@@ -511,20 +464,17 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.TextBox txt_apellido;
-        private System.Windows.Forms.TextBox txt_correo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Label lbl;
-        private System.Windows.Forms.TextBox txt_cedula;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureU;
-        private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Label lbl2;
-        private System.Windows.Forms.Label lbl3;
-        private System.Windows.Forms.Label lbl4;
-        private System.Windows.Forms.Label lbl5;
         private System.Windows.Forms.Label lbl6;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.OpenFileDialog FotoDialog;
+        public System.Windows.Forms.TextBox txt_nombre;
+        public System.Windows.Forms.TextBox txt_apellido;
+        public System.Windows.Forms.TextBox txt_correo;
+        public System.Windows.Forms.MaskedTextBox txt_cedula;
+        public System.Windows.Forms.MaskedTextBox txt_telefono;
     }
 }
