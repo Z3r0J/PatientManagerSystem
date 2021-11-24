@@ -366,7 +366,7 @@ namespace PatientManagerSystem
             this.DtgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DtgvCitas.Size = new System.Drawing.Size(1364, 332);
             this.DtgvCitas.TabIndex = 0;
-            this.DtgvCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacientes_CellContentClick);
+            this.DtgvCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPacientes_CellContentClick);
             this.DtgvCitas.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DtgvCitas_DataBindingComplete);
             // 
             // panel6

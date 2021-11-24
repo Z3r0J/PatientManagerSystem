@@ -54,7 +54,7 @@ namespace PatientManagerSystem
         {
             Editar();
         }
-        public void dgvPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void DgvPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex>=0)
             {

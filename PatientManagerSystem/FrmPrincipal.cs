@@ -100,5 +100,10 @@ namespace PatientManagerSystem
         {
             AbrirFormularioEnWrapper(new FrmListadoDoctor());
         }
+
+        private void BtnMantCitas_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnWrapper(new FrmListadoCitas());
+        }
     }
 }
