@@ -76,6 +76,9 @@ namespace PatientManagerSystem
             }
             else
             {
+                tableLayoutPanel1.Controls.Add(BtnMantPacientes,0,2);
+                tableLayoutPanel1.Controls.Add(BtnMantResultadoLab, 0, 3);
+                tableLayoutPanel1.Controls.Add(BtnMantCitas, 0, 4);
                 BtnMantUsuario.Visible = false;
                 BtnMantMedico.Visible = false;
                 BtnMantPruebaLab.Visible = false;
@@ -88,5 +91,9 @@ namespace PatientManagerSystem
             LblName.Text = Nombre;
         }
 
+        private void BtnMantResultadoLab_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnWrapper(new FrmListadosResultados());
+        }
     }
 }

@@ -305,6 +305,7 @@ namespace PatientManagerSystem
             this.BtnMantResultadoLab.TabIndex = 7;
             this.BtnMantResultadoLab.Text = "Resultados de Laboratorios";
             this.BtnMantResultadoLab.UseVisualStyleBackColor = true;
+            this.BtnMantResultadoLab.Click += new System.EventHandler(this.BtnMantResultadoLab_Click);
             // 
             // panel4
             // 

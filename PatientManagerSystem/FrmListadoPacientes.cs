@@ -18,6 +18,8 @@ namespace PatientManagerSystem
         ServicePacientes _servicioPacientes;
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         private int id;
+
+        public bool IsOnCitas { get; set; }
         public FrmListadoPacientes()
         {
             InitializeComponent();
@@ -65,6 +67,10 @@ namespace PatientManagerSystem
             Editar();
         }
 
+        private void BtnSiguiente_Click(object sender, EventArgs e)
+        {
+            Editar();
+        }
         public void dgvPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex>=0)
@@ -153,6 +159,15 @@ namespace PatientManagerSystem
             dgvPacientes.ClearSelection();
             dgvPacientes.CurrentCell = null;
             btnDeseleccionar.Visible = false;
+        }
+
+        private void EstaEnCitas()
+        {
+            if (IsOnCitas)
+            {
+                btnAgregar.Text = "Siguiente";
+                btnAgregar.Click += new EventHandler(BtnSiguiente_Click);
+            }
         }
         #endregion
 

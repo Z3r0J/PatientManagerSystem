@@ -16,6 +16,12 @@
     <Compile Update="FrmAgregarEditarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmListadosResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmAgregarResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -24,6 +30,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="FrmLogin - Copy - Copy %282%29.resx">
+      <DependentUpon>FrmLogin.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FrmLogin - Copy - Copy - Copy.resx">
+      <DependentUpon>FrmLogin - Copy - Copy.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FrmLogin - Copy - Copy.resx">
+      <DependentUpon>FrmLogin.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Update="FrmLogin - Copy.resx">
       <DependentUpon>FrmLogin.resx</DependentUpon>
     </EmbeddedResource>
