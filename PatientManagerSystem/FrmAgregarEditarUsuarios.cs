@@ -4,19 +4,17 @@ using DataLayer.Modelos;
 using EmailLayer;
 using PatientManagerSystem.CustomComboBoxItem;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PatientManagerSystem
 {
     public partial class FrmAgregarEditarUsuarios : Form
     {
+        public bool Editar { get; set; }
+
+        public int Id { get; set; }
         private ServiceUsuarios usuarios;
 
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
@@ -29,6 +27,7 @@ namespace PatientManagerSystem
             SqlConnection conexion = new SqlConnection(connectionString);
             usuarios = new ServiceUsuarios(conexion);
             _enviarCorreo = new EnviarCorreo();
+            LoadCbx();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -63,7 +62,8 @@ namespace PatientManagerSystem
             item.Text = "Seleccione una opción";
             item.Value = null;
 
-            ComboBoxItem item1 = new ComboBoxItem() {
+            ComboBoxItem item1 = new ComboBoxItem()
+            {
                 Text = "Administrador",
                 Value = 1
             };
@@ -82,24 +82,147 @@ namespace PatientManagerSystem
 
         private void FrmAgregarEditarUsuarios_Load(object sender, EventArgs e)
         {
-            LoadCbx();
         }
 
         private bool Agregar()
         {
 
             ComboBoxItem item = CbxTipoUsuario.SelectedItem as ComboBoxItem;
+
+
             Usuarios user = new Usuarios()
             {
                 Nombre = TxtNombre.Text,
-            Apellido = TxtApellido.Text,
-            Correo = TxtCorreo.Text,
-            Usuario = TxtUsuario.Text,
-            Contraseña = TxtContraseña.Text,
-            TipoDeUsuario = (int)item.Value
+                Apellido = TxtApellido.Text,
+                Correo = TxtCorreo.Text,
+                Usuario = TxtUsuario.Text,
+                Contraseña = TxtContraseña.Text,
+                TipoDeUsuario = (int)item.Value
             };
             bool add = usuarios.Agregar(user);
-                return add;
+            return add;
+
+        }
+
+        private bool EditarUsuarios()
+        {
+
+            ComboBoxItem item = CbxTipoUsuario.SelectedItem as ComboBoxItem;
+
+
+            Usuarios user = new Usuarios()
+            {
+                Id = Id,
+                Nombre = TxtNombre.Text,
+                Apellido = TxtApellido.Text,
+                Correo = TxtCorreo.Text,
+                Usuario = TxtUsuario.Text,
+                Contraseña = TxtContraseña.Text,
+                TipoDeUsuario = (int)item.Value
+            };
+            bool add = usuarios.Actualizar(user);
+            return add;
+
+        }
+
+        private void Validar()
+        {
+            bool Existe = usuarios.Existe(TxtUsuario.Text);
+            ComboBoxItem item = CbxTipoUsuario.SelectedItem as ComboBoxItem;
+            if (item.Value == null)
+            {
+                MessageBox.Show("Elige un tipo de usuario", "Notificación");
+            }
+            else if (string.IsNullOrWhiteSpace(TxtNombre.Text))
+            {
+                MessageBox.Show("Inserta un nombre", "Notificación");
+            }
+            else if (string.IsNullOrWhiteSpace(TxtApellido.Text))
+            {
+                MessageBox.Show("Inserta un Apellido", "Notificación");
+            }
+            else if (string.IsNullOrWhiteSpace(TxtCorreo.Text))
+            {
+                MessageBox.Show("Inserta un Correo", "Notificación");
+            }
+            else if (string.IsNullOrWhiteSpace(TxtUsuario.Text))
+            {
+                MessageBox.Show("Inserta un Usuario", "Notificación");
+            }
+            else if (string.IsNullOrWhiteSpace(TxtContraseña.Text))
+            {
+                MessageBox.Show("Inserta una contraseña", "Notificación");
+
+            }
+            else if (TxtConfirmarContraseña.Text != TxtContraseña.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden", "Notificación");
+            }
+            else if (Existe)
+            {
+                MessageBox.Show("Este usuario existe", "Notificación");
+            }
+            else
+            {
+                if (Agregar())
+                {
+                    Clear();
+                    EnviarCorreo();
+                    MessageBox.Show("Agregado Correctamente");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Oops, ha ocurrido un error", "Notificación");
+                }
+            }
+        }
+
+
+        private void Editando()
+        {
+            ComboBoxItem item = CbxTipoUsuario.SelectedItem as ComboBoxItem;
+            if (item.Value == null)
+            {
+                MessageBox.Show("Elige un tipo de usuario", "Notificación");
+            }
+            else if (string.IsNullOrWhiteSpace(TxtNombre.Text))
+            {
+                MessageBox.Show("Inserta un nombre", "Notificación");
+            }
+            else if (string.IsNullOrWhiteSpace(TxtApellido.Text))
+            {
+                MessageBox.Show("Inserta un Apellido", "Notificación");
+            }
+            else if (string.IsNullOrWhiteSpace(TxtCorreo.Text))
+            {
+                MessageBox.Show("Inserta un Correo", "Notificación");
+            }
+            else if (string.IsNullOrWhiteSpace(TxtUsuario.Text))
+            {
+                MessageBox.Show("Inserta un Usuario", "Notificación");
+            }
+            else if (string.IsNullOrWhiteSpace(TxtContraseña.Text))
+            {
+                MessageBox.Show("Inserta una contraseña", "Notificación");
+
+            }
+            else if (TxtConfirmarContraseña.Text != TxtContraseña.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden", "Notificación");
+            }
+            else
+            {
+                if (EditarUsuarios())
+                {
+                    MessageBox.Show("Editado Correctamente");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Oops, ha ocurrido un error", "Notificación");
+                }
+            }
 
         }
 
@@ -133,7 +256,7 @@ namespace PatientManagerSystem
                    "<b> Saludos!,</b>" +
                    "</font>" +
                    "<br><br><font color='#299187' size=3><b>" +
-                   "Atención "+ users.Nombre + ", se acaba de crear una nueva cuenta en el Sistema Gestor de Pacientes. Este correo se genero automaticamente y es un mensaje de seguridad." +
+                   "Atención " + users.Nombre + ", se acaba de crear una nueva cuenta en el Sistema Gestor de Pacientes. Este correo se genero automaticamente y es un mensaje de seguridad." +
                    "<br><br> Nombre de Usuario: " + users.Usuario + "" +
                    "<br>" +
                    "<br>" +
@@ -151,16 +274,18 @@ namespace PatientManagerSystem
                    "</td>" +
                    "</tr>" +
                    "</table>";
-            _enviarCorreo.Enviando(users.Correo,$"Bienvenid@s a Sistema Gestor de paciente {users.Nombre}",Body);
+            _enviarCorreo.Enviando(users.Correo, $"Bienvenid@s a Sistema Gestor de paciente {users.Nombre}", Body);
         }
 
         private void BtnRegistrarse_Click(object sender, EventArgs e)
         {
-            if (Agregar())
+            if (Editar)
             {
-                Clear();
-                EnviarCorreo();
-                MessageBox.Show("Agregado Correctamente");
+                Editando();
+            }
+            else
+            {
+                Validar();
             }
         }
     }

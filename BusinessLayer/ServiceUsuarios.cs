@@ -14,6 +14,11 @@ namespace BusinessLayer
         {
             data = new DataUsuarios(_conexion);
         }
+
+        public bool Existe(string usuario) {
+
+            return data.Existe(usuario);
+        }
         public Usuarios Login(string Usuarios, string Contraseña)
         {
             return data.Login(Usuarios,Contraseña);

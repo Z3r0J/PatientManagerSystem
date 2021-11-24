@@ -7,6 +7,7 @@ namespace DataLayer
 {
     public class DataUsuarios
     {
+
         private SqlConnection _conexion;
         public DataUsuarios(SqlConnection conexion)
         {
@@ -53,6 +54,27 @@ namespace DataLayer
             comando.Parameters.AddWithValue("@TipoDeUsuario", usuarios.TipoDeUsuario);
 
             return ExecuteProc(comando);
+
+        }
+
+        public bool Existe(string username)
+        {
+            SqlCommand comando = new SqlCommand("SP_Existe", _conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.AddWithValue("@Usuario", username);
+            _conexion.Open();
+
+            SqlDataReader LeerDatos = comando.ExecuteReader();
+
+            if (LeerDatos.Read())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
 
@@ -103,10 +125,17 @@ namespace DataLayer
                 {
                     datos.Id = LeerDatos.IsDBNull(0) ? 0 : LeerDatos.GetInt32(0);
                     datos.Nombre = LeerDatos.IsDBNull(1) ? "" : LeerDatos.GetString(1);
+                    datos.Apellido = LeerDatos.IsDBNull(2) ? "" : LeerDatos.GetString(2);
+                    datos.Usuario = LeerDatos.IsDBNull(3) ? "" : LeerDatos.GetString(3);
+                    datos.TipoDeUsuario = LeerDatos.IsDBNull(6) ? 0 : LeerDatos.GetInt32(6);
+                    _conexion.Close();
+                    return datos;
                 }
-
-                _conexion.Close();
-                return datos;
+                else
+                {
+                    _conexion.Close();
+                    return null;
+                }
 
             }
             catch 

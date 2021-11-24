@@ -23,20 +23,32 @@ namespace PatientManagerSystem
             InitializeComponent();
             SqlConnection _conexion = new SqlConnection(connectionString);
             _servicioPacientes = new ServicePacientes(_conexion);
-            paciente = new frmAgregarEditarPacientes();
             id = 0;
         }
+        frmAgregarEditarPacientes paciente;
 
-        public void CargarPacientes()
+
+        #region Eventos
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-           
-            dgvPacientes.DataSource = _servicioPacientes.ObtenerPacientes(); 
+            Eliminar();
         }
 
-        frmAgregarEditarPacientes paciente;
+        private void btnDeseleccionar_Click(object sender, EventArgs e)
+        {
+            Deseleccionar();
+        }
+
+        private void dgvPacientes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvPacientes.Rows[0].Selected = false;
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Deseleccionar();
+            paciente = new frmAgregarEditarPacientes();
+            paciente._id = 0;
             paciente.Show();
             
         }
@@ -44,75 +56,106 @@ namespace PatientManagerSystem
         private void FrmListadoPacientes_Load(object sender, EventArgs e)
         {
             CargarPacientes();
-            btnEditar.Visible = false;
-            btnEliminar.Visible = false;
+            DtgStyle();
+            Deseleccionar();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            
-            paciente.Show();
-        }
-
-        private void dgvPacientes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnDeseleccionar.Visible = true;
-            btnEditar.Visible = true;
-            btnEliminar.Visible = true;
-
-            int _id = Convert.ToInt32(dgvPacientes.Rows[e.RowIndex].Cells["Id"].Value.ToString()); ;
-
-            paciente._paciente.Nombre = dgvPacientes.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-            paciente._id = _id;
-            paciente._paciente.Id = _id;
-            id = _id;
-            paciente._paciente.Apellido = dgvPacientes.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
-            paciente._paciente.Cedula = dgvPacientes.Rows[e.RowIndex].Cells["Cedula"].Value.ToString();
-            paciente._paciente.Telefono = dgvPacientes.Rows[e.RowIndex].Cells["Telefono"].Value.ToString();
-            paciente._paciente.Direccion = dgvPacientes.Rows[e.RowIndex].Cells["Direccion"].Value.ToString();
-            paciente._paciente.FechaNacimiento = Convert.ToDateTime(dgvPacientes.Rows[e.RowIndex].Cells["Fecha Nacimiento"].Value.ToString());
-            paciente._paciente.Fumador = Convert.ToBoolean(dgvPacientes.Rows[e.RowIndex].Cells["Fumador"].Value.ToString());
-            paciente._paciente.Alergias = dgvPacientes.Rows[e.RowIndex].Cells["Alergias"].Value.ToString();
-            paciente._paciente.Id = _id;
-            paciente._filename = dgvPacientes.Rows[e.RowIndex].Cells["Foto"].Value.ToString();
+            Editar();
         }
 
         public void dgvPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex>=0)
+            {
+                btnDeseleccionar.Visible = true;
+            }
+        }
 
+        #endregion
+
+        #region Metodos
+
+        private void DtgStyle()
+        {
+            dgvPacientes.Columns[0].Width = 70;
+            dgvPacientes.Columns[1].Width = 160;
+            dgvPacientes.Columns[2].Width = 220;
+            dgvPacientes.Columns[3].Width = 270;
+        }
+        private void CargarPacientes()
+        {
+
+            dgvPacientes.DataSource = _servicioPacientes.ObtenerPacientes();
+        }
+        private void Editar()
+        {
+            if (dgvPacientes.SelectedRows.Count > 0)
+            {
+                paciente = new frmAgregarEditarPacientes();
+
+                int _id = Convert.ToInt32(dgvPacientes.CurrentRow.Cells[0].Value.ToString());
+
+                paciente._paciente.Nombre = dgvPacientes.CurrentRow.Cells[1].Value.ToString();
+                paciente._id = _id;
+                paciente._paciente.Id = _id;
+                id = _id;
+                paciente._paciente.Apellido = dgvPacientes.CurrentRow.Cells[2].Value.ToString();
+                paciente._paciente.Telefono = dgvPacientes.CurrentRow.Cells[3].Value.ToString();
+                paciente._paciente.Direccion = dgvPacientes.CurrentRow.Cells[4].Value.ToString();
+                paciente._paciente.Cedula = dgvPacientes.CurrentRow.Cells[5].Value.ToString();
+                paciente._paciente.FechaNacimiento = Convert.ToDateTime(dgvPacientes.CurrentRow.Cells[6].Value.ToString());
+                paciente._paciente.Fumador = Convert.ToBoolean(dgvPacientes.CurrentRow.Cells[7].Value.ToString());
+                paciente._paciente.Alergias = dgvPacientes.CurrentRow.Cells[8].Value.ToString();
+                paciente._paciente.Id = _id;
+                paciente._filename = dgvPacientes.CurrentRow.Cells[9].Value.ToString();
+                this.Hide();
+                paciente.ShowDialog();
+                Deseleccionar();
+                this.Show();
+                paciente._id = 0;
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un paciente");
+            }
+        }
+
+        private void Eliminar()
+        {
+            if (dgvPacientes.SelectedRows.Count > 0)
+            {
+                if (DialogResult.Yes == MessageBox.Show("Esta seguro que desea eliminar el paciente?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                {
+                    var result = _servicioPacientes.EliminarPaciente(id);
+                    if (result)
+                    {
+                        MessageBox.Show("El paciente se ha eliminado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarPacientes();
+                        Deseleccionar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha podido eliminar el paciente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila", "Notificacion");
+            }
         }
 
         private void Deseleccionar()
         {
             dgvPacientes.ClearSelection();
-            paciente._id = 0;
+            dgvPacientes.CurrentCell = null;
             btnDeseleccionar.Visible = false;
-            btnEditar.Visible = false;
-            btnEliminar.Visible = false;
         }
+        #endregion
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if(DialogResult.Yes == MessageBox.Show("Esta seguro que desea eliminar el paciente?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
-            {
-                var result = _servicioPacientes.EliminarPaciente(id);
-                if (result)
-                {
-                    MessageBox.Show("El paciente se ha eliminado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("No se ha podido eliminar el paciente", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
 
-            }
-            CargarPacientes();
-            Deseleccionar();
-        }
-
-        private void btnDeseleccionar_Click(object sender, EventArgs e)
-        {
-            Deseleccionar();
-        }
     }
 }
