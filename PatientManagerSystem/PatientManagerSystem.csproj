@@ -13,7 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FrmAgregarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmAgregarEditarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmListadoCitas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmListadoDoctor.cs">

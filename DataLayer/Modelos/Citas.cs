@@ -7,10 +7,10 @@ namespace DataLayer.Modelos
     public class Citas
     {
         public int Id { get; set; }
-        public Pacientes Pacientes { get; set; }
-        public Medicos Medicos { get; set; }
+        public int IdPacientes { get; set; }
+        public int IdDoctor { get; set; }
         public DateTime Fecha_Cita { get; set; }
-        public DateTime Hora_Cita { get; set; }
+        public string Hora_Cita { get; set; }
         public string Causa { get; set; }
         public int Estado_Citas { get; set; }
     }
