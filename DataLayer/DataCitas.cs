@@ -36,8 +36,8 @@ namespace DataLayer
         {
             SqlCommand comando = new SqlCommand("SP_AgregarCitas", _conexion);
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@IdPacientes", citas.Pacientes.Id);
-            comando.Parameters.AddWithValue("@IdDoctor", citas.Medicos.Id);
+            comando.Parameters.AddWithValue("@IdPacientes", citas.IdPacientes);
+            comando.Parameters.AddWithValue("@IdDoctor", citas.IdDoctor);
             comando.Parameters.AddWithValue("@Fecha_Cita",citas.Fecha_Cita);
             comando.Parameters.AddWithValue("@Hora_Cita", citas.Hora_Cita);
             comando.Parameters.AddWithValue("@Causa_Cita",citas.Causa);
@@ -55,7 +55,7 @@ namespace DataLayer
                 _conexion.Close();
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
                 _conexion.Close();
                 return false;

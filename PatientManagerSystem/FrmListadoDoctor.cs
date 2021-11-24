@@ -19,6 +19,8 @@ namespace PatientManagerSystem
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         private int id;
 
+        public int IdPaciente { get; set; }
+        public string NombreApellidoPacientes { get; set; }
         public bool IsOnCitas { get; set; } = false;
         public FrmListadoDoctor()
         {
@@ -55,11 +57,12 @@ namespace PatientManagerSystem
             
         }
 
-        private void FrmListadoPacientes_Load(object sender, EventArgs e)
+        private void FrmListadoDoctor_Load(object sender, EventArgs e)
         {
             CargarDoctor();
             DtgStyle();
             Deseleccionar();
+            EstaEnCitas();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -69,12 +72,24 @@ namespace PatientManagerSystem
 
         private void BtnSiguiente_Click(object sender, EventArgs e)
         {
-            Editar();
+            FrmAgregarCitas frm = new FrmAgregarCitas();
+            frm.IdPaciente = IdPaciente;
+            frm.IdDoctor= Convert.ToInt32(DtgvDoctor.CurrentRow.Cells[0].Value.ToString());
+            frm.NombreApellidoPacientes = NombreApellidoPacientes;
+            frm.NombreApellidoDoctor = $"{DtgvDoctor.CurrentRow.Cells[1].Value} {DtgvDoctor.CurrentRow.Cells[2].Value}";
+            this.Hide();
+            frm.ShowDialog();
+            this.Close();
         }
         public void dgvPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex>=0)
             {
+                if (IsOnCitas)
+                {
+                    btnAgregar.Visible = true;
+                }
+
                 btnDeseleccionar.Visible = true;
             }
         }
@@ -157,7 +172,12 @@ namespace PatientManagerSystem
             if (IsOnCitas)
             {
                 btnAgregar.Text = "Siguiente";
+                btnAgregar.Click -= new EventHandler(btnAgregar_Click);
                 btnAgregar.Click += new EventHandler(BtnSiguiente_Click);
+                btnAgregar.Visible = false;
+                btnEditar.Visible = false;
+                btnEliminar.Visible = false;
+
             }
         }
         #endregion
