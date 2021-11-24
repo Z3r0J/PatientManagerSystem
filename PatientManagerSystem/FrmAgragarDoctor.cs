@@ -17,40 +17,68 @@ namespace PatientManagerSystem
         }
         public void validar()
         {
-           /* if (txt_nombre.Text=="")
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txt_nombre.Text))
             {
+                ok = false;
                 lbl1.Text = "*";
 
             }
             else
             {
                 lbl1.Text = "";
-                
+                BtnAgregar.Enabled = true;
+
             }
-            if (txt_apellido.Text=="")
+            if (string.IsNullOrEmpty(txt_apellido.Text))
             {
-                lbl2.Text = "*";    
+                ok = false;
+                lbl2.Text = "*";
             }
             else
             {
                 lbl2.Text = "";
+                BtnAgregar.Enabled = true;
+
             }
-            if (txt_correo.Text=="")
+
+            if (string.IsNullOrEmpty(txt_correo.Text))
             {
+                ok = false;
                 lbl3.Text = "*";
             }
             else
             {
                 lbl3.Text = "";
-            }
-            if (txt_telefono.Text=="")
-            {
-                lbl4.Text = "*";
-            }
-            if (txt_nombre.Text == "")
-            {
                 BtnAgregar.Enabled = true;
-            }*/
+
+            }
+
+            if (string.IsNullOrEmpty(txt_telefono.Text))
+            {
+                ok = false;
+                lbl4.Text = "*";
+
+            }
+            else
+            {
+                lbl4.Text = "";
+                BtnAgregar.Enabled = true;
+            }
+
+            if (string.IsNullOrEmpty(txt_cedula.Text))
+            {
+                ok = false;
+                BtnAgregar.Enabled = true;
+            }
+            else
+            {
+                lbl5.Text = "";
+                BtnAgregar.Enabled = true;
+
+            }
+            
 
         }
 
