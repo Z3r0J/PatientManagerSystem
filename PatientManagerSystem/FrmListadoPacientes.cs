@@ -169,8 +169,12 @@ namespace PatientManagerSystem
                 btnAgregar.Click += new EventHandler(BtnSiguiente_Click);
             }
         }
+
         #endregion
 
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }
