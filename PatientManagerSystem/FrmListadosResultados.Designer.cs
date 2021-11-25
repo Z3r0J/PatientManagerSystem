@@ -29,7 +29,7 @@ namespace PatientManagerSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -57,6 +57,7 @@ namespace PatientManagerSystem
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnOculto = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -66,6 +67,7 @@ namespace PatientManagerSystem
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvResultados)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFoto)).BeginInit();
@@ -288,6 +290,7 @@ namespace PatientManagerSystem
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.BtnOculto);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -310,15 +313,15 @@ namespace PatientManagerSystem
             this.DtgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgvResultados.ColumnHeadersVisible = false;
             this.tableLayoutPanel1.SetColumnSpan(this.DtgvResultados, 6);
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DtgvResultados.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DtgvResultados.DefaultCellStyle = dataGridViewCellStyle2;
             this.DtgvResultados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DtgvResultados.Location = new System.Drawing.Point(3, 180);
             this.DtgvResultados.MultiSelect = false;
@@ -404,6 +407,20 @@ namespace PatientManagerSystem
             this.label2.TabIndex = 0;
             this.label2.Text = "Cod.";
             // 
+            // BtnOculto
+            // 
+            this.BtnOculto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.BtnOculto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOculto.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnOculto.ForeColor = System.Drawing.Color.Black;
+            this.BtnOculto.Location = new System.Drawing.Point(33, 22);
+            this.BtnOculto.Name = "BtnOculto";
+            this.BtnOculto.Size = new System.Drawing.Size(163, 64);
+            this.BtnOculto.TabIndex = 2;
+            this.BtnOculto.Text = "Oculto";
+            this.BtnOculto.UseVisualStyleBackColor = true;
+            this.BtnOculto.Visible = false;
+            // 
             // FrmListadosResultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -427,6 +444,7 @@ namespace PatientManagerSystem
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DtgvResultados)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbFoto)).EndInit();
@@ -465,5 +483,6 @@ namespace PatientManagerSystem
         private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.Label LblBuscar;
         private System.Windows.Forms.Button BtnConsultar;
+        private System.Windows.Forms.Button BtnOculto;
     }
 }

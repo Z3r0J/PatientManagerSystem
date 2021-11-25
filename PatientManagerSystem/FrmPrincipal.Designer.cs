@@ -186,6 +186,7 @@ namespace PatientManagerSystem
             this.BtnMantPruebaLab.TabIndex = 5;
             this.BtnMantPruebaLab.Text = "Pruebas de Laboratorios";
             this.BtnMantPruebaLab.UseVisualStyleBackColor = true;
+            this.BtnMantPruebaLab.Click += new System.EventHandler(this.BtnMantPruebaLab_Click);
             // 
             // BtnMantMedico
             // 

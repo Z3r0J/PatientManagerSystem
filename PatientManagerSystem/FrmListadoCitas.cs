@@ -45,7 +45,7 @@ namespace PatientManagerSystem
 
         private void FrmListadoPacientes_Load(object sender, EventArgs e)
         {
-            CargarDoctor();
+            CargarMedicos();
             DtgStyle();
             Deseleccionar();
         }
@@ -54,6 +54,33 @@ namespace PatientManagerSystem
         {
             Editar();
         }
+
+        private void BtnConsultar_Click(object sender, EventArgs e)
+        {
+            FrmListadoPrueba frm = new FrmListadoPrueba();
+            frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
+            frm.IdDoctor = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[8].Value.ToString());
+            frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
+            frm.IsOnCitas = true;
+            this.Hide();
+            frm.ShowDialog();
+            CargarMedicos();
+            this.Show();
+            
+        }
+        private void BtnConsultarResultados_Click(object sender, EventArgs e)
+        {
+            FrmListadosResultados frm = new FrmListadosResultados();
+            frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
+            frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
+            frm.IsOnCitas = true;
+            this.Hide();
+            frm.ShowDialog();
+            CargarMedicos();
+            this.Show();
+
+        }
+
         public void DgvPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex>=0)
@@ -61,10 +88,13 @@ namespace PatientManagerSystem
                 if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString())==1)
                 {
                     BtnConsultar.Text = "Consultar";
+                    BtnConsultar.Click += new EventHandler(BtnConsultar_Click);
                 }
                 else if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString()) == 2)
                 {
                     BtnConsultar.Text = "Consultar Resultados";
+                    BtnConsultar.Click += new EventHandler(BtnConsultarResultados_Click);
+
                 }
                 else if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString()) == 3)
                 {
@@ -81,11 +111,11 @@ namespace PatientManagerSystem
         private void DtgStyle()
         {
             DtgvCitas.Columns[0].Width = 70;
-            DtgvCitas.Columns[1].Width = 160;
-            DtgvCitas.Columns[2].Width = 220;
-            DtgvCitas.Columns[3].Width = 270;
+            DtgvCitas.Columns[7].Visible = false;
+            DtgvCitas.Columns[8].Visible = false;
+            DtgvCitas.Columns[9].Visible = false;
         }
-        private void CargarDoctor()
+        private void CargarMedicos()
         {
 
             DtgvCitas.DataSource = _servicioCitas.ListarCitas();
@@ -113,7 +143,7 @@ namespace PatientManagerSystem
                     if (result)
                     {
                         MessageBox.Show("El Doctor se ha eliminado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CargarDoctor();
+                        CargarMedicos();
                         Deseleccionar();
                     }
                     else
@@ -144,7 +174,7 @@ namespace PatientManagerSystem
             frm.IsOnCitas = true;
             this.Hide();
             frm.ShowDialog();
-            CargarDoctor();
+            CargarMedicos();
             this.Show();
         }
     }

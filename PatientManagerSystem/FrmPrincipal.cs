@@ -105,5 +105,11 @@ namespace PatientManagerSystem
         {
             AbrirFormularioEnWrapper(new FrmListadoCitas());
         }
+
+        private void BtnMantPruebaLab_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnWrapper(new FrmListadoPrueba());
+
+        }
     }
 }

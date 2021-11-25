@@ -46,6 +46,16 @@ namespace DataLayer
             return ExecuteProc(comando);
         }
 
+        public bool ActualizarEstado(Citas citas)
+        {
+            SqlCommand comando = new SqlCommand("SP_ActualizarEstadoCitas", _conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Id", citas.Id);
+            comando.Parameters.AddWithValue("@Estado_Cita", citas.Estado_Citas);
+
+            return ExecuteProc(comando);
+        }
+
         public bool ExecuteProc(SqlCommand comando)
         {
             try

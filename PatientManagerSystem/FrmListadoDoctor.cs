@@ -177,8 +177,6 @@ namespace PatientManagerSystem
                 btnAgregar.Visible = false;
                 btnEditar.Visible = false;
                 btnEliminar.Visible = false;
-                btnAgregar.Anchor = AnchorStyles.Left;
-
             }
         }
         #endregion

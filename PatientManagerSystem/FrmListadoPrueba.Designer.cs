@@ -155,6 +155,7 @@ namespace PatientManagerSystem
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPruebas.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPruebas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPruebas.Location = new System.Drawing.Point(3, 167);
             this.dgvPruebas.MultiSelect = false;
             this.dgvPruebas.Name = "dgvPruebas";
@@ -162,9 +163,10 @@ namespace PatientManagerSystem
             this.dgvPruebas.RowHeadersVisible = false;
             this.dgvPruebas.RowTemplate.Height = 25;
             this.dgvPruebas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPruebas.Size = new System.Drawing.Size(1348, 286);
+            this.dgvPruebas.Size = new System.Drawing.Size(1348, 306);
             this.dgvPruebas.TabIndex = 0;
             this.dgvPruebas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPruebas_CellContentClick);
+            this.dgvPruebas.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvPruebas_DataBindingComplete);
             // 
             // panel1
             // 

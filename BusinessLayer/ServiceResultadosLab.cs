@@ -30,5 +30,14 @@ namespace BusinessLayer
         {
             return data.ReportarResultados(resultados);
         }
-    }
+
+        public bool AgregarPruebas(ResultadosLaboratorios resultados)
+        {
+            return data.AgregarPruebas(resultados);
+        }
+        public DataTable ListadoResultadosPacientes(int IdPacientes, int IdCitas)
+        {
+            return data.ListadoResultadosPacientes(IdPacientes,IdCitas);
+        }
+        }
 }

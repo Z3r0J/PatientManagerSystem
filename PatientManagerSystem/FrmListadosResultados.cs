@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using BusinessLayer;
+﻿using BusinessLayer;
 using DataLayer.Modelos;
+using System;
+using System.Configuration;
 using System.Data.SqlClient;
-using System.IO;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace PatientManagerSystem
 {
     public partial class FrmListadosResultados : Form
     {
         ServiceResultadosLab _servicioResultadosLab;
+        ServiceCitas _serviceCitas;
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+
+        public bool IsOnCitas { get; set; } = false;
+        public int IdCitas { get; set; }
+        public int IdPacientes { get; set; }
         public FrmListadosResultados()
         {
             InitializeComponent();
@@ -41,12 +41,13 @@ namespace PatientManagerSystem
             CargarPruebasLab();
             DtgStyle();
             Deseleccionar();
+            EstaEnCitas();
         }
 
 
         public void DtgvResultados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex>=0)
+            if (e.RowIndex >= 0)
             {
                 BtnConsultar.Visible = true;
                 btnDeseleccionar.Visible = true;
@@ -66,8 +67,8 @@ namespace PatientManagerSystem
         {
             DtgvResultados.DataSource = _servicioResultadosLab.ListarResultados();
         }
-        
-           private void Deseleccionar()
+
+        private void Deseleccionar()
         {
             DtgvResultados.ClearSelection();
             DtgvResultados.CurrentCell = null;
@@ -84,7 +85,7 @@ namespace PatientManagerSystem
 
         private void BtnConsultar_Click(object sender, EventArgs e)
         {
-            if (DtgvResultados.SelectedRows.Count>0)
+            if (DtgvResultados.SelectedRows.Count > 0)
             {
                 FrmAgregarResultados frm = new FrmAgregarResultados();
 
@@ -99,7 +100,55 @@ namespace PatientManagerSystem
             }
             else
             {
-                MessageBox.Show("Selecciona una fila","");
+                MessageBox.Show("Selecciona una fila", "");
+            }
+        }
+
+        private void BtnCompletar_Click(object sender, EventArgs e)
+        {
+            SqlConnection _conexion = new SqlConnection(connectionString);
+            _serviceCitas = new ServiceCitas(_conexion);
+
+            Citas citas = new Citas()
+            {
+                Id = IdCitas,
+                Estado_Citas = 3
+            };
+
+
+            bool Complete = _serviceCitas.ActualizarEstado(citas);
+            if (Complete)
+            {
+                MessageBox.Show("Se completo la cita correctamente");
+                this.Close();
+            }
+        }
+        private void BtnOculto_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void EstaEnCitas()
+        {
+            if (IsOnCitas)
+            {
+                BtnConsultar.Text = "Completar Citas";
+                BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
+                BtnConsultar.Click += new EventHandler(BtnCompletar_Click);
+                BtnConsultar.Visible = true;
+                DtgvResultados.DataSource = _servicioResultadosLab.ListadoResultadosPacientes(IdPacientes, IdCitas);
+                BtnOculto.Visible = true;
+                BtnOculto.Text = "Cerrar Resultados";
+                BtnOculto.Click += new EventHandler(BtnOculto_Click);
+                label2.Visible = false;
+                label3.Text = "Nombre de la prueba";
+                label3.Location = new Point(3, 38);
+                label4.Visible = false;
+                panel8.Visible = false;
+                panel10.Visible = false;
+                tableLayoutPanel1.Controls.Add(panel9, 3, 1);
+                label6.Text = "Estado de la prueba";
+                label6.Location = new Point(2,15);
             }
         }
     }

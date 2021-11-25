@@ -64,6 +64,7 @@ namespace PatientManagerSystem
             if (resultado)
             {
                 MessageBox.Show($"Se ha {mensajeBien} la prueba con exito.");
+                this.Close();
             }
             else
             {
