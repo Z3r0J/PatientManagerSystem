@@ -7,9 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Reporte.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="itext7" Version="7.2.0" />
+    <PackageReference Include="itext7.pdfhtml" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
     <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
     <ProjectReference Include="..\EmailLayer\EmailLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Reporte.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +38,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmListadoDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmListadoCompletado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmListadosResultados.cs">
@@ -39,6 +57,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="FrmListadoPrueba - Copy.resx">
+      <DependentUpon>FrmListadoPrueba.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Update="FrmLogin - Copy - Copy %282%29.resx">
       <DependentUpon>FrmLogin.resx</DependentUpon>
     </EmbeddedResource>

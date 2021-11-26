@@ -81,6 +81,17 @@ namespace PatientManagerSystem
 
         }
 
+        private void BtnVerResultados_Click(object sender, EventArgs e)
+        {
+            FrmListadoCompletado frm = new FrmListadoCompletado();
+            frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
+            frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
+            this.Hide();
+            frm.ShowDialog();
+            CargarMedicos();
+            this.Show();
+
+        }
         public void DgvPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex>=0)
@@ -88,17 +99,25 @@ namespace PatientManagerSystem
                 if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString())==1)
                 {
                     BtnConsultar.Text = "Consultar";
+                    BtnConsultar.Click -= new EventHandler(BtnVerResultados_Click);
+                    BtnConsultar.Click -= new EventHandler(BtnConsultarResultados_Click);
                     BtnConsultar.Click += new EventHandler(BtnConsultar_Click);
                 }
                 else if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString()) == 2)
                 {
                     BtnConsultar.Text = "Consultar Resultados";
+                    BtnConsultar.Click -= new EventHandler(BtnVerResultados_Click);
+                    BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
                     BtnConsultar.Click += new EventHandler(BtnConsultarResultados_Click);
 
                 }
                 else if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString()) == 3)
                 {
                     BtnConsultar.Text = "Ver Resultados";
+                    BtnConsultar.Click -= new EventHandler(BtnConsultarResultados_Click);
+                    BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
+                    BtnConsultar.Click += new EventHandler(BtnVerResultados_Click);
+
                 }
                 btnDeseleccionar.Visible = true;
             }

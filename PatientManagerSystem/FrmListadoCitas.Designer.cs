@@ -124,9 +124,9 @@ namespace PatientManagerSystem
             this.label10.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(58, 38);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 18);
+            this.label10.Size = new System.Drawing.Size(152, 18);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Foto";
+            this.label10.Text = "Estado de la citas";
             // 
             // panel11
             // 
@@ -143,9 +143,9 @@ namespace PatientManagerSystem
             this.label8.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(47, 38);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 18);
+            this.label8.Size = new System.Drawing.Size(136, 18);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Cedula";
+            this.label8.Text = "Causa de la cita";
             // 
             // panel10
             // 
@@ -162,9 +162,9 @@ namespace PatientManagerSystem
             this.label6.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(46, 38);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 18);
+            this.label6.Size = new System.Drawing.Size(40, 18);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Telefono";
+            this.label6.Text = "Hora";
             // 
             // panel9
             // 
@@ -181,9 +181,9 @@ namespace PatientManagerSystem
             this.label5.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(3, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 18);
+            this.label5.Size = new System.Drawing.Size(48, 18);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Correo";
+            this.label5.Text = "Fecha";
             // 
             // panel8
             // 
@@ -198,11 +198,11 @@ namespace PatientManagerSystem
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(5, 38);
+            this.label4.Location = new System.Drawing.Point(33, 38);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 18);
+            this.label4.Size = new System.Drawing.Size(56, 18);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Apellido";
+            this.label4.Text = "Doctor";
             // 
             // panel5
             // 
@@ -400,7 +400,6 @@ namespace PatientManagerSystem
             // 
             // ptbFoto
             // 
-            this.ptbFoto.Image = global::PatientManagerSystem.Properties.Resources.usuario;
             this.ptbFoto.Location = new System.Drawing.Point(2, 3);
             this.ptbFoto.Name = "ptbFoto";
             this.ptbFoto.Size = new System.Drawing.Size(28, 33);
@@ -432,11 +431,11 @@ namespace PatientManagerSystem
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(54, 38);
+            this.label3.Location = new System.Drawing.Point(69, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 18);
+            this.label3.Size = new System.Drawing.Size(80, 18);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Nombre";
+            this.label3.Text = "Pacientes";
             // 
             // label2
             // 

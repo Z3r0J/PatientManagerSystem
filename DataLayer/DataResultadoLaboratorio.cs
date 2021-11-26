@@ -51,6 +51,25 @@ namespace DataLayer
             return ListarFilas;
         }
 
+        public DataTable ListadoResultadoCompletados(int IdPacientes, int IdCitas)
+        {
+
+            SqlCommand comando = new SqlCommand("SP_ListadoPruebasCompletadas", _conexion);
+
+            comando.CommandType = CommandType.StoredProcedure;
+            _conexion.Open();
+            comando.Parameters.AddWithValue("@IdPacientes", IdPacientes);
+            comando.Parameters.AddWithValue("@IdCitas", IdCitas);
+            DataTable ListarFilas = new DataTable();
+            SqlDataReader Datos = comando.ExecuteReader();
+            ListarFilas.Load(Datos);
+            Datos.Close();
+            Datos.Dispose();
+            _conexion.Close();
+
+            return ListarFilas;
+        }
+
         public DataTable Buscar_Resultados(string Buscar)
         {
 

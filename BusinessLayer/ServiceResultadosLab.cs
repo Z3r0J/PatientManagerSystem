@@ -1,10 +1,7 @@
 ﻿using DataLayer;
 using DataLayer.Modelos;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
 
 namespace BusinessLayer
 {
@@ -16,7 +13,7 @@ namespace BusinessLayer
             data = new DataResultadoLaboratorio(conexion);
         }
 
-       public DataTable ListarResultados()
+        public DataTable ListarResultados()
         {
             return data.ListadoResultados();
         }
@@ -37,7 +34,11 @@ namespace BusinessLayer
         }
         public DataTable ListadoResultadosPacientes(int IdPacientes, int IdCitas)
         {
-            return data.ListadoResultadosPacientes(IdPacientes,IdCitas);
+            return data.ListadoResultadosPacientes(IdPacientes, IdCitas);
         }
+        public DataTable ListadoResultadoCompletados(int IdPacientes, int IdCitas)
+        {
+            return data.ListadoResultadoCompletados(IdPacientes, IdCitas);
         }
+    }
 }

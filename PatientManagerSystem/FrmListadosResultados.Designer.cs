@@ -348,7 +348,7 @@ namespace PatientManagerSystem
             // 
             // ptbFoto
             // 
-            this.ptbFoto.Image = global::PatientManagerSystem.Properties.Resources.usuario;
+
             this.ptbFoto.Location = new System.Drawing.Point(2, 3);
             this.ptbFoto.Name = "ptbFoto";
             this.ptbFoto.Size = new System.Drawing.Size(28, 33);

@@ -362,7 +362,6 @@ namespace PatientManagerSystem
             // 
             // pictureU
             // 
-            this.pictureU.Image = global::PatientManagerSystem.Properties.Resources.add_image;
             this.pictureU.Location = new System.Drawing.Point(0, 3);
             this.pictureU.Name = "pictureU";
             this.pictureU.Size = new System.Drawing.Size(168, 62);

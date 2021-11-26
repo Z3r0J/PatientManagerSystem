@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .logo {
+            width: 250px;
+            height: 250px;
+        }
+
+        .outerDiv {
+            color: #fff;
+            height: 400px;
+            width: 600px;
+            padding: 5px;
+        }
+
+        .leftDiv {
+            color: #000;
+            height: 400px;
+            width: 0%;
+            float: left;
+        }
+
+        .rightDiv {
+            color: #000;
+            height: 400px;
+            float: right;
+        }
+
+        body {
+            background: #293039 !important;
+            color: #fff !important;
+            font-family: "Roboto" !important;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat Alternates' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="outerDiv">
+        <div class="leftDiv">
+            <b><h5 style="font-family:'Lucida Console'; color:#fff;">INFORME DE RESULTADO(S)</h5></b>
+            <table style="width:255px!important; font-family:'Montserrat Alternates';" class="table table-striped table-light table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col"><p style="width:255px"><span>Sr(a) <b>@NombrePaciente</b></span></p></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="col">
+                            <p style="width:255px">@Direccion</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <p style="width:255px">Dr(a) @Doctor</p>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="rightDiv">
+            <img src="https://i.imgur.com/ntNdCPg.png" class="logo" />
+            <table class="table table-bordered table-dark table-md" style="font-family: 'Inconsolata'">
+                <thead>
+                    <tr>
+                        <th scope="col"><p style="width:255px">Cedula: @Cedula</p></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="col">
+                            <p style="width:255px">Fecha Nac: @FechaNac</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            <p style="width:255px">Telefono: @Telefono</p>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>
+        <table class="table table-striped table-bordered table-dark" style="font-family: 'Alegreya Sans SC'">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre de la Prueba</th>
+                    <th scope="col">Resultado de la prueba</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">@NombreDeLaPrueba</th>
+                    <td>@ResultadoDeLaPrueba</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
