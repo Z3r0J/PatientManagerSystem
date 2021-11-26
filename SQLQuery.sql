@@ -293,3 +293,52 @@ create procedure SP_AgregarCitas
 @Estado_Citas int
 as
 Insert into Citas values(@IdPacientes,@IdDoctor,@Fecha_Cita,@Hora_Cita,@Causa_Cita,@Estado_Citas)
+
+create procedure SP_ActualizarEstadoCitas
+@Id int,
+@Estado_Cita int
+as
+Update Citas set Estado_Citas=@Estado_Cita where Id=@Id
+
+create procedure SP_CrearPrueba
+@nombre nvarchar(70)
+as
+insert into Pruebas_Laboratorios values(@nombre)
+
+create procedure SP_ObtenerPruebas
+as
+Select * from Pruebas_Laboratorios
+
+create procedure SP_EditarPrueba
+@id int,
+@nombre nvarchar(70)
+as
+Update Pruebas_Laboratorios set Nombre=@nombre where Id=@id
+
+create procedure SP_EliminarPrueba
+@id int
+as
+Delete Pruebas_Laboratorios where Id=@id
+
+create procedure SP_AgregarResultados
+@IdPacientes int,
+@IdCitas int,
+@IdPruebas int,
+@IdDoctor int,
+@Resultados nvarchar(100),
+@Estados_Resultados int
+as
+insert into Resultados_Laboratorios values(@IdPacientes,@IdCitas,@IdPruebas,@IdDoctor,@Resultados,@Estados_Resultados)
+
+create procedure SP_EstadosPruebas
+@IdPacientes int,
+@IdCitas int
+as
+select Pruebas_Laboratorios.Nombre as 'Nombre de la prueba',Estados_Resultados.Nombre as 'Estado' from Resultados_Laboratorios
+inner join
+Estados_Resultados
+on Estados_Resultados.Id=Resultados_Laboratorios.Estados_Resultados
+inner join
+Pruebas_Laboratorios
+on Pruebas_Laboratorios.Id=Resultados_Laboratorios.IdPruebaLaboratorio
+where IdPaciente=@IdPacientes and IdCita=@IdCitas
