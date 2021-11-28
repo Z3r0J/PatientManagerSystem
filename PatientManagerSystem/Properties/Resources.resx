@@ -121,20 +121,20 @@
   <data name="editpat-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\editpat-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="editpat-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\editpat-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="deletepru-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\deletepru-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editpru-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\editpru-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="deletepat-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\deletepat-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="deletedoc-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\deletedoc-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edituser-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\edituser-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addpat-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\addpat-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +148,8 @@
   <data name="lab-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\lab-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\user-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="citas-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\citas-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="deletepat-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\deletepat-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,17 +166,20 @@
   <data name="deleteuser-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\deleteuser-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editpru-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\editpru-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="minimizar (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\minimizar (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deletedoc-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\deletedoc-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LOGO-BLACK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\LOGO-BLACK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="deletepat-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\deletepat-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="result-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\result-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editpru-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\editpru-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="adddoc-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\adddoc-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,14 +196,17 @@
   <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="deleteuser-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\deleteuser-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="editpru-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\editpru-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="appointment-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\appointment-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="maximizar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\maximizar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="citasdelete-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\citasdelete-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOGO-WHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\LOGO-WHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="adduser-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\adduser-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,8 +217,17 @@
   <data name="labresult-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\labresult-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="citas-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\citas-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\user-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="citasdelete-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\citasdelete-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addpat-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\addpat-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,11 +253,14 @@
   <data name="addpru-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\addpru-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LOGO-WHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\LOGO-WHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edituser-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\edituser-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="deletedoc-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\deletedoc-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="maximizar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\maximizar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="result-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\result-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="deletepru-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\deletepru-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,13 +274,25 @@
   <data name="signo-menos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\signo-menos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editpat-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\editpat-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="deleteuser-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\deleteuser-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="result-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\result-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="consultar-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\consultar-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="result-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\result-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="consultarresultado-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\consultarresultado-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultarresultado-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\consultarresultado-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="consultar-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\consultar-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="verresultado-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\verresultado-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="verresultado-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\verresultado-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -107,7 +107,7 @@ namespace PatientManagerSystem
 
         private void BtnMantCitas_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnWrapper(new FrmListadoCitas());
+            AbrirFormularioEnWrapper(new FrmListadoCitas($"Welcome, {Nombre}", BlackAndLight));
         }
 
         private void BtnMantPruebaLab_Click(object sender, EventArgs e)
