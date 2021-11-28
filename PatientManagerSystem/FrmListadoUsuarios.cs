@@ -130,8 +130,8 @@ namespace PatientManagerSystem
                 frm.Id = Convert.ToInt32(DtgvUsuarios.CurrentRow.Cells[0].Value.ToString());
                 frm.TxtNombre.Text = DtgvUsuarios.CurrentRow.Cells[1].Value.ToString();
                 frm.TxtApellido.Text = DtgvUsuarios.CurrentRow.Cells[2].Value.ToString();
-                frm.TxtUsuario.Text = DtgvUsuarios.CurrentRow.Cells[3].Value.ToString();
-                frm.TxtCorreo.Text = DtgvUsuarios.CurrentRow.Cells[4].Value.ToString();
+                frm.TxtUsuario.Text = DtgvUsuarios.CurrentRow.Cells[4].Value.ToString();
+                frm.TxtCorreo.Text = DtgvUsuarios.CurrentRow.Cells[3].Value.ToString();
                 frm.TxtContraseña.Text = DtgvUsuarios.CurrentRow.Cells[5].Value.ToString();
                 frm.TxtConfirmarContraseña.Text = DtgvUsuarios.CurrentRow.Cells[5].Value.ToString();
                 frm.CbxTipoUsuario.SelectedIndex = a;
@@ -163,6 +163,7 @@ namespace PatientManagerSystem
                     if (Eliminar)
                     {
                         MessageBox.Show("Eliminado correctamente", "Notificacion");
+                        ListarUsuarios();
                     }
                     else
                     {
