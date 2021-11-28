@@ -29,7 +29,7 @@ namespace PatientManagerSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -53,6 +53,7 @@ namespace PatientManagerSystem
             this.btnAgregar = new System.Windows.Forms.Button();
             this.DtgvDoctor = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.ptbFoto = new System.Windows.Forms.PictureBox();
             this.LblWelcome = new System.Windows.Forms.Label();
@@ -363,15 +364,15 @@ namespace PatientManagerSystem
             this.DtgvDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgvDoctor.ColumnHeadersVisible = false;
             this.tableLayoutPanel1.SetColumnSpan(this.DtgvDoctor, 6);
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DtgvDoctor.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DtgvDoctor.DefaultCellStyle = dataGridViewCellStyle2;
             this.DtgvDoctor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DtgvDoctor.Location = new System.Drawing.Point(3, 180);
             this.DtgvDoctor.MultiSelect = false;
@@ -388,6 +389,7 @@ namespace PatientManagerSystem
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.textBox1);
             this.panel6.Controls.Add(this.ptbFoto);
             this.panel6.Controls.Add(this.LblWelcome);
@@ -397,12 +399,21 @@ namespace PatientManagerSystem
             this.panel6.Size = new System.Drawing.Size(224, 103);
             this.panel6.TabIndex = 8;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Buscar por cedula:";
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 56);
+            this.textBox1.Location = new System.Drawing.Point(3, 77);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 32);
+            this.textBox1.Size = new System.Drawing.Size(189, 23);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -411,7 +422,7 @@ namespace PatientManagerSystem
             this.ptbFoto.Image = global::PatientManagerSystem.Properties.Resources.usuario;
             this.ptbFoto.Location = new System.Drawing.Point(2, 3);
             this.ptbFoto.Name = "ptbFoto";
-            this.ptbFoto.Size = new System.Drawing.Size(28, 33);
+            this.ptbFoto.Size = new System.Drawing.Size(32, 33);
             this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbFoto.TabIndex = 1;
             this.ptbFoto.TabStop = false;
@@ -421,9 +432,9 @@ namespace PatientManagerSystem
             this.LblWelcome.BackColor = System.Drawing.Color.Transparent;
             this.LblWelcome.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblWelcome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LblWelcome.Location = new System.Drawing.Point(32, 6);
+            this.LblWelcome.Location = new System.Drawing.Point(35, 6);
             this.LblWelcome.Name = "LblWelcome";
-            this.LblWelcome.Size = new System.Drawing.Size(189, 46);
+            this.LblWelcome.Size = new System.Drawing.Size(189, 52);
             this.LblWelcome.TabIndex = 0;
             this.LblWelcome.Text = "   Welcome";
             // 
@@ -523,11 +534,9 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

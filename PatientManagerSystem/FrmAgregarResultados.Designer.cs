@@ -30,9 +30,6 @@ namespace PatientManagerSystem
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Restaurar_vlogin = new System.Windows.Forms.PictureBox();
-            this.Minimizar_vlogin = new System.Windows.Forms.PictureBox();
-            this.Maximizar_vlogin = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.restaurar_v2 = new System.Windows.Forms.PictureBox();
             this.pminizar_v2 = new System.Windows.Forms.PictureBox();
@@ -45,9 +42,6 @@ namespace PatientManagerSystem
             this.panel5 = new System.Windows.Forms.Panel();
             this.TxtResultado = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Restaurar_vlogin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Minimizar_vlogin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Maximizar_vlogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restaurar_v2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pminizar_v2)).BeginInit();
@@ -60,9 +54,6 @@ namespace PatientManagerSystem
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.panel1.Controls.Add(this.Restaurar_vlogin);
-            this.panel1.Controls.Add(this.Minimizar_vlogin);
-            this.panel1.Controls.Add(this.Maximizar_vlogin);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.restaurar_v2);
             this.panel1.Controls.Add(this.pminizar_v2);
@@ -73,44 +64,6 @@ namespace PatientManagerSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(451, 39);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // Restaurar_vlogin
-            // 
-            this.Restaurar_vlogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Restaurar_vlogin.Image = global::PatientManagerSystem.Properties.Resources.minimizar__6_;
-            this.Restaurar_vlogin.Location = new System.Drawing.Point(394, 0);
-            this.Restaurar_vlogin.Name = "Restaurar_vlogin";
-            this.Restaurar_vlogin.Size = new System.Drawing.Size(25, 25);
-            this.Restaurar_vlogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Restaurar_vlogin.TabIndex = 7;
-            this.Restaurar_vlogin.TabStop = false;
-            this.Restaurar_vlogin.Visible = false;
-            this.Restaurar_vlogin.Click += new System.EventHandler(this.Restaurar_vlogin_Click);
-            // 
-            // Minimizar_vlogin
-            // 
-            this.Minimizar_vlogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Minimizar_vlogin.Image = global::PatientManagerSystem.Properties.Resources.signo_menos;
-            this.Minimizar_vlogin.Location = new System.Drawing.Point(363, 3);
-            this.Minimizar_vlogin.Name = "Minimizar_vlogin";
-            this.Minimizar_vlogin.Size = new System.Drawing.Size(25, 25);
-            this.Minimizar_vlogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Minimizar_vlogin.TabIndex = 6;
-            this.Minimizar_vlogin.TabStop = false;
-            this.Minimizar_vlogin.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // Maximizar_vlogin
-            // 
-            this.Maximizar_vlogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Maximizar_vlogin.Image = global::PatientManagerSystem.Properties.Resources.maximizar__1_;
-            this.Maximizar_vlogin.Location = new System.Drawing.Point(393, 3);
-            this.Maximizar_vlogin.Name = "Maximizar_vlogin";
-            this.Maximizar_vlogin.Size = new System.Drawing.Size(25, 25);
-            this.Maximizar_vlogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Maximizar_vlogin.TabIndex = 5;
-            this.Maximizar_vlogin.TabStop = false;
-            this.Maximizar_vlogin.Click += new System.EventHandler(this.Maximizar_vlogin_Click);
             // 
             // pictureBox5
             // 
@@ -257,9 +210,6 @@ namespace PatientManagerSystem
             this.Name = "FrmAgregarResultados";
             this.Text = "FrmLogin";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Restaurar_vlogin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Minimizar_vlogin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Maximizar_vlogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.restaurar_v2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pminizar_v2)).EndInit();
@@ -279,9 +229,6 @@ namespace PatientManagerSystem
         private System.Windows.Forms.PictureBox pminizar_v2;
         private System.Windows.Forms.PictureBox maximizar_v2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox Restaurar_vlogin;
-        private System.Windows.Forms.PictureBox Minimizar_vlogin;
-        private System.Windows.Forms.PictureBox Maximizar_vlogin;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;

@@ -88,7 +88,15 @@ namespace PatientManagerSystem
                 btnDeseleccionar.Visible = true;
             }
         }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dgvPacientes.DataSource = _servicioPacientes.BuscarPacientes(textBox1.Text);
+        }
 
+        private void btnClaro_Click(object sender, EventArgs e)
+        {
+            CambiarTema(BlackAndLight);
+        }
         #endregion
 
         #region Metodos
@@ -232,15 +240,5 @@ namespace PatientManagerSystem
         }
 
         #endregion
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            dgvPacientes.DataSource = _servicioPacientes.BuscarPacientes(textBox1.Text);
-        }
-
-        private void btnClaro_Click(object sender, EventArgs e)
-        {
-            CambiarTema(BlackAndLight);
-        }
     }
 }

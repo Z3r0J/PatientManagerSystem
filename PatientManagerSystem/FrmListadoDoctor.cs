@@ -15,6 +15,7 @@ namespace PatientManagerSystem
 {
     public partial class FrmListadoDoctor : Form
     {
+        #region Variables & Instancias
         ServiceDoctor _servicioDoctor;
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         public char BlackAndLight { get; set; } = 'L';
@@ -23,6 +24,7 @@ namespace PatientManagerSystem
         public int IdPaciente { get; set; }
         public string NombreApellidoPacientes { get; set; }
         public bool IsOnCitas { get; set; } = false;
+        #endregion
         public FrmListadoDoctor(string mensaje,char Tema)
         {
             InitializeComponent();
@@ -35,6 +37,15 @@ namespace PatientManagerSystem
 
 
         #region Eventos
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DtgvDoctor.DataSource = _servicioDoctor.BuscarDoctor(textBox1.Text);
+        }
+
+        private void btnClaro_Click(object sender, EventArgs e)
+        {
+            CambiarTema(BlackAndLight);
+        }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             Eliminar();
@@ -231,15 +242,5 @@ namespace PatientManagerSystem
         }
 
         #endregion
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            DtgvDoctor.DataSource = _servicioDoctor.BuscarDoctor(textBox1.Text);
-        }
-
-        private void btnClaro_Click(object sender, EventArgs e)
-        {
-            CambiarTema(BlackAndLight);
-        }
     }
 }

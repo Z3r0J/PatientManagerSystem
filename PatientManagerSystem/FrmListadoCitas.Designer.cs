@@ -395,9 +395,10 @@ namespace PatientManagerSystem
             // 
             // ptbFoto
             // 
+            this.ptbFoto.Image = global::PatientManagerSystem.Properties.Resources.usuario;
             this.ptbFoto.Location = new System.Drawing.Point(2, 3);
             this.ptbFoto.Name = "ptbFoto";
-            this.ptbFoto.Size = new System.Drawing.Size(28, 33);
+            this.ptbFoto.Size = new System.Drawing.Size(32, 33);
             this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbFoto.TabIndex = 1;
             this.ptbFoto.TabStop = false;
@@ -406,7 +407,7 @@ namespace PatientManagerSystem
             // 
             this.LblWelcome.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblWelcome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LblWelcome.Location = new System.Drawing.Point(32, 6);
+            this.LblWelcome.Location = new System.Drawing.Point(35, 6);
             this.LblWelcome.Name = "LblWelcome";
             this.LblWelcome.Size = new System.Drawing.Size(169, 84);
             this.LblWelcome.TabIndex = 0;

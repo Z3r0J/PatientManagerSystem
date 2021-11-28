@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using iText.Html2pdf;
 using System.IO;
 using DataLayer.Modelos;
+using System.Drawing;
 
 namespace PatientManagerSystem
 {
@@ -13,18 +14,60 @@ namespace PatientManagerSystem
     {
         ServiceResultadosLab _serviceResultados;
         ServicePacientes _servicePacientes;
-        public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+        private string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         public int IdPacientes { get; set; }
         public string NombreDoctor { get; set; }
         public int IdCitas { get; set; }
-        public FrmListadoCompletado()
+
+        private char BlackAndLight { get; set; } = 'L';
+        public FrmListadoCompletado(char Tema)
         {
             InitializeComponent();
             SqlConnection _conexion = new SqlConnection(connectionString);
             _serviceResultados = new ServiceResultadosLab(_conexion);
             _servicePacientes = new ServicePacientes(_conexion);
+
+            CambiarTema(Tema);            
+        }
+        #region Eventos
+        private void btnDeseleccionar_Click(object sender, EventArgs e)
+        {
+            Deseleccionar();
+        }
+        private void dgvPruebas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                btnDeseleccionar.Visible = true;
+            }
+
+        }
+        private void FrmListadoPrueba_Load(object sender, EventArgs e)
+        {
+            CargarPruebas();
+
+        }
+        private void dgvPruebas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DtgvListadoCompletados.ClearSelection();
         }
 
+        private void BtnCerrarVentana_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnInforme_Click(object sender, EventArgs e)
+        {
+            ExportarPDF();
+        }
+        private void btnClaro_Click(object sender, EventArgs e)
+        {
+            CambiarTema(BlackAndLight);
+        }
+        #endregion
+
+        #region Metodos
         private void ExportarPDF()
         {
             Pacientes datos = new Pacientes();
@@ -80,19 +123,6 @@ namespace PatientManagerSystem
                 Directory.CreateDirectory(directory);
             }
         }
-        private void btnDeseleccionar_Click(object sender, EventArgs e)
-        {
-            Deseleccionar();
-        }
-
-        private void dgvPruebas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                btnDeseleccionar.Visible = true;
-            }
-
-        }
         private void CargarPruebas()
         {
             DtgvListadoCompletados.DataSource = _serviceResultados.ListadoResultadoCompletados(IdPacientes, IdCitas);
@@ -104,27 +134,49 @@ namespace PatientManagerSystem
             DtgvListadoCompletados.CurrentCell = null;
             btnDeseleccionar.Visible = false;
         }
-
-
-        private void FrmListadoPrueba_Load(object sender, EventArgs e)
+        private void CambiarTema(char Tema)
         {
-            CargarPruebas();
+            if (Tema == 'B' || BlackAndLight == 'B')
+            {
+                BlackAndLight = 'L';
+                this.BackColor = Color.White;
+                tableLayoutPanel1.BackColor = Color.White;
+                btnClaro.Text = "Claro ☼";
 
-        }
+                BtnCerrarVentana.ForeColor = Color.Black;
+                BtnInforme.ForeColor = Color.Black;
+                btnDeseleccionar.ForeColor = Color.Black;
+                btnClaro.ForeColor = Color.Black;
+                this.ForeColor = Color.Black;
 
-        private void dgvPruebas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            DtgvListadoCompletados.ClearSelection();
-        }
+                BtnCerrarVentana.Image = Properties.Resources.close_white;
+                btnDeseleccionar.Image = Properties.Resources.deselect_white;
+                BtnInforme.Image = Properties.Resources.ExportarPDF_white;
 
-        private void BtnCerrarVentana_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+                DtgvListadoCompletados.DefaultCellStyle.BackColor = Color.White;
+                DtgvListadoCompletados.DefaultCellStyle.ForeColor = Color.Gray;
+                DtgvListadoCompletados.BackgroundColor = Color.White;
+            }
+            else
+            {
+                BlackAndLight = 'B';
+                this.BackColor = Color.FromArgb(26, 32, 40);
+                tableLayoutPanel1.BackColor = Color.FromArgb(26, 32, 40);
+                btnClaro.Text = "OSCURO 🌙";
+                BtnCerrarVentana.ForeColor = Color.White;
+                BtnInforme.ForeColor = Color.White;
+                btnDeseleccionar.ForeColor = Color.White;
+                btnClaro.ForeColor = Color.White;
+                this.ForeColor = Color.White;
 
-        private void BtnInforme_Click(object sender, EventArgs e)
-        {
-            ExportarPDF();
+                BtnCerrarVentana.Image = Properties.Resources.close_black;
+                btnDeseleccionar.Image = Properties.Resources.deselect_black;
+                BtnInforme.Image = Properties.Resources.ExportarPDF_black;
+                DtgvListadoCompletados.DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+                DtgvListadoCompletados.DefaultCellStyle.ForeColor = Color.White;
+                DtgvListadoCompletados.BackgroundColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            }
         }
+        #endregion
     }
 }

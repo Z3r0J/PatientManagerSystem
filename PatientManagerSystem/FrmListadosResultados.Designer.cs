@@ -220,7 +220,7 @@ namespace PatientManagerSystem
             this.TxtBuscar.Location = new System.Drawing.Point(3, 3);
             this.TxtBuscar.Multiline = true;
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(161, 34);
+            this.TxtBuscar.Size = new System.Drawing.Size(193, 34);
             this.TxtBuscar.TabIndex = 5;
             this.TxtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -367,9 +367,10 @@ namespace PatientManagerSystem
             // 
             // ptbFoto
             // 
+            this.ptbFoto.Image = global::PatientManagerSystem.Properties.Resources.usuario;
             this.ptbFoto.Location = new System.Drawing.Point(2, 3);
             this.ptbFoto.Name = "ptbFoto";
-            this.ptbFoto.Size = new System.Drawing.Size(28, 33);
+            this.ptbFoto.Size = new System.Drawing.Size(32, 33);
             this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbFoto.TabIndex = 1;
             this.ptbFoto.TabStop = false;
@@ -378,9 +379,9 @@ namespace PatientManagerSystem
             // 
             this.LblWelcome.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblWelcome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LblWelcome.Location = new System.Drawing.Point(32, 6);
+            this.LblWelcome.Location = new System.Drawing.Point(30, 6);
             this.LblWelcome.Name = "LblWelcome";
-            this.LblWelcome.Size = new System.Drawing.Size(173, 73);
+            this.LblWelcome.Size = new System.Drawing.Size(175, 97);
             this.LblWelcome.TabIndex = 0;
             this.LblWelcome.Text = "   Welcome";
             // 

@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using BusinessLayer;
+﻿using BusinessLayer;
 using DataLayer.Modelos;
+using System;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace PatientManagerSystem
 {
     public partial class FrmLogin : Form
     {
+        #region Variables & Instancia
         private ServiceUsuarios usuarios;
 
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+        #endregion
         public FrmLogin()
         {
             InitializeComponent();
@@ -24,6 +21,7 @@ namespace PatientManagerSystem
             usuarios = new ServiceUsuarios(conexion);
         }
 
+        #region Eventos
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -47,51 +45,50 @@ namespace PatientManagerSystem
             Restaurar_vlogin.Visible = false;
             Maximizar_vlogin.Visible = true;
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             Validar();
+            Limpiar();
 
+        }
+        #endregion
+
+        #region Eventos
+        private void Limpiar()
+        {
+            txtNombreUsuario.Clear();
+            txtContraseña.Clear();
         }
         private void Validar()
         {
 
-                if (string.IsNullOrEmpty(txtNombreUsuario.Text))
+            if (string.IsNullOrEmpty(txtNombreUsuario.Text))
+            {
+                MessageBox.Show("Debe poner su nombre de usuario", "Advertencia");
+            }
+            else if (string.IsNullOrEmpty(txtContraseña.Text))
+            {
+                MessageBox.Show("Debe poner su contraseña", "Advertencia");
+            }
+            else
+            {
+                Usuarios datos = usuarios.Login(txtNombreUsuario.Text, txtContraseña.Text);
+
+                if (datos != null)
                 {
-                    MessageBox.Show("Debe poner su nombre de usuario", "Advertencia");
-                }
-                else if (string.IsNullOrEmpty(txtContraseña.Text))
-                {
-                    MessageBox.Show("Debe poner su contraseña", "Advertencia");
+                    FrmPrincipal frm = new FrmPrincipal();
+                    frm.Rol = datos.TipoDeUsuario;
+                    frm.Nombre = $"{datos.Nombre} {datos.Apellido}";
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Show();
                 }
                 else
                 {
-                    Usuarios datos = usuarios.Login(txtNombreUsuario.Text, txtContraseña.Text);
-
-                    if (datos != null)
-                    {
-                        FrmPrincipal frm = new FrmPrincipal();
-                    frm.Rol = datos.TipoDeUsuario;
-                    frm.Nombre = $"{datos.Nombre} {datos.Apellido}";
-                        this.Hide();
-                        frm.ShowDialog();
-                        this.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ocurrio un error");
-                    }
+                    MessageBox.Show("Ocurrio un error");
                 }
+            }
         }
+        #endregion
     }
 }

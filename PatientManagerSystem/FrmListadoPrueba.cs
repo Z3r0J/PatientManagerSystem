@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using BusinessLayer;
+using DataLayer.Modelos;
+using System;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using BusinessLayer;
-using DataLayer.Modelos;
 
 namespace PatientManagerSystem
 {
     public partial class FrmListadoPrueba : Form
     {
+        #region Variables & Instancia
+
         ServicePruebasLaboratorio _servicioPrueba;
         ServiceResultadosLab _serviceResultados;
         ServiceCitas _serviceCitas;
@@ -24,7 +22,11 @@ namespace PatientManagerSystem
         public int IdDoctor { get; set; }
         public int IdCitas { get; set; }
         public char BlackAndLight { get; set; } = 'L';
-        public FrmListadoPrueba(string mensaje,char Tema)
+
+        FrmAgregarEditarPrueba frm;
+
+        #endregion
+        public FrmListadoPrueba(string mensaje, char Tema)
         {
             InitializeComponent();
             SqlConnection _conexion = new SqlConnection(connectionString);
@@ -35,8 +37,8 @@ namespace PatientManagerSystem
 
             CambiarTema(Tema);
         }
-        FrmAgregarEditarPrueba frm;
 
+        #region Eventos
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             AgregarPrueba();
@@ -45,8 +47,52 @@ namespace PatientManagerSystem
         {
             AgregarPruebas_EditarEstadoCitas();
         }
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            EditarPrueba();
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarPrueba();
+        }
+        private void btnDeseleccionar_Click(object sender, EventArgs e)
+        {
+            Deseleccionar();
+        }
+        private void btnClaro_Click(object sender, EventArgs e)
+        {
+            CambiarTema(BlackAndLight);
+        }
+        private void dgvPruebas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (IsOnCitas)
+            {
+                if (e.RowIndex >= 0)
+                {
+                    btnAgregar.Visible = true;
+                }
+            }
+            if (e.RowIndex >= 0)
+            {
+                id = Convert.ToInt32(dgvPruebas.CurrentRow.Cells[0].Value.ToString());
+                btnDeseleccionar.Visible = true;
+            }
 
-        public void AgregarPruebas_EditarEstadoCitas()
+        }
+        private void dgvPruebas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvPruebas.Rows[0].Selected = false;
+        }
+        #endregion
+
+        #region Metodos
+        private void DtgStyle()
+        {
+            dgvPruebas.Columns[0].Width = dgvPruebas.Width / 2;
+            dgvPruebas.Columns[1].Width = dgvPruebas.Width / 2;
+
+        }
+        private void AgregarPruebas_EditarEstadoCitas()
         {
             ResultadosLaboratorios resultados;
             Citas citas = new Citas();
@@ -82,44 +128,9 @@ namespace PatientManagerSystem
             }
             else
             {
-                MessageBox.Show("Oops Error!","Notificacion");
+                MessageBox.Show("Oops Error!", "Notificacion");
             }
 
-        }
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            EditarPrueba();
-        }
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            EliminarPrueba();
-        }
-        private void btnDeseleccionar_Click(object sender, EventArgs e)
-        {
-            Deseleccionar();
-        }
-
-        private void dgvPruebas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (IsOnCitas)
-            {
-                if (e.RowIndex>=0)
-                {
-                        btnAgregar.Visible = true;
-                }
-            }
-            if (e.RowIndex>=0)
-            {
-                id = Convert.ToInt32(dgvPruebas.CurrentRow.Cells[0].Value.ToString());
-                btnDeseleccionar.Visible = true;
-            }
-
-        }
-        private void DtgStyle()
-        {
-            dgvPruebas.Columns[0].Width = dgvPruebas.Width / 2;
-            dgvPruebas.Columns[1].Width = dgvPruebas.Width / 2;
-           
         }
         private void CargarPruebas()
         {
@@ -148,7 +159,7 @@ namespace PatientManagerSystem
             {
                 frm = new FrmAgregarEditarPrueba();
 
-               frm.id = Convert.ToInt32(dgvPruebas.CurrentRow.Cells[0].Value.ToString());
+                frm.id = Convert.ToInt32(dgvPruebas.CurrentRow.Cells[0].Value.ToString());
 
                 frm.txtPrueba.Text = dgvPruebas.CurrentRow.Cells[1].Value.ToString();
                 this.Hide();
@@ -216,12 +227,6 @@ namespace PatientManagerSystem
                 dgvPruebas.MultiSelect = true;
             }
         }
-
-        private void dgvPruebas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            dgvPruebas.Rows[0].Selected = false;
-        }
-
         private void CambiarTema(char Tema)
         {
             if (Tema == 'B' || BlackAndLight == 'B')
@@ -268,10 +273,6 @@ namespace PatientManagerSystem
 
             }
         }
-
-        private void btnClaro_Click(object sender, EventArgs e)
-        {
-            CambiarTema(BlackAndLight);
-        }
+        #endregion
     }
 }

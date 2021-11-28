@@ -232,7 +232,6 @@ namespace PatientManagerSystem
             this.lblUsuario.Size = new System.Drawing.Size(109, 32);
             this.lblUsuario.TabIndex = 1;
             this.lblUsuario.Text = "Usuario:";
-            this.lblUsuario.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtNombreUsuario
             // 

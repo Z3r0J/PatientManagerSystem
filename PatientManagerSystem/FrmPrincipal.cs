@@ -25,7 +25,16 @@ namespace PatientManagerSystem
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Quieres cerrar sesión","Pregunta",MessageBoxButtons.YesNo);
+
+            if (result==DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+
+            }
         }
 
         private void Restaurar_v2_Click(object sender, EventArgs e)

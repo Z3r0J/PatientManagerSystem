@@ -29,7 +29,7 @@ namespace PatientManagerSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
@@ -399,15 +399,15 @@ namespace PatientManagerSystem
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPacientes.ColumnHeadersVisible = false;
             this.tableLayoutPanel1.SetColumnSpan(this.dgvPacientes, 6);
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPacientes.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPacientes.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPacientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPacientes.Location = new System.Drawing.Point(3, 180);
             this.dgvPacientes.MultiSelect = false;
@@ -445,7 +445,7 @@ namespace PatientManagerSystem
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 56);
+            this.textBox1.Location = new System.Drawing.Point(4, 75);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(150, 23);
             this.textBox1.TabIndex = 4;
@@ -453,9 +453,10 @@ namespace PatientManagerSystem
             // 
             // ptbFoto
             // 
+            this.ptbFoto.Image = global::PatientManagerSystem.Properties.Resources.usuario;
             this.ptbFoto.Location = new System.Drawing.Point(2, 3);
             this.ptbFoto.Name = "ptbFoto";
-            this.ptbFoto.Size = new System.Drawing.Size(28, 33);
+            this.ptbFoto.Size = new System.Drawing.Size(40, 36);
             this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbFoto.TabIndex = 1;
             this.ptbFoto.TabStop = false;
@@ -464,9 +465,9 @@ namespace PatientManagerSystem
             // 
             this.LblWelcome.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblWelcome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LblWelcome.Location = new System.Drawing.Point(32, 6);
+            this.LblWelcome.Location = new System.Drawing.Point(48, 6);
             this.LblWelcome.Name = "LblWelcome";
-            this.LblWelcome.Size = new System.Drawing.Size(169, 46);
+            this.LblWelcome.Size = new System.Drawing.Size(153, 66);
             this.LblWelcome.TabIndex = 0;
             this.LblWelcome.Text = "   Welcome";
             // 

@@ -29,7 +29,7 @@ namespace PatientManagerSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -94,9 +94,10 @@ namespace PatientManagerSystem
             // 
             // ptbFoto
             // 
+            this.ptbFoto.Image = global::PatientManagerSystem.Properties.Resources.usuario;
             this.ptbFoto.Location = new System.Drawing.Point(2, 3);
             this.ptbFoto.Name = "ptbFoto";
-            this.ptbFoto.Size = new System.Drawing.Size(28, 33);
+            this.ptbFoto.Size = new System.Drawing.Size(32, 33);
             this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbFoto.TabIndex = 1;
             this.ptbFoto.TabStop = false;
@@ -105,9 +106,9 @@ namespace PatientManagerSystem
             // 
             this.LblWelcome.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblWelcome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LblWelcome.Location = new System.Drawing.Point(32, 6);
+            this.LblWelcome.Location = new System.Drawing.Point(40, 6);
             this.LblWelcome.Name = "LblWelcome";
-            this.LblWelcome.Size = new System.Drawing.Size(169, 46);
+            this.LblWelcome.Size = new System.Drawing.Size(161, 89);
             this.LblWelcome.TabIndex = 0;
             this.LblWelcome.Text = "   Welcome";
             // 
@@ -125,15 +126,15 @@ namespace PatientManagerSystem
             this.dgvPruebas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPruebas.ColumnHeadersVisible = false;
             this.tableLayoutPanel1.SetColumnSpan(this.dgvPruebas, 6);
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPruebas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPruebas.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPruebas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPruebas.Location = new System.Drawing.Point(3, 167);
             this.dgvPruebas.MultiSelect = false;
@@ -367,8 +368,6 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox ptbFoto;
         private System.Windows.Forms.Label LblWelcome;
         private System.Windows.Forms.DataGridView dgvPruebas;

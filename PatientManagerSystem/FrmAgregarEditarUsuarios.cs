@@ -29,32 +29,26 @@ namespace PatientManagerSystem
             _enviarCorreo = new EnviarCorreo();
             LoadCbx();
         }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
+        #region Eventos
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
-        private void Maximizar_vlogin_Click(object sender, EventArgs e)
+        private void BtnRegistrarse_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            Maximizar_vlogin.Visible = false;
-            Restaurar_vlogin.Visible = true;
+            if (Editar)
+            {
+                Editando();
+            }
+            else
+            {
+                Validar();
+            }
         }
+        #endregion
 
-        private void Restaurar_vlogin_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            Restaurar_vlogin.Visible = false;
-            Maximizar_vlogin.Visible = true;
-        }
-
-
+        #region Metodos
         private void LoadCbx()
         {
             ComboBoxItem item = new ComboBoxItem();
@@ -78,10 +72,6 @@ namespace PatientManagerSystem
             CbxTipoUsuario.Items.Add(item2);
             CbxTipoUsuario.SelectedIndex = 0;
 
-        }
-
-        private void FrmAgregarEditarUsuarios_Load(object sender, EventArgs e)
-        {
         }
 
         private bool Agregar()
@@ -277,17 +267,6 @@ namespace PatientManagerSystem
                    "</table>";
             _enviarCorreo.Enviando(users.Correo, $"Bienvenid@s a Sistema Gestor de paciente {users.Nombre}", Body);
         }
-
-        private void BtnRegistrarse_Click(object sender, EventArgs e)
-        {
-            if (Editar)
-            {
-                Editando();
-            }
-            else
-            {
-                Validar();
-            }
-        }
+        #endregion
     }
 }

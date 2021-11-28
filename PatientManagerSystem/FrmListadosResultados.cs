@@ -10,6 +10,8 @@ namespace PatientManagerSystem
 {
     public partial class FrmListadosResultados : Form
     {
+        #region Variables & Instancia
+
         ServiceResultadosLab _servicioResultadosLab;
         ServiceCitas _serviceCitas;
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
@@ -18,13 +20,16 @@ namespace PatientManagerSystem
         public int IdCitas { get; set; }
         public int IdPacientes { get; set; }
         public char BlackAndLight { get; set; } = 'L';
-        public FrmListadosResultados(string mensaje,char Tema)
+
+        #endregion
+
+        public FrmListadosResultados(string mensaje, char Tema)
         {
             InitializeComponent();
             SqlConnection _conexion = new SqlConnection(connectionString);
             _servicioResultadosLab = new ServiceResultadosLab(_conexion);
             CambiarTema(Tema);
-            LblWelcome.Text = mensaje;    
+            LblWelcome.Text = mensaje;
         }
 
         #region Eventos
@@ -56,33 +61,10 @@ namespace PatientManagerSystem
                 btnDeseleccionar.Visible = true;
             }
         }
-
-        #endregion
-
-        #region Metodos
-
-        private void DtgStyle()
+        private void btnClaro_Click(object sender, EventArgs e)
         {
-            DtgvResultados.Columns[0].Width = 70;
-            DtgvResultados.Columns[1].Width = 210;
-            DtgvResultados.Columns[2].Width = 210;
-
+            CambiarTema(BlackAndLight);
         }
-
-        private void CargarPruebasLab()
-        {
-            DtgvResultados.DataSource = _servicioResultadosLab.ListarResultados();
-        }
-
-        private void Deseleccionar()
-        {
-            DtgvResultados.ClearSelection();
-            DtgvResultados.CurrentCell = null;
-            btnDeseleccionar.Visible = false;
-            BtnConsultar.Visible = false;
-        }
-
-        #endregion
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -134,6 +116,27 @@ namespace PatientManagerSystem
             this.Close();
         }
 
+        #endregion
+
+        #region Metodos
+        private void DtgStyle()
+        {
+            DtgvResultados.Columns[0].Width = 70;
+            DtgvResultados.Columns[1].Width = 210;
+            DtgvResultados.Columns[2].Width = 210;
+        }
+        private void CargarPruebasLab()
+        {
+            DtgvResultados.DataSource = _servicioResultadosLab.ListarResultados();
+        }
+
+        private void Deseleccionar()
+        {
+            DtgvResultados.ClearSelection();
+            DtgvResultados.CurrentCell = null;
+            btnDeseleccionar.Visible = false;
+            BtnConsultar.Visible = false;
+        }
         private void CambiarTema(char Tema)
         {
             if (Tema == 'B' || BlackAndLight == 'B')
@@ -198,10 +201,6 @@ namespace PatientManagerSystem
                 label6.Location = new Point(3, 38);
             }
         }
-
-        private void btnClaro_Click(object sender, EventArgs e)
-        {
-            CambiarTema(BlackAndLight);
-        }
+        #endregion
     }
 }

@@ -213,6 +213,26 @@ namespace PatientManagerSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_black {
+            get {
+                object obj = ResourceManager.GetObject("close-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_white {
+            get {
+                object obj = ResourceManager.GetObject("close-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap consultar_black {
             get {
                 object obj = ResourceManager.GetObject("consultar-black", resourceCulture);
@@ -353,6 +373,16 @@ namespace PatientManagerSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap deselect_white1 {
+            get {
+                object obj = ResourceManager.GetObject("deselect-white1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap doctor_black {
             get {
                 object obj = ResourceManager.GetObject("doctor-black", resourceCulture);
@@ -446,6 +476,26 @@ namespace PatientManagerSystem.Properties {
         internal static System.Drawing.Bitmap edituser_white {
             get {
                 object obj = ResourceManager.GetObject("edituser-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ExportarPDF_black {
+            get {
+                object obj = ResourceManager.GetObject("ExportarPDF-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ExportarPDF_white {
+            get {
+                object obj = ResourceManager.GetObject("ExportarPDF-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

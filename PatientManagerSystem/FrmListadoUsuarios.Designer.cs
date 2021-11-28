@@ -325,7 +325,7 @@ namespace PatientManagerSystem
             this.LblWelcome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LblWelcome.Location = new System.Drawing.Point(30, 4);
             this.LblWelcome.Name = "LblWelcome";
-            this.LblWelcome.Size = new System.Drawing.Size(194, 54);
+            this.LblWelcome.Size = new System.Drawing.Size(194, 95);
             this.LblWelcome.TabIndex = 0;
             this.LblWelcome.Text = "Welcome";
             // 

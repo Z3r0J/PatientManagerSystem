@@ -12,12 +12,16 @@ namespace PatientManagerSystem
     public partial class FrmListadoUsuarios : Form
     {
 
+        #region Variables & Instancias
+
         private ServiceUsuarios usuarios;
 
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
 
         private EnviarCorreo _enviarCorreo;
         public char BlackAndLight { get; set; } = 'L';
+
+        #endregion
         public FrmListadoUsuarios(string Nombre, char Tema)
         {
             InitializeComponent();
@@ -28,7 +32,6 @@ namespace PatientManagerSystem
             Deseleccionar();
             CambiarTema(Tema);
         }
-
 
         #region Eventos
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -77,6 +80,11 @@ namespace PatientManagerSystem
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             Eliminar();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CambiarTema(BlackAndLight);
         }
 
         #endregion
@@ -218,10 +226,5 @@ namespace PatientManagerSystem
             }
         }
         #endregion
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            CambiarTema(BlackAndLight);
-        }
     }
 }

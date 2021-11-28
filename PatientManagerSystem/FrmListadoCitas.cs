@@ -15,10 +15,14 @@ namespace PatientManagerSystem
 {
     public partial class FrmListadoCitas : Form
     {
+        #region Variables & Instancias
+
         ServiceCitas _servicioCitas;
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         private int id;
         public char BlackAndLight { get; set; } = 'L';
+
+        #endregion
         public FrmListadoCitas(string mensaje,char Tema)
         {
             InitializeComponent();
@@ -28,7 +32,6 @@ namespace PatientManagerSystem
             LblWelcome.Text = mensaje;
             CambiarTema(Tema);
         }
-
 
         #region Eventos
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -64,6 +67,7 @@ namespace PatientManagerSystem
             this.Hide();
             frm.ShowDialog();
             CargarMedicos();
+            Deseleccionar();
             this.Show();
             
         }
@@ -76,19 +80,35 @@ namespace PatientManagerSystem
             this.Hide();
             frm.ShowDialog();
             CargarMedicos();
+            Deseleccionar();
             this.Show();
 
         }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            FrmListadoPacientes frm = new FrmListadoPacientes("", 'B');
+            frm.IsOnCitas = true;
+            this.Hide();
+            frm.ShowDialog();
+            CargarMedicos();
+            Deseleccionar();
+            this.Show();
+        }
 
+        private void btnClaro_Click(object sender, EventArgs e)
+        {
+            CambiarTema(BlackAndLight);
+        }
         private void BtnVerResultados_Click(object sender, EventArgs e)
         {
-            FrmListadoCompletado frm = new FrmListadoCompletado();
+            FrmListadoCompletado frm = new FrmListadoCompletado('L');
             frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
             frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
             frm.NombreDoctor = DtgvCitas.CurrentRow.Cells[2].Value.ToString();
             this.Hide();
             frm.ShowDialog();
             CargarMedicos();
+            Deseleccionar();
             this.Show();
 
         }
@@ -102,7 +122,16 @@ namespace PatientManagerSystem
                     BtnConsultar.Click -= new EventHandler(BtnVerResultados_Click);
                     BtnConsultar.Click -= new EventHandler(BtnConsultarResultados_Click);
                     BtnConsultar.Click += new EventHandler(BtnConsultar_Click);
-                    CambiarTema(BlackAndLight);
+                    if (BlackAndLight == 'L')
+                    {
+                        BtnConsultar.ForeColor = Color.Black;
+                        BtnConsultar.Image = Properties.Resources.consultar_white;
+                    }
+                    else
+                    {
+                        BtnConsultar.ForeColor = Color.White;
+                        BtnConsultar.Image = Properties.Resources.consultar_black;
+                    }
                 }
                 else if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString()) == 2)
                 {
@@ -110,16 +139,33 @@ namespace PatientManagerSystem
                     BtnConsultar.Click -= new EventHandler(BtnVerResultados_Click);
                     BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
                     BtnConsultar.Click += new EventHandler(BtnConsultarResultados_Click);
-                    CambiarTema(BlackAndLight);
+                    if (BlackAndLight == 'L')
+                    {
+                        BtnConsultar.ForeColor = Color.Black;
+                        BtnConsultar.Image = Properties.Resources.consultarresultado_white;
+                    }
+                    else
+                    {
+                        BtnConsultar.ForeColor = Color.White;
+                        BtnConsultar.Image = Properties.Resources.consultarresultado_black;
+                    }
                 }
-                else if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString()) == 3)
+                else
                 {
                     BtnConsultar.Text = "                Ver                                Resultados";
                     BtnConsultar.Click -= new EventHandler(BtnConsultarResultados_Click);
                     BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
                     BtnConsultar.Click += new EventHandler(BtnVerResultados_Click);
-                    CambiarTema(BlackAndLight);
-
+                    if (BlackAndLight == 'L')
+                    {
+                        BtnConsultar.ForeColor = Color.Black;
+                        BtnConsultar.Image = Properties.Resources.verresultado_white;
+                    }
+                    else
+                    {
+                        BtnConsultar.ForeColor = Color.White;
+                        BtnConsultar.Image = Properties.Resources.verresultado_black;
+                    }
                 }
                 btnDeseleccionar.Visible = true;
                 BtnConsultar.Visible = true;
@@ -174,6 +220,7 @@ namespace PatientManagerSystem
         {
             DtgvCitas.ClearSelection();
             DtgvCitas.CurrentCell = null;
+            BtnConsultar.Visible = false;
             btnDeseleccionar.Visible = false;
         }
 
@@ -191,6 +238,7 @@ namespace PatientManagerSystem
                 BtnConsultar.ForeColor = Color.Black;
                 btnClaro.ForeColor = Color.Black;
                 this.ForeColor = Color.Black;
+                btnDeseleccionar.ForeColor = Color.Black;
 
                 btnAgregar.Image = Properties.Resources.citas_white;
                 btnEliminar.Image = Properties.Resources.citasdelete_white;
@@ -217,7 +265,7 @@ namespace PatientManagerSystem
                 }
                 catch (Exception ex)
                 {
-
+                    Console.WriteLine(ex);
                 }
 
                 DtgvCitas.DefaultCellStyle.BackColor = Color.White;
@@ -234,6 +282,7 @@ namespace PatientManagerSystem
                 btnEliminar.ForeColor = Color.White;
                 BtnConsultar.ForeColor = Color.White;
                 btnClaro.ForeColor = Color.White;
+                btnDeseleccionar.ForeColor = Color.White;
                 this.ForeColor = Color.White;
 
                 try
@@ -270,20 +319,5 @@ namespace PatientManagerSystem
         }
 
         #endregion
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            FrmListadoPacientes frm = new FrmListadoPacientes("",'B');
-            frm.IsOnCitas = true;
-            this.Hide();
-            frm.ShowDialog();
-            CargarMedicos();
-            this.Show();
-        }
-
-        private void btnClaro_Click(object sender, EventArgs e)
-        {
-            CambiarTema(BlackAndLight);
-        }
     }
 }
