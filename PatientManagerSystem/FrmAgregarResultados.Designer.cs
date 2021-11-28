@@ -193,6 +193,7 @@ namespace PatientManagerSystem
             // TxtResultado
             // 
             this.TxtResultado.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TxtResultado.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtResultado.Location = new System.Drawing.Point(228, 43);
             this.TxtResultado.Multiline = true;
             this.TxtResultado.Name = "TxtResultado";

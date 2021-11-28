@@ -56,7 +56,6 @@ namespace PatientManagerSystem
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.ptbFoto = new System.Windows.Forms.PictureBox();
             this.LblWelcome = new System.Windows.Forms.Label();
@@ -424,7 +423,6 @@ namespace PatientManagerSystem
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.textBox1);
             this.panel6.Controls.Add(this.ptbFoto);
             this.panel6.Controls.Add(this.LblWelcome);
@@ -434,20 +432,11 @@ namespace PatientManagerSystem
             this.panel6.Size = new System.Drawing.Size(224, 103);
             this.panel6.TabIndex = 8;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(161, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 24);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "🔎";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(4, 75);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 23);
+            this.textBox1.Size = new System.Drawing.Size(175, 23);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 

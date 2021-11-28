@@ -269,6 +269,7 @@ namespace PatientManagerSystem
             this.txtContraseña.Location = new System.Drawing.Point(228, 205);
             this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(211, 30);
             this.txtContraseña.TabIndex = 3;
             // 

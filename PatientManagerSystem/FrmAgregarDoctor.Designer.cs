@@ -30,37 +30,37 @@ namespace PatientManagerSystem
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_nombre = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txt_apellido = new System.Windows.Forms.TextBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txt_correo = new System.Windows.Forms.TextBox();
+            this.txt_apellido = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.txt_telefono = new System.Windows.Forms.MaskedTextBox();
+            this.txt_correo = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.lbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.txt_cedula = new System.Windows.Forms.MaskedTextBox();
+            this.txt_telefono = new System.Windows.Forms.MaskedTextBox();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_cedula = new System.Windows.Forms.MaskedTextBox();
             this.lbl6 = new System.Windows.Forms.Label();
-            this.pictureU = new System.Windows.Forms.PictureBox();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.FotoDialog = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureU = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnAgregar = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.FotoDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -72,13 +72,13 @@ namespace PatientManagerSystem
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureU)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureU)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -116,23 +116,6 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.Size = new System.Drawing.Size(706, 436);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(262, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre";
-            // 
-            // txt_nombre
-            // 
-            this.txt_nombre.Location = new System.Drawing.Point(3, 18);
-            this.txt_nombre.Multiline = true;
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(311, 33);
-            this.txt_nombre.TabIndex = 0;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -144,14 +127,14 @@ namespace PatientManagerSystem
             this.panel3.Size = new System.Drawing.Size(353, 59);
             this.panel3.TabIndex = 2;
             // 
-            // label2
+            // label1
             // 
-            this.label2.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(250, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Apellido";
+            this.label1.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(262, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre";
             // 
             // panel4
             // 
@@ -164,13 +147,14 @@ namespace PatientManagerSystem
             this.panel4.Size = new System.Drawing.Size(353, 59);
             this.panel4.TabIndex = 3;
             // 
-            // txt_apellido
+            // txt_nombre
             // 
-            this.txt_apellido.Location = new System.Drawing.Point(3, 21);
-            this.txt_apellido.Multiline = true;
-            this.txt_apellido.Name = "txt_apellido";
-            this.txt_apellido.Size = new System.Drawing.Size(311, 33);
-            this.txt_apellido.TabIndex = 1;
+            this.txt_nombre.Font = new System.Drawing.Font("Footlight MT Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_nombre.Location = new System.Drawing.Point(3, 18);
+            this.txt_nombre.Multiline = true;
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(311, 33);
+            this.txt_nombre.TabIndex = 0;
             // 
             // panel5
             // 
@@ -183,14 +167,14 @@ namespace PatientManagerSystem
             this.panel5.Size = new System.Drawing.Size(353, 56);
             this.panel5.TabIndex = 4;
             // 
-            // label3
+            // label2
             // 
-            this.label3.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(261, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 23);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Correo";
+            this.label2.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(250, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Apellido";
             // 
             // panel6
             // 
@@ -203,13 +187,14 @@ namespace PatientManagerSystem
             this.panel6.Size = new System.Drawing.Size(353, 56);
             this.panel6.TabIndex = 5;
             // 
-            // txt_correo
+            // txt_apellido
             // 
-            this.txt_correo.Location = new System.Drawing.Point(3, 21);
-            this.txt_correo.Multiline = true;
-            this.txt_correo.Name = "txt_correo";
-            this.txt_correo.Size = new System.Drawing.Size(311, 33);
-            this.txt_correo.TabIndex = 1;
+            this.txt_apellido.Font = new System.Drawing.Font("Footlight MT Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_apellido.Location = new System.Drawing.Point(3, 21);
+            this.txt_apellido.Multiline = true;
+            this.txt_apellido.Name = "txt_apellido";
+            this.txt_apellido.Size = new System.Drawing.Size(311, 33);
+            this.txt_apellido.TabIndex = 1;
             // 
             // panel7
             // 
@@ -222,15 +207,14 @@ namespace PatientManagerSystem
             this.panel7.Size = new System.Drawing.Size(353, 59);
             this.panel7.TabIndex = 6;
             // 
-            // label4
+            // label3
             // 
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(261, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 23);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Telefono";
+            this.label3.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(261, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 23);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Correo";
             // 
             // panel8
             // 
@@ -243,14 +227,14 @@ namespace PatientManagerSystem
             this.panel8.Size = new System.Drawing.Size(353, 59);
             this.panel8.TabIndex = 7;
             // 
-            // txt_telefono
+            // txt_correo
             // 
-            this.txt_telefono.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_telefono.Location = new System.Drawing.Point(6, 16);
-            this.txt_telefono.Mask = "(999) 000-0000";
-            this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(308, 35);
-            this.txt_telefono.TabIndex = 1;
+            this.txt_correo.Font = new System.Drawing.Font("Footlight MT Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_correo.Location = new System.Drawing.Point(3, 21);
+            this.txt_correo.Multiline = true;
+            this.txt_correo.Name = "txt_correo";
+            this.txt_correo.Size = new System.Drawing.Size(311, 33);
+            this.txt_correo.TabIndex = 1;
             // 
             // panel9
             // 
@@ -263,14 +247,15 @@ namespace PatientManagerSystem
             this.panel9.Size = new System.Drawing.Size(353, 52);
             this.panel9.TabIndex = 8;
             // 
-            // lbl
+            // label4
             // 
-            this.lbl.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl.Location = new System.Drawing.Point(262, 31);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(84, 23);
-            this.lbl.TabIndex = 1;
-            this.lbl.Text = "Cedula";
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(261, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 23);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Telefono";
             // 
             // panel10
             // 
@@ -283,14 +268,14 @@ namespace PatientManagerSystem
             this.panel10.Size = new System.Drawing.Size(353, 52);
             this.panel10.TabIndex = 9;
             // 
-            // txt_cedula
+            // txt_telefono
             // 
-            this.txt_cedula.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_cedula.Location = new System.Drawing.Point(6, 16);
-            this.txt_cedula.Mask = "000-0000000-0";
-            this.txt_cedula.Name = "txt_cedula";
-            this.txt_cedula.Size = new System.Drawing.Size(308, 35);
-            this.txt_cedula.TabIndex = 0;
+            this.txt_telefono.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_telefono.Location = new System.Drawing.Point(6, 16);
+            this.txt_telefono.Mask = "(999) 000-0000";
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(308, 35);
+            this.txt_telefono.TabIndex = 1;
             // 
             // panel11
             // 
@@ -303,14 +288,14 @@ namespace PatientManagerSystem
             this.panel11.Size = new System.Drawing.Size(353, 53);
             this.panel11.TabIndex = 10;
             // 
-            // label5
+            // lbl
             // 
-            this.label5.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(285, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 23);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Foto";
+            this.lbl.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl.Location = new System.Drawing.Point(262, 31);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(84, 23);
+            this.lbl.TabIndex = 1;
+            this.lbl.Text = "Cedula";
             // 
             // panel12
             // 
@@ -324,14 +309,14 @@ namespace PatientManagerSystem
             this.panel12.Size = new System.Drawing.Size(353, 53);
             this.panel12.TabIndex = 11;
             // 
-            // pictureBox1
+            // txt_cedula
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(177, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 59);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.txt_cedula.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_cedula.Location = new System.Drawing.Point(6, 16);
+            this.txt_cedula.Mask = "000-0000000-0";
+            this.txt_cedula.Name = "txt_cedula";
+            this.txt_cedula.Size = new System.Drawing.Size(308, 35);
+            this.txt_cedula.TabIndex = 0;
             // 
             // lbl6
             // 
@@ -341,17 +326,6 @@ namespace PatientManagerSystem
             this.lbl6.Name = "lbl6";
             this.lbl6.Size = new System.Drawing.Size(28, 23);
             this.lbl6.TabIndex = 4;
-            // 
-            // pictureU
-            // 
-            this.pictureU.Image = global::PatientManagerSystem.Properties.Resources.add_image;
-            this.pictureU.Location = new System.Drawing.Point(3, 0);
-            this.pictureU.Name = "pictureU";
-            this.pictureU.Size = new System.Drawing.Size(168, 62);
-            this.pictureU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureU.TabIndex = 0;
-            this.pictureU.TabStop = false;
-            this.pictureU.Click += new System.EventHandler(this.pictureU_Click);
             // 
             // panel13
             // 
@@ -363,6 +337,15 @@ namespace PatientManagerSystem
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(353, 67);
             this.panel13.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(285, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 23);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Foto";
             // 
             // panel14
             // 
@@ -376,9 +359,25 @@ namespace PatientManagerSystem
             this.panel14.Size = new System.Drawing.Size(353, 67);
             this.panel14.TabIndex = 13;
             // 
-            // FotoDialog
+            // pictureBox1
             // 
-            this.FotoDialog.DefaultExt = "png,gif,jpg,jpeg";
+            this.pictureBox1.Location = new System.Drawing.Point(177, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(164, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureU
+            // 
+            this.pictureU.Image = global::PatientManagerSystem.Properties.Resources.add_image;
+            this.pictureU.Location = new System.Drawing.Point(3, 0);
+            this.pictureU.Name = "pictureU";
+            this.pictureU.Size = new System.Drawing.Size(168, 62);
+            this.pictureU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureU.TabIndex = 0;
+            this.pictureU.TabStop = false;
+            this.pictureU.Click += new System.EventHandler(this.pictureU_Click);
             // 
             // panel1
             // 
@@ -390,6 +389,18 @@ namespace PatientManagerSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(700, 33);
             this.panel1.TabIndex = 14;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox4.Image = global::PatientManagerSystem.Properties.Resources.x;
+            this.pictureBox4.Location = new System.Drawing.Point(675, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(25, 33);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox4.TabIndex = 9;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // panel2
             // 
@@ -414,17 +425,9 @@ namespace PatientManagerSystem
             this.BtnAgregar.Text = "Agregar Medico";
             this.BtnAgregar.UseVisualStyleBackColor = true;
             // 
-            // pictureBox4
+            // FotoDialog
             // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox4.Image = global::PatientManagerSystem.Properties.Resources.x;
-            this.pictureBox4.Location = new System.Drawing.Point(675, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 33);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 9;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.FotoDialog.DefaultExt = "png,gif,jpg,jpeg";
             // 
             // FrmAgregarDoctor
             // 
@@ -452,13 +455,13 @@ namespace PatientManagerSystem
             this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureU)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureU)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

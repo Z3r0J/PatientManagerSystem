@@ -250,6 +250,7 @@ namespace PatientManagerSystem
             // txtPrueba
             // 
             this.txtPrueba.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtPrueba.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPrueba.Location = new System.Drawing.Point(220, 34);
             this.txtPrueba.Multiline = true;
             this.txtPrueba.Name = "txtPrueba";

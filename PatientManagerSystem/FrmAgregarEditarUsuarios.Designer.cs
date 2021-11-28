@@ -207,6 +207,7 @@ namespace PatientManagerSystem
             // 
             // TxtNombre
             // 
+            this.TxtNombre.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtNombre.Location = new System.Drawing.Point(228, 3);
             this.TxtNombre.Multiline = true;
             this.TxtNombre.Name = "TxtNombre";
@@ -236,6 +237,7 @@ namespace PatientManagerSystem
             // 
             // TxtApellido
             // 
+            this.TxtApellido.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtApellido.Location = new System.Drawing.Point(228, 49);
             this.TxtApellido.Multiline = true;
             this.TxtApellido.Name = "TxtApellido";
@@ -374,15 +376,16 @@ namespace PatientManagerSystem
             // 
             // CbxTipoUsuario
             // 
-            this.CbxTipoUsuario.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxTipoUsuario.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CbxTipoUsuario.FormattingEnabled = true;
             this.CbxTipoUsuario.Location = new System.Drawing.Point(228, 279);
             this.CbxTipoUsuario.Name = "CbxTipoUsuario";
-            this.CbxTipoUsuario.Size = new System.Drawing.Size(211, 33);
+            this.CbxTipoUsuario.Size = new System.Drawing.Size(211, 30);
             this.CbxTipoUsuario.TabIndex = 15;
             // 
             // TxtCorreo
             // 
+            this.TxtCorreo.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtCorreo.Location = new System.Drawing.Point(228, 95);
             this.TxtCorreo.Multiline = true;
             this.TxtCorreo.Name = "TxtCorreo";
@@ -391,6 +394,7 @@ namespace PatientManagerSystem
             // 
             // TxtUsuario
             // 
+            this.TxtUsuario.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtUsuario.Location = new System.Drawing.Point(228, 141);
             this.TxtUsuario.Multiline = true;
             this.TxtUsuario.Name = "TxtUsuario";
@@ -399,17 +403,21 @@ namespace PatientManagerSystem
             // 
             // TxtContraseña
             // 
+            this.TxtContraseña.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtContraseña.Location = new System.Drawing.Point(228, 187);
             this.TxtContraseña.Multiline = true;
             this.TxtContraseña.Name = "TxtContraseña";
+            this.TxtContraseña.PasswordChar = '*';
             this.TxtContraseña.Size = new System.Drawing.Size(211, 32);
             this.TxtContraseña.TabIndex = 18;
             // 
             // TxtConfirmarContraseña
             // 
+            this.TxtConfirmarContraseña.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtConfirmarContraseña.Location = new System.Drawing.Point(228, 233);
             this.TxtConfirmarContraseña.Multiline = true;
             this.TxtConfirmarContraseña.Name = "TxtConfirmarContraseña";
+            this.TxtConfirmarContraseña.PasswordChar = '*';
             this.TxtConfirmarContraseña.Size = new System.Drawing.Size(211, 32);
             this.TxtConfirmarContraseña.TabIndex = 19;
             // 
