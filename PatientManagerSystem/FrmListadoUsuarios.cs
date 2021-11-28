@@ -74,7 +74,7 @@ namespace PatientManagerSystem
 
         private void DtgvUsuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            DtgvUsuarios.Rows[0].Selected = false;
+            DtgvUsuarios.ClearSelection();
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)

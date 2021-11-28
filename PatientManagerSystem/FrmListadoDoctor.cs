@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using BusinessLayer;
+using System;
 using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using BusinessLayer;
-using DataLayer.Modelos;
 using System.Data.SqlClient;
-using System.IO;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace PatientManagerSystem
 {
@@ -25,7 +19,7 @@ namespace PatientManagerSystem
         public string NombreApellidoPacientes { get; set; }
         public bool IsOnCitas { get; set; } = false;
         #endregion
-        public FrmListadoDoctor(string mensaje,char Tema)
+        public FrmListadoDoctor(string mensaje, char Tema)
         {
             InitializeComponent();
             SqlConnection _conexion = new SqlConnection(connectionString);
@@ -58,7 +52,7 @@ namespace PatientManagerSystem
 
         private void DtgvDoctor_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            DtgvDoctor.Rows[0].Selected = false;
+            DtgvDoctor.ClearSelection();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -68,7 +62,7 @@ namespace PatientManagerSystem
             frm.ShowDialog();
             this.Show();
             Deseleccionar();
-            
+
         }
 
         private void FrmListadoDoctor_Load(object sender, EventArgs e)
@@ -88,7 +82,7 @@ namespace PatientManagerSystem
         {
             FrmAgregarCitas frm = new FrmAgregarCitas();
             frm.IdPaciente = IdPaciente;
-            frm.IdDoctor= Convert.ToInt32(DtgvDoctor.CurrentRow.Cells[0].Value.ToString());
+            frm.IdDoctor = Convert.ToInt32(DtgvDoctor.CurrentRow.Cells[0].Value.ToString());
             frm.NombreApellidoPacientes = NombreApellidoPacientes;
             frm.NombreApellidoDoctor = $"{DtgvDoctor.CurrentRow.Cells[1].Value} {DtgvDoctor.CurrentRow.Cells[2].Value}";
             this.Hide();
@@ -97,7 +91,7 @@ namespace PatientManagerSystem
         }
         public void dgvPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex>=0)
+            if (e.RowIndex >= 0)
             {
                 if (IsOnCitas)
                 {
@@ -129,7 +123,7 @@ namespace PatientManagerSystem
             if (DtgvDoctor.SelectedRows.Count > 0)
             {
                 FrmAgregarDoctor frm = new FrmAgregarDoctor();
-                frm._id= Convert.ToInt32(DtgvDoctor.CurrentRow.Cells[0].Value.ToString());
+                frm._id = Convert.ToInt32(DtgvDoctor.CurrentRow.Cells[0].Value.ToString());
                 frm.txt_nombre.Text = DtgvDoctor.CurrentRow.Cells[1].Value.ToString();
                 frm.txt_apellido.Text = DtgvDoctor.CurrentRow.Cells[2].Value.ToString();
                 frm.txt_correo.Text = DtgvDoctor.CurrentRow.Cells[3].Value.ToString();

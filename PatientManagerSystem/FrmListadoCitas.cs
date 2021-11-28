@@ -47,7 +47,7 @@ namespace PatientManagerSystem
 
         private void DtgvCitas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            DtgvCitas.Rows[0].Selected = false;
+            DtgvCitas.ClearSelection();
         }
 
         private void FrmListadoPacientes_Load(object sender, EventArgs e)

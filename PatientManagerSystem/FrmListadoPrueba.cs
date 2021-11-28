@@ -81,7 +81,7 @@ namespace PatientManagerSystem
         }
         private void dgvPruebas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            dgvPruebas.Rows[0].Selected = false;
+            dgvPruebas.ClearSelection();
         }
         #endregion
 
