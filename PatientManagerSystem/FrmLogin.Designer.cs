@@ -41,14 +41,14 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Restaurar_vlogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar_vlogin)).BeginInit();
@@ -60,8 +60,8 @@ namespace PatientManagerSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,7 @@ namespace PatientManagerSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(451, 39);
             this.panel1.TabIndex = 1;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // Restaurar_vlogin
             // 
@@ -229,6 +230,15 @@ namespace PatientManagerSystem
             this.panel2.Size = new System.Drawing.Size(219, 143);
             this.panel2.TabIndex = 5;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PatientManagerSystem.Properties.Resources.userlogin;
+            this.pictureBox2.Location = new System.Drawing.Point(69, 53);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
             // lblUsuario
             // 
             this.lblUsuario.BackColor = System.Drawing.Color.White;
@@ -243,6 +253,7 @@ namespace PatientManagerSystem
             // txtNombreUsuario
             // 
             this.txtNombreUsuario.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtNombreUsuario.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNombreUsuario.Location = new System.Drawing.Point(228, 58);
             this.txtNombreUsuario.Multiline = true;
             this.txtNombreUsuario.Name = "txtNombreUsuario";
@@ -259,6 +270,15 @@ namespace PatientManagerSystem
             this.panel3.Size = new System.Drawing.Size(219, 136);
             this.panel3.TabIndex = 6;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PatientManagerSystem.Properties.Resources.passwordlogin;
+            this.pictureBox3.Location = new System.Drawing.Point(55, 49);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
             // lblContraseña
             // 
             this.lblContraseña.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -274,6 +294,7 @@ namespace PatientManagerSystem
             // txtContraseña
             // 
             this.txtContraseña.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtContraseña.Font = new System.Drawing.Font("Poor Richard", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtContraseña.Location = new System.Drawing.Point(228, 205);
             this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
@@ -291,24 +312,6 @@ namespace PatientManagerSystem
             this.panel5.Size = new System.Drawing.Size(445, 15);
             this.panel5.TabIndex = 8;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PatientManagerSystem.Properties.Resources.userlogin;
-            this.pictureBox2.Location = new System.Drawing.Point(69, 53);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::PatientManagerSystem.Properties.Resources.passwordlogin;
-            this.pictureBox3.Location = new System.Drawing.Point(55, 49);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -318,6 +321,7 @@ namespace PatientManagerSystem
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Restaurar_vlogin)).EndInit();
@@ -331,8 +335,8 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 

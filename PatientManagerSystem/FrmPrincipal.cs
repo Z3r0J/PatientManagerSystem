@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -20,6 +21,14 @@ namespace PatientManagerSystem
         {
             InitializeComponent();
         }
+
+        #region DLLFORTHEBAR
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int IParam);
+        #endregion
 
         #region Eventos
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -94,7 +103,11 @@ namespace PatientManagerSystem
            maximizar_v2.Visible = false;
             restaurar_v2.Visible = true;
         }
-
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             AbrirFormularioEnWrapper(new FrmListadoUsuarios($"Welcome, {Nombre}",BlackAndLight));
@@ -105,6 +118,12 @@ namespace PatientManagerSystem
         {
             AbrirFormularioEnWrapper(new FrmListadoPacientes($"Welcome, {Nombre}", BlackAndLight));
         }
+
+
+
+        #endregion
+
+        #region Metodos
 
         private Form FormActivado = null;
         private void AbrirFormularioEnWrapper(Form FormHijo)
@@ -119,11 +138,6 @@ namespace PatientManagerSystem
             FormHijo.BringToFront();
             FormHijo.Show();
         }
-
-        #endregion
-
-        #region Metodos
-
         private void Rols()
         {
             if (Rol==1)

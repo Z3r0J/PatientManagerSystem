@@ -289,6 +289,7 @@ namespace PatientManagerSystem
             this.BtnConsultar.Text = "           Consultar";
             this.BtnConsultar.UseVisualStyleBackColor = true;
             this.BtnConsultar.Visible = false;
+            this.BtnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click_1);
             // 
             // panel2
             // 

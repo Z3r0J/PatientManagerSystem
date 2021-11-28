@@ -59,29 +59,47 @@ namespace PatientManagerSystem
 
         private void BtnConsultar_Click(object sender, EventArgs e)
         {
-            FrmListadoPrueba frm = new FrmListadoPrueba("",'B');
-            frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
-            frm.IdDoctor = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[8].Value.ToString());
-            frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
-            frm.IsOnCitas = true;
-            this.Hide();
-            frm.ShowDialog();
-            CargarMedicos();
-            Deseleccionar();
-            this.Show();
+            try
+            {
+                FrmListadoPrueba frm = new FrmListadoPrueba("", 'B');
+                frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
+                frm.IdDoctor = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[8].Value.ToString());
+                frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
+                frm.IsOnCitas = true;
+                this.Hide();
+                frm.ShowDialog();
+                CargarMedicos();
+                Deseleccionar();
+                this.Show();
+                BtnConsultar.Click -= new EventHandler(BtnConsultarResultados_Click);
+                BtnConsultar.Click -= new EventHandler(BtnVerResultados_Click);
+                BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
+            }
+            catch (Exception ex)
+            {
+            }
             
         }
         private void BtnConsultarResultados_Click(object sender, EventArgs e)
         {
-            FrmListadosResultados frm = new FrmListadosResultados("",'B');
-            frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
-            frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
-            frm.IsOnCitas = true;
-            this.Hide();
-            frm.ShowDialog();
-            CargarMedicos();
-            Deseleccionar();
-            this.Show();
+            try
+            {
+                FrmListadosResultados frm = new FrmListadosResultados("", 'B');
+                frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
+                frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
+                frm.IsOnCitas = true;
+                this.Hide();
+                frm.ShowDialog();
+                CargarMedicos();
+                Deseleccionar();
+                this.Show();
+                BtnConsultar.Click -= new EventHandler(BtnConsultarResultados_Click);
+                BtnConsultar.Click -= new EventHandler(BtnVerResultados_Click);
+                BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
+            }
+            catch (Exception ex)
+            {
+            }
 
         }
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -101,72 +119,32 @@ namespace PatientManagerSystem
         }
         private void BtnVerResultados_Click(object sender, EventArgs e)
         {
-            FrmListadoCompletado frm = new FrmListadoCompletado('L');
-            frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
-            frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
-            frm.NombreDoctor = DtgvCitas.CurrentRow.Cells[2].Value.ToString();
-            this.Hide();
-            frm.ShowDialog();
-            CargarMedicos();
-            Deseleccionar();
-            this.Show();
+            try
+            {
+                FrmListadoCompletado frm = new FrmListadoCompletado('L');
+                frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
+                frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
+                frm.NombreDoctor = DtgvCitas.CurrentRow.Cells[2].Value.ToString();
+                this.Hide();
+                frm.ShowDialog();
+                CargarMedicos();
+                Deseleccionar();
+                this.Show();
+
+                BtnConsultar.Click -= new EventHandler(BtnConsultarResultados_Click);
+                BtnConsultar.Click -= new EventHandler(BtnVerResultados_Click);
+                BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
+            }
+            catch (Exception ex)
+            {
+            }
 
         }
         public void DgvPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex>=0)
             {
-                if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString())==1)
-                {
-                    BtnConsultar.Text = "           Consultar";
-                    BtnConsultar.Click -= new EventHandler(BtnVerResultados_Click);
-                    BtnConsultar.Click -= new EventHandler(BtnConsultarResultados_Click);
-                    BtnConsultar.Click += new EventHandler(BtnConsultar_Click);
-                    if (BlackAndLight == 'L')
-                    {
-                        BtnConsultar.ForeColor = Color.Black;
-                        BtnConsultar.Image = Properties.Resources.consultar_white;
-                    }
-                    else
-                    {
-                        BtnConsultar.ForeColor = Color.White;
-                        BtnConsultar.Image = Properties.Resources.consultar_black;
-                    }
-                }
-                else if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString()) == 2)
-                {
-                    BtnConsultar.Text = "               Consultar                   Resultados";
-                    BtnConsultar.Click -= new EventHandler(BtnVerResultados_Click);
-                    BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
-                    BtnConsultar.Click += new EventHandler(BtnConsultarResultados_Click);
-                    if (BlackAndLight == 'L')
-                    {
-                        BtnConsultar.ForeColor = Color.Black;
-                        BtnConsultar.Image = Properties.Resources.consultarresultado_white;
-                    }
-                    else
-                    {
-                        BtnConsultar.ForeColor = Color.White;
-                        BtnConsultar.Image = Properties.Resources.consultarresultado_black;
-                    }
-                }
-                else
-                {
-                    BtnConsultar.Text = "                Ver                                Resultados";
-                    BtnConsultar.Click -= new EventHandler(BtnConsultarResultados_Click);
-                    BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
-                    BtnConsultar.Click += new EventHandler(BtnVerResultados_Click);
-                    if (BlackAndLight == 'L')
-                    {
-                        BtnConsultar.ForeColor = Color.Black;
-                        BtnConsultar.Image = Properties.Resources.verresultado_white;
-                    }
-                    else
-                    {
-                        BtnConsultar.ForeColor = Color.White;
-                        BtnConsultar.Image = Properties.Resources.verresultado_black;
-                    }
-                }
+                Eventos();
                 btnDeseleccionar.Visible = true;
                 BtnConsultar.Visible = true;
             }
@@ -176,6 +154,61 @@ namespace PatientManagerSystem
 
         #region Metodos
 
+        private void Eventos()
+        {
+
+            if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString()) == 1)
+            {
+                BtnConsultar.Text = "           Consultar";
+                BtnConsultar.Click -= new EventHandler(BtnConsultarResultados_Click);
+                BtnConsultar.Click -= new EventHandler(BtnVerResultados_Click);
+                BtnConsultar.Click += new EventHandler(BtnConsultar_Click);
+                if (BlackAndLight == 'L')
+                {
+                    BtnConsultar.ForeColor = Color.Black;
+                    BtnConsultar.Image = Properties.Resources.consultar_white;
+                }
+                else
+                {
+                    BtnConsultar.ForeColor = Color.White;
+                    BtnConsultar.Image = Properties.Resources.consultar_black;
+                }
+            }
+            else if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString()) == 2)
+            {
+                BtnConsultar.Text = "               Consultar                   Resultados";
+                BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
+                BtnConsultar.Click -= new EventHandler(BtnVerResultados_Click);
+                BtnConsultar.Click += new EventHandler(BtnConsultarResultados_Click);
+                if (BlackAndLight == 'L')
+                {
+                    BtnConsultar.ForeColor = Color.Black;
+                    BtnConsultar.Image = Properties.Resources.consultarresultado_white;
+                }
+                else
+                {
+                    BtnConsultar.ForeColor = Color.White;
+                    BtnConsultar.Image = Properties.Resources.consultarresultado_black;
+                }
+            }
+            else if (Convert.ToInt32(DtgvCitas.CurrentRow.Cells[9].Value.ToString()) == 3)
+            {
+                BtnConsultar.Text = "                Ver                                Resultados";
+                BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
+                BtnConsultar.Click -= new EventHandler(BtnConsultarResultados_Click);
+                BtnConsultar.Click += new EventHandler(BtnVerResultados_Click);
+                if (BlackAndLight == 'L')
+                {
+                    BtnConsultar.ForeColor = Color.Black;
+                    BtnConsultar.Image = Properties.Resources.verresultado_white;
+                }
+                else
+                {
+                    BtnConsultar.ForeColor = Color.White;
+                    BtnConsultar.Image = Properties.Resources.verresultado_black;
+                }
+            }
+        }
         private void DtgStyle()
         {
             DtgvCitas.Columns[0].Width = 70;
@@ -219,7 +252,6 @@ namespace PatientManagerSystem
         private void Deseleccionar()
         {
             DtgvCitas.ClearSelection();
-            DtgvCitas.CurrentCell = null;
             BtnConsultar.Visible = false;
             btnDeseleccionar.Visible = false;
         }
@@ -319,5 +351,9 @@ namespace PatientManagerSystem
         }
 
         #endregion
+
+        private void BtnConsultar_Click_1(object sender, EventArgs e)
+        {
+        }
     }
 }
