@@ -93,6 +93,26 @@ namespace PatientManagerSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addpat_black {
+            get {
+                object obj = ResourceManager.GetObject("addpat-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap addpat_white {
+            get {
+                object obj = ResourceManager.GetObject("addpat-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap addpru_black {
             get {
                 object obj = ResourceManager.GetObject("addpru-black", resourceCulture);
@@ -166,6 +186,26 @@ namespace PatientManagerSystem.Properties {
         internal static System.Drawing.Bitmap deletedoc_white {
             get {
                 object obj = ResourceManager.GetObject("deletedoc-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap deletepat_black {
+            get {
+                object obj = ResourceManager.GetObject("deletepat-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap deletepat_white {
+            get {
+                object obj = ResourceManager.GetObject("deletepat-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +306,26 @@ namespace PatientManagerSystem.Properties {
         internal static System.Drawing.Bitmap editdoc_white {
             get {
                 object obj = ResourceManager.GetObject("editdoc-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editpat_black {
+            get {
+                object obj = ResourceManager.GetObject("editpat-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editpat_white {
+            get {
+                object obj = ResourceManager.GetObject("editpat-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -441,6 +501,26 @@ namespace PatientManagerSystem.Properties {
         internal static string Reporte {
             get {
                 return ResourceManager.GetString("Reporte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap result_black {
+            get {
+                object obj = ResourceManager.GetObject("result-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap result_white {
+            get {
+                object obj = ResourceManager.GetObject("result-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

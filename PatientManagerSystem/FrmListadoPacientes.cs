@@ -2,6 +2,7 @@
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace PatientManagerSystem
@@ -11,14 +12,16 @@ namespace PatientManagerSystem
         ServicePacientes _servicioPacientes;
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         private int id;
-
         public bool IsOnCitas { get; set; }
-        public FrmListadoPacientes()
+        public char BlackAndLight { get; set; } = 'L';
+        public FrmListadoPacientes(string mensaje,char Tema)
         {
             InitializeComponent();
             SqlConnection _conexion = new SqlConnection(connectionString);
             _servicioPacientes = new ServicePacientes(_conexion);
             id = 0;
+            LblWelcome.Text = mensaje;
+            CambiarTema(Tema);
         }
         frmAgregarEditarPacientes paciente;
 
@@ -36,7 +39,7 @@ namespace PatientManagerSystem
 
         private void dgvPacientes_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            dgvPacientes.Rows[0].Selected = false;
+            dgvPacientes.ClearSelection();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -181,11 +184,63 @@ namespace PatientManagerSystem
             }
         }
 
+        private void CambiarTema(char Tema)
+        {
+            if (Tema == 'B' || BlackAndLight == 'B')
+            {
+                BlackAndLight = 'L';
+                this.BackColor = Color.White;
+                tableLayoutPanel1.BackColor = Color.White;
+                btnClaro.Text = "Claro ☼";
+                btnAgregar.ForeColor = Color.Black;
+                btnEditar.ForeColor = Color.Black;
+                btnEliminar.ForeColor = Color.Black;
+                btnAgregar.ForeColor = Color.Black;
+                btnDeseleccionar.ForeColor = Color.Black;
+                btnClaro.ForeColor = Color.Black;
+                btnAgregar.Image = Properties.Resources.addpat_white;
+                btnEditar.Image = Properties.Resources.editpat_white;
+                btnEliminar.Image = Properties.Resources.deletepat_white;
+                btnDeseleccionar.Image = Properties.Resources.deselect_white;
+                this.ForeColor = Color.Black;
+                dgvPacientes.DefaultCellStyle.BackColor = Color.White;
+                dgvPacientes.DefaultCellStyle.ForeColor = Color.Gray;
+                dgvPacientes.BackgroundColor = Color.White;
+            }
+            else
+            {
+                BlackAndLight = 'B';
+                this.BackColor = Color.FromArgb(26, 32, 40);
+                tableLayoutPanel1.BackColor = Color.FromArgb(26, 32, 40);
+                btnClaro.Text = "OSCURO 🌙";
+                btnAgregar.ForeColor = Color.White;
+                btnEditar.ForeColor = Color.White;
+                btnEliminar.ForeColor = Color.White;
+                btnAgregar.ForeColor = Color.White;
+                btnDeseleccionar.ForeColor = Color.White;
+                btnClaro.ForeColor = Color.White;
+                btnAgregar.Image = Properties.Resources.addpat_black;
+                btnEditar.Image = Properties.Resources.editpat_black;
+                btnEliminar.Image = Properties.Resources.deletepat_black;
+                btnDeseleccionar.Image = Properties.Resources.deselect_black;
+                this.ForeColor = Color.White;
+                dgvPacientes.DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+                dgvPacientes.DefaultCellStyle.ForeColor = Color.White;
+                dgvPacientes.BackgroundColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+
+            }
+        }
+
         #endregion
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            dgvPacientes.DataSource = _servicioPacientes.BuscarPacientes(textBox1.Text);
+        }
 
+        private void btnClaro_Click(object sender, EventArgs e)
+        {
+            CambiarTema(BlackAndLight);
         }
     }
 }

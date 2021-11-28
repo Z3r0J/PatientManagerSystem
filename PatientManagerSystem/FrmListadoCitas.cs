@@ -70,7 +70,7 @@ namespace PatientManagerSystem
         }
         private void BtnConsultarResultados_Click(object sender, EventArgs e)
         {
-            FrmListadosResultados frm = new FrmListadosResultados();
+            FrmListadosResultados frm = new FrmListadosResultados("",'B');
             frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
             frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
             frm.IsOnCitas = true;
@@ -190,7 +190,7 @@ namespace PatientManagerSystem
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            FrmListadoPacientes frm = new FrmListadoPacientes();
+            FrmListadoPacientes frm = new FrmListadoPacientes("",'B');
             frm.IsOnCitas = true;
             this.Hide();
             frm.ShowDialog();

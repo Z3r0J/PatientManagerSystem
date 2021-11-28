@@ -65,7 +65,7 @@ namespace PatientManagerSystem
 
         private void button6_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnWrapper(new FrmListadoPacientes());
+            AbrirFormularioEnWrapper(new FrmListadoPacientes($"Welcome, {Nombre}", BlackAndLight));
         }
 
 
@@ -97,7 +97,7 @@ namespace PatientManagerSystem
 
         private void BtnMantResultadoLab_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnWrapper(new FrmListadosResultados());
+            AbrirFormularioEnWrapper(new FrmListadosResultados($"Welcome, {Nombre}", BlackAndLight));
         }
 
         private void BtnMantMedico_Click(object sender, EventArgs e)

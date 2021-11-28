@@ -17,6 +17,11 @@ namespace BusinessLayer
             data = new DataPacientes(conexion);
         }
 
+        public DataTable BuscarPacientes(string Buscar)
+        {
+            return data.Buscar(Buscar);
+        }
+
         public DataTable ObtenerPacientes()
         {
             return data.ObtenerPacientes();

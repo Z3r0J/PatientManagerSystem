@@ -16,6 +16,23 @@ namespace DataLayer
             _conexion = conexion;
         }
 
+        public DataTable Buscar(string Buscar)
+        {
+            SqlCommand comando = new SqlCommand("SP_BuscarPacientes", _conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Buscar", Buscar);
+            _conexion.Open();
+
+            DataTable ListarFilas = new DataTable();
+            SqlDataReader Datos = comando.ExecuteReader();
+            ListarFilas.Load(Datos);
+            Datos.Close();
+            Datos.Dispose();
+            _conexion.Close();
+
+            return ListarFilas;
+        }
+
         public Pacientes InformacionPacientesID(int ID)
         {
             try

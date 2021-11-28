@@ -17,11 +17,14 @@ namespace PatientManagerSystem
         public bool IsOnCitas { get; set; } = false;
         public int IdCitas { get; set; }
         public int IdPacientes { get; set; }
-        public FrmListadosResultados()
+        public char BlackAndLight { get; set; } = 'L';
+        public FrmListadosResultados(string mensaje,char Tema)
         {
             InitializeComponent();
             SqlConnection _conexion = new SqlConnection(connectionString);
             _servicioResultadosLab = new ServiceResultadosLab(_conexion);
+            CambiarTema(Tema);
+            LblWelcome.Text = mensaje;    
         }
 
         #region Eventos
@@ -60,6 +63,9 @@ namespace PatientManagerSystem
 
         private void DtgStyle()
         {
+            DtgvResultados.Columns[0].Width = 70;
+            DtgvResultados.Columns[1].Width = 210;
+            DtgvResultados.Columns[2].Width = 210;
 
         }
 
@@ -128,11 +134,52 @@ namespace PatientManagerSystem
             this.Close();
         }
 
+        private void CambiarTema(char Tema)
+        {
+            if (Tema == 'B' || BlackAndLight == 'B')
+            {
+                BlackAndLight = 'L';
+                this.BackColor = Color.White;
+                tableLayoutPanel1.BackColor = Color.White;
+                btnClaro.Text = "Claro ☼";
+                BtnOculto.ForeColor = Color.Black;
+                BtnConsultar.ForeColor = Color.Black;
+                btnDeseleccionar.ForeColor = Color.Black;
+                btnClaro.ForeColor = Color.Black;
+                BtnConsultar.Image = Properties.Resources.result_white;
+                btnDeseleccionar.Image = Properties.Resources.deselect_white;
+                this.ForeColor = Color.Black;
+                LblBuscar.ForeColor = Color.Black;
+                DtgvResultados.DefaultCellStyle.BackColor = Color.White;
+                DtgvResultados.DefaultCellStyle.ForeColor = Color.Gray;
+                DtgvResultados.BackgroundColor = Color.White;
+            }
+            else
+            {
+                BlackAndLight = 'B';
+                this.BackColor = Color.FromArgb(26, 32, 40);
+                tableLayoutPanel1.BackColor = Color.FromArgb(26, 32, 40);
+                btnClaro.Text = "OSCURO 🌙";
+                BtnOculto.ForeColor = Color.White;
+                BtnConsultar.ForeColor = Color.White;
+                btnDeseleccionar.ForeColor = Color.White;
+                LblBuscar.ForeColor = Color.White;
+                btnClaro.ForeColor = Color.White;
+                BtnConsultar.Image = Properties.Resources.result_black;
+                btnDeseleccionar.Image = Properties.Resources.deselect_black;
+                this.ForeColor = Color.White;
+                DtgvResultados.DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+                DtgvResultados.DefaultCellStyle.ForeColor = Color.White;
+                DtgvResultados.BackgroundColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+
+            }
+        }
         private void EstaEnCitas()
         {
             if (IsOnCitas)
             {
                 BtnConsultar.Text = "Completar Citas";
+                BtnConsultar.Image = null;
                 BtnConsultar.Click -= new EventHandler(BtnConsultar_Click);
                 BtnConsultar.Click += new EventHandler(BtnCompletar_Click);
                 BtnConsultar.Visible = true;
@@ -140,16 +187,21 @@ namespace PatientManagerSystem
                 BtnOculto.Visible = true;
                 BtnOculto.Text = "Cerrar Resultados";
                 BtnOculto.Click += new EventHandler(BtnOculto_Click);
-                label2.Visible = false;
-                label3.Text = "Nombre de la prueba";
-                label3.Location = new Point(3, 38);
-                label4.Visible = false;
+                label2.Visible = true;
+                label2.Text = "Nombre de la prueba";
+                label2.Location = new Point(3, 38);
+                label7.Visible = false;
                 panel8.Visible = false;
                 panel10.Visible = false;
                 tableLayoutPanel1.Controls.Add(panel9, 3, 1);
                 label6.Text = "Estado de la prueba";
-                label6.Location = new Point(2,15);
+                label6.Location = new Point(3, 38);
             }
+        }
+
+        private void btnClaro_Click(object sender, EventArgs e)
+        {
+            CambiarTema(BlackAndLight);
         }
     }
 }
