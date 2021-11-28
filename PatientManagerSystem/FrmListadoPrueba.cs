@@ -23,13 +23,17 @@ namespace PatientManagerSystem
         public int IdPacientes { get; set; }
         public int IdDoctor { get; set; }
         public int IdCitas { get; set; }
-        public FrmListadoPrueba()
+        public char BlackAndLight { get; set; } = 'L';
+        public FrmListadoPrueba(string mensaje,char Tema)
         {
             InitializeComponent();
             SqlConnection _conexion = new SqlConnection(connectionString);
             _servicioPrueba = new ServicePruebasLaboratorio(_conexion);
 
             id = 0;
+            LblWelcome.Text = mensaje;
+
+            CambiarTema(Tema);
         }
         FrmAgregarEditarPrueba frm;
 
@@ -104,7 +108,7 @@ namespace PatientManagerSystem
                         btnAgregar.Visible = true;
                 }
             }
-            if (e.RowIndex>0)
+            if (e.RowIndex>=0)
             {
                 id = Convert.ToInt32(dgvPruebas.CurrentRow.Cells[0].Value.ToString());
                 btnDeseleccionar.Visible = true;
@@ -216,6 +220,58 @@ namespace PatientManagerSystem
         private void dgvPruebas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dgvPruebas.Rows[0].Selected = false;
+        }
+
+        private void CambiarTema(char Tema)
+        {
+            if (Tema == 'B' || BlackAndLight == 'B')
+            {
+                BlackAndLight = 'L';
+                this.BackColor = Color.White;
+                tableLayoutPanel1.BackColor = Color.White;
+                btnClaro.Text = "Claro ☼";
+                btnAgregar.ForeColor = Color.Black;
+                btnEditar.ForeColor = Color.Black;
+                btnEliminar.ForeColor = Color.Black;
+                btnAgregar.ForeColor = Color.Black;
+                btnDeseleccionar.ForeColor = Color.Black;
+                btnClaro.ForeColor = Color.Black;
+                btnAgregar.Image = Properties.Resources.addpru_white;
+                btnEditar.Image = Properties.Resources.editpru_white;
+                btnEliminar.Image = Properties.Resources.deletepru_white;
+                btnDeseleccionar.Image = Properties.Resources.deselect_white;
+                this.ForeColor = Color.Black;
+                dgvPruebas.DefaultCellStyle.BackColor = Color.White;
+                dgvPruebas.DefaultCellStyle.ForeColor = Color.Gray;
+                dgvPruebas.BackgroundColor = Color.White;
+            }
+            else
+            {
+                BlackAndLight = 'B';
+                this.BackColor = Color.FromArgb(26, 32, 40);
+                tableLayoutPanel1.BackColor = Color.FromArgb(26, 32, 40);
+                btnClaro.Text = "OSCURO 🌙";
+                btnAgregar.ForeColor = Color.White;
+                btnEditar.ForeColor = Color.White;
+                btnEliminar.ForeColor = Color.White;
+                btnAgregar.ForeColor = Color.White;
+                btnDeseleccionar.ForeColor = Color.White;
+                btnClaro.ForeColor = Color.White;
+                btnAgregar.Image = Properties.Resources.addpru_black;
+                btnEditar.Image = Properties.Resources.editpru_black;
+                btnEliminar.Image = Properties.Resources.deletepru_black;
+                btnDeseleccionar.Image = Properties.Resources.deselect_black;
+                this.ForeColor = Color.White;
+                dgvPruebas.DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+                dgvPruebas.DefaultCellStyle.ForeColor = Color.White;
+                dgvPruebas.BackgroundColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+
+            }
+        }
+
+        private void btnClaro_Click(object sender, EventArgs e)
+        {
+            CambiarTema(BlackAndLight);
         }
     }
 }

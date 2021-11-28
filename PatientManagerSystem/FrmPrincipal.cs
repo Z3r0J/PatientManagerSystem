@@ -12,6 +12,7 @@ namespace PatientManagerSystem
     {
         public int Rol { get; set; } = 1;
         public string Nombre { get; set; }
+        public char BlackAndLight { get; set; } = 'B';
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -58,7 +59,7 @@ namespace PatientManagerSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnWrapper(new FrmListadoUsuarios($"Welcome, {Nombre}"));
+            AbrirFormularioEnWrapper(new FrmListadoUsuarios($"Welcome, {Nombre}",BlackAndLight));
 
         }
 
@@ -89,6 +90,9 @@ namespace PatientManagerSystem
         {
             Rols();
             LblName.Text = Nombre;
+            tmHora.Start();
+            string hour = DateTime.Now.ToString("hh:mm:ss");
+            label2.Text = hour;
         }
 
         private void BtnMantResultadoLab_Click(object sender, EventArgs e)
@@ -98,7 +102,7 @@ namespace PatientManagerSystem
 
         private void BtnMantMedico_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnWrapper(new FrmListadoDoctor());
+            AbrirFormularioEnWrapper(new FrmListadoDoctor($"Welcome, {Nombre}", BlackAndLight));
         }
 
         private void BtnMantCitas_Click(object sender, EventArgs e)
@@ -108,8 +112,71 @@ namespace PatientManagerSystem
 
         private void BtnMantPruebaLab_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnWrapper(new FrmListadoPrueba());
+            AbrirFormularioEnWrapper(new FrmListadoPrueba($"Welcome, {Nombre}", BlackAndLight));
 
+        }
+
+        private void tmHora_Tick(object sender, EventArgs e)
+        {
+            string hour = DateTime.Now.ToString("hh:mm:ss");
+            label2.Text = hour;
+        }
+
+        private void BtnClaroOscuro_Click(object sender, EventArgs e)
+        {
+            CambiarTema();
+        }
+
+        private void CambiarTema()
+        {
+            if (BlackAndLight=='B')
+            {
+                BlackAndLight = 'L';
+                BtnClaroOscuro.Text = "Claro ☼";
+                this.BackColor = Color.White;
+                tableLayoutPanel1.BackColor = Color.White;
+                this.ForeColor = Color.Black;
+                BtnMantUsuario.ForeColor = Color.Black;
+                BtnMantMedico.ForeColor = Color.Black;
+                BtnMantPacientes.ForeColor = Color.Black;
+                BtnMantPruebaLab.ForeColor = Color.Black;
+                BtnMantResultadoLab.ForeColor = Color.Black;
+                BtnMantCitas.ForeColor = Color.Black;
+                LblCambiarTema.ForeColor = Color.Black;
+                BtnClaroOscuro.ForeColor = Color.Black;
+                LblName.ForeColor = Color.Black;
+                label2.ForeColor = Color.Black;
+                BtnMantUsuario.Image = Properties.Resources.user_white;
+                BtnMantMedico.Image = Properties.Resources.doctor_white;
+                BtnMantPacientes.Image = Properties.Resources.patient_white;
+                BtnMantPruebaLab.Image = Properties.Resources.lab_white;
+                BtnMantResultadoLab.Image = Properties.Resources.labresult_white;
+                BtnMantCitas.Image = Properties.Resources.appointment_white;
+            }
+            else
+            {
+                BlackAndLight = 'B';
+                BtnClaroOscuro.Text = "OSCURO 🌙";
+                this.BackColor = Color.FromArgb(26, 32, 40);
+                tableLayoutPanel1.BackColor = Color.FromArgb(26, 32, 40);
+                this.ForeColor = Color.White;
+                BtnMantUsuario.ForeColor = Color.White;
+                BtnMantMedico.ForeColor = Color.White;
+                BtnMantPacientes.ForeColor = Color.White;
+                BtnMantPruebaLab.ForeColor = Color.White;
+                BtnMantResultadoLab.ForeColor = Color.White;
+                BtnMantCitas.ForeColor = Color.White;
+                LblCambiarTema.ForeColor = Color.White;
+                BtnClaroOscuro.ForeColor = Color.White;
+                LblName.ForeColor = Color.White;
+                label2.ForeColor = Color.White;
+                BtnMantUsuario.Image = Properties.Resources.user_black;
+                BtnMantMedico.Image = Properties.Resources.doctor_black;
+                BtnMantPacientes.Image = Properties.Resources.patient_black;
+                BtnMantPruebaLab.Image = Properties.Resources.lab_black;
+                BtnMantResultadoLab.Image = Properties.Resources.labresult_black;
+                BtnMantCitas.Image = Properties.Resources.appointment_black;
+            }
         }
     }
 }

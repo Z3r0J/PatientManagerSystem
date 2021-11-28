@@ -3,22 +3,83 @@ using System;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using iText.Html2pdf;
+using System.IO;
+using DataLayer.Modelos;
 
 namespace PatientManagerSystem
 {
     public partial class FrmListadoCompletado : Form
     {
         ServiceResultadosLab _serviceResultados;
+        ServicePacientes _servicePacientes;
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         public int IdPacientes { get; set; }
+        public string NombreDoctor { get; set; }
         public int IdCitas { get; set; }
         public FrmListadoCompletado()
         {
             InitializeComponent();
             SqlConnection _conexion = new SqlConnection(connectionString);
             _serviceResultados = new ServiceResultadosLab(_conexion);
+            _servicePacientes = new ServicePacientes(_conexion);
         }
 
+        private void ExportarPDF()
+        {
+            Pacientes datos = new Pacientes();
+
+            datos = _servicePacientes.ObtenerPacientesPorID(IdPacientes);
+
+            string directorio = @"Pacientes\Resultados\" + $"{IdPacientes}" + "\\";
+            CreateDirectory(directorio);
+
+            SaveFileDialog savefile = new SaveFileDialog();
+
+            savefile.InitialDirectory=@"Pacientes\Resultados\"+$"{IdPacientes}"+"\\";
+            savefile.FileName = string.Format("{0}.pdf",$"No.{IdCitas}-{datos.Nombre}");
+
+            string PaginaHTML_Texto = Properties.Resources.Reporte.ToString();
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@NombrePaciente", $"{datos.Nombre}");
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@Direccion", $"{datos.Direccion}");
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@Doctor", NombreDoctor);
+
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@Cedula", datos.Cedula);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FechaNac", $"{datos.FechaNacimiento}");
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@Telefono", datos.Telefono);
+            string filas = string.Empty;
+            foreach (DataGridViewRow row in DtgvListadoCompletados.Rows)
+            {
+                filas += "<tr>";
+                filas += "<th scope='row'>" + row.Cells["Nombre de la prueba"].Value.ToString() + "</th>";
+                filas += "<td>" + row.Cells["Resultado Total"].Value.ToString() + "</td>";
+                filas += "</tr>";                
+            }
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@Filas", filas);
+
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(savefile.FileName, FileMode.Create))
+                {
+                    using (StringReader sr = new StringReader(PaginaHTML_Texto))
+                    {
+                        HtmlConverter.ConvertToPdf(PaginaHTML_Texto, stream);
+                    }
+
+                    stream.Close();
+                }
+
+                MessageBox.Show("PDF EXPORTADO CORRECTAMENTE!", "Notifación");
+            }
+        }
+
+        private void CreateDirectory(string directory)
+        {
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+        }
         private void btnDeseleccionar_Click(object sender, EventArgs e)
         {
             Deseleccionar();
@@ -59,6 +120,11 @@ namespace PatientManagerSystem
         private void BtnCerrarVentana_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnInforme_Click(object sender, EventArgs e)
+        {
+            ExportarPDF();
         }
     }
 }

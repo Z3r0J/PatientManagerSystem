@@ -4,6 +4,7 @@ using EmailLayer;
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace PatientManagerSystem
@@ -16,7 +17,8 @@ namespace PatientManagerSystem
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
 
         private EnviarCorreo _enviarCorreo;
-        public FrmListadoUsuarios(string Nombre)
+        public char BlackAndLight { get; set; } = 'L';
+        public FrmListadoUsuarios(string Nombre, char Tema)
         {
             InitializeComponent();
             SqlConnection conexion = new SqlConnection(connectionString);
@@ -24,6 +26,7 @@ namespace PatientManagerSystem
             _enviarCorreo = new EnviarCorreo();
             LblWelcome.Text = Nombre;
             Deseleccionar();
+            CambiarTema(Tema);
         }
 
 
@@ -144,23 +147,81 @@ namespace PatientManagerSystem
                 Usuarios us = new Usuarios();
                 us.Id= Convert.ToInt32(DtgvUsuarios.CurrentRow.Cells[0].Value.ToString());
 
-                bool Eliminar = usuarios.Eliminar(us);
-
-                if (Eliminar)
+                DialogResult result = MessageBox.Show("¿Estas seguro de eliminar este usuario","Pregunta", MessageBoxButtons.YesNo);
+                if (result==DialogResult.Yes)
                 {
-                    MessageBox.Show("Eliminado correctamente", "Notificacion");
+                    bool Eliminar = usuarios.Eliminar(us);
+
+                    if (Eliminar)
+                    {
+                        MessageBox.Show("Eliminado correctamente", "Notificacion");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Oops, ha ocurrido error", "Notificacion");
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Oops, ha ocurrido error", "Notificacion");
-                }
 
+                }
             }
             else
             {
                 MessageBox.Show("Seleccione una fila", "Notificacion");
             }
         }
+
+        private void CambiarTema(char Tema)
+        {
+            if (Tema=='B' || BlackAndLight=='B')
+            {
+                BlackAndLight = 'L';
+                this.BackColor = Color.White;
+                button5.Text = "Claro ☼";
+                BtnAgregar.ForeColor = Color.Black;
+                BtnEditar.ForeColor = Color.Black;
+                BtnEliminar.ForeColor = Color.Black;
+                BtnAgregar.ForeColor = Color.Black;
+                BtnDeseleccionar.ForeColor = Color.Black;
+                button5.ForeColor = Color.Black;
+                BtnAgregar.Image = Properties.Resources.adduser_white;
+                BtnEditar.Image = Properties.Resources.edituser_white;
+                BtnEliminar.Image = Properties.Resources.deleteuser_white;
+                BtnDeseleccionar.Image = Properties.Resources.deselect_white;
+                this.ForeColor = Color.Black;
+                DtgvUsuarios.DefaultCellStyle.BackColor = Color.White;
+                DtgvUsuarios.DefaultCellStyle.ForeColor = Color.Gray;
+                DtgvUsuarios.BackgroundColor = Color.White;
+            }
+            else
+            {
+                BlackAndLight = 'B';
+                this.BackColor = Color.FromArgb(26, 32, 40);
+                button5.Text = "OSCURO 🌙";
+                BtnAgregar.ForeColor = Color.White;
+                BtnEditar.ForeColor = Color.White;
+                BtnEliminar.ForeColor = Color.White;
+                BtnAgregar.ForeColor = Color.White;
+                BtnDeseleccionar.ForeColor = Color.White;
+                button5.ForeColor = Color.White;
+                BtnAgregar.Image = Properties.Resources.adduser_black;
+                BtnEditar.Image = Properties.Resources.edituser_black;
+                BtnEliminar.Image = Properties.Resources.deleteuser_black;
+                BtnDeseleccionar.Image = Properties.Resources.deselect_black;
+                this.ForeColor = Color.White;
+                DtgvUsuarios.DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+                DtgvUsuarios.DefaultCellStyle.ForeColor = Color.White;
+                DtgvUsuarios.BackgroundColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+
+            }
+        }
         #endregion
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CambiarTema(BlackAndLight);
+        }
     }
 }

@@ -57,7 +57,7 @@ namespace PatientManagerSystem
 
         private void BtnConsultar_Click(object sender, EventArgs e)
         {
-            FrmListadoPrueba frm = new FrmListadoPrueba();
+            FrmListadoPrueba frm = new FrmListadoPrueba("",'B');
             frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
             frm.IdDoctor = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[8].Value.ToString());
             frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
@@ -86,6 +86,7 @@ namespace PatientManagerSystem
             FrmListadoCompletado frm = new FrmListadoCompletado();
             frm.IdPacientes = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[7].Value.ToString());
             frm.IdCitas = Convert.ToInt32(DtgvCitas.CurrentRow.Cells[0].Value.ToString());
+            frm.NombreDoctor = DtgvCitas.CurrentRow.Cells[2].Value.ToString();
             this.Hide();
             frm.ShowDialog();
             CargarMedicos();

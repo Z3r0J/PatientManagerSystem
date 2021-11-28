@@ -49,11 +49,13 @@ namespace PatientManagerSystem
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.BtnInforme = new System.Windows.Forms.Button();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvListadoCompletados)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -127,7 +129,7 @@ namespace PatientManagerSystem
             this.label1.TabIndex = 0;
             this.label1.Text = "   Welcome";
             // 
-            // dgvPruebas
+            // DtgvListadoCompletados
             // 
             this.DtgvListadoCompletados.AllowUserToAddRows = false;
             this.DtgvListadoCompletados.AllowUserToDeleteRows = false;
@@ -153,7 +155,7 @@ namespace PatientManagerSystem
             this.DtgvListadoCompletados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DtgvListadoCompletados.Location = new System.Drawing.Point(3, 167);
             this.DtgvListadoCompletados.MultiSelect = false;
-            this.DtgvListadoCompletados.Name = "dgvPruebas";
+            this.DtgvListadoCompletados.Name = "DtgvListadoCompletados";
             this.DtgvListadoCompletados.ReadOnly = true;
             this.DtgvListadoCompletados.RowHeadersVisible = false;
             this.DtgvListadoCompletados.RowTemplate.Height = 25;
@@ -192,6 +194,7 @@ namespace PatientManagerSystem
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.BtnInforme);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(225, 0);
@@ -310,6 +313,20 @@ namespace PatientManagerSystem
             this.label3.TabIndex = 1;
             this.label3.Text = "Nombre";
             // 
+            // BtnInforme
+            // 
+            this.BtnInforme.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
+            this.BtnInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInforme.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnInforme.ForeColor = System.Drawing.Color.Black;
+            this.BtnInforme.Location = new System.Drawing.Point(33, 18);
+            this.BtnInforme.Name = "BtnInforme";
+            this.BtnInforme.Size = new System.Drawing.Size(163, 64);
+            this.BtnInforme.TabIndex = 2;
+            this.BtnInforme.Text = "Exportar PDF";
+            this.BtnInforme.UseVisualStyleBackColor = true;
+            this.BtnInforme.Click += new System.EventHandler(this.BtnInforme_Click);
+            // 
             // FrmListadoCompletado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -327,6 +344,7 @@ namespace PatientManagerSystem
             ((System.ComponentModel.ISupportInitialize)(this.ptbFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvListadoCompletados)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -357,5 +375,6 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button BtnCerrarVentana;
+        private System.Windows.Forms.Button BtnInforme;
     }
 }

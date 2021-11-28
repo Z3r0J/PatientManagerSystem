@@ -65,7 +65,7 @@ namespace PatientManagerSystem
         {
             if (dgvPacientes.SelectedRows.Count > 0)
             {
-                FrmListadoDoctor frm = new FrmListadoDoctor();
+                FrmListadoDoctor frm = new FrmListadoDoctor("",'B');
                 frm.IdPaciente = Convert.ToInt32(dgvPacientes.CurrentRow.Cells[0].Value.ToString());
                 frm.NombreApellidoPacientes = $"{dgvPacientes.CurrentRow.Cells[1].Value.ToString()} {dgvPacientes.CurrentRow.Cells[2].Value.ToString()}";
                 frm.IsOnCitas = true;

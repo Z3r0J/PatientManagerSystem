@@ -17,17 +17,20 @@ namespace PatientManagerSystem
     {
         ServiceDoctor _servicioDoctor;
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+        public char BlackAndLight { get; set; } = 'L';
         private int id;
 
         public int IdPaciente { get; set; }
         public string NombreApellidoPacientes { get; set; }
         public bool IsOnCitas { get; set; } = false;
-        public FrmListadoDoctor()
+        public FrmListadoDoctor(string mensaje,char Tema)
         {
             InitializeComponent();
             SqlConnection _conexion = new SqlConnection(connectionString);
             _servicioDoctor = new ServiceDoctor(_conexion);
             id = 0;
+            LblWelcome.Text = mensaje;
+            CambiarTema(Tema);
         }
 
 
@@ -179,8 +182,64 @@ namespace PatientManagerSystem
                 btnEliminar.Visible = false;
             }
         }
+
+        private void CambiarTema(char Tema)
+        {
+            if (Tema == 'B' || BlackAndLight == 'B')
+            {
+                BlackAndLight = 'L';
+                this.BackColor = Color.White;
+                tableLayoutPanel1.BackColor = Color.White;
+                btnClaro.Text = "Claro ☼";
+                btnAgregar.ForeColor = Color.Black;
+                btnEditar.ForeColor = Color.Black;
+                btnEliminar.ForeColor = Color.Black;
+                btnAgregar.ForeColor = Color.Black;
+                btnDeseleccionar.ForeColor = Color.Black;
+                btnClaro.ForeColor = Color.Black;
+                btnAgregar.Image = Properties.Resources.adddoc_white;
+                btnEditar.Image = Properties.Resources.editdoc_white;
+                btnEliminar.Image = Properties.Resources.deletedoc_white;
+                btnDeseleccionar.Image = Properties.Resources.deselect_white;
+                this.ForeColor = Color.Black;
+                DtgvDoctor.DefaultCellStyle.BackColor = Color.White;
+                DtgvDoctor.DefaultCellStyle.ForeColor = Color.Gray;
+                DtgvDoctor.BackgroundColor = Color.White;
+            }
+            else
+            {
+                BlackAndLight = 'B';
+                this.BackColor = Color.FromArgb(26, 32, 40);
+                tableLayoutPanel1.BackColor = Color.FromArgb(26, 32, 40);
+                btnClaro.Text = "OSCURO 🌙";
+                btnAgregar.ForeColor = Color.White;
+                btnEditar.ForeColor = Color.White;
+                btnEliminar.ForeColor = Color.White;
+                btnAgregar.ForeColor = Color.White;
+                btnDeseleccionar.ForeColor = Color.White;
+                btnClaro.ForeColor = Color.White;
+                btnAgregar.Image = Properties.Resources.adddoc_black;
+                btnEditar.Image = Properties.Resources.editdoc_black;
+                btnEliminar.Image = Properties.Resources.deletedoc_black;
+                btnDeseleccionar.Image = Properties.Resources.deselect_black;
+                this.ForeColor = Color.White;
+                DtgvDoctor.DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+                DtgvDoctor.DefaultCellStyle.ForeColor = Color.White;
+                DtgvDoctor.BackgroundColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+
+            }
+        }
+
         #endregion
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DtgvDoctor.DataSource = _servicioDoctor.BuscarDoctor(textBox1.Text);
+        }
 
+        private void btnClaro_Click(object sender, EventArgs e)
+        {
+            CambiarTema(BlackAndLight);
+        }
     }
 }

@@ -46,6 +46,10 @@ namespace BusinessLayer
         {
             return data.SavePhoto(id, destination);
         }
+        public Pacientes ObtenerPacientesPorID(int ID)
+        {
+            return data.InformacionPacientesID(ID);
+        }
 
     }
 }
