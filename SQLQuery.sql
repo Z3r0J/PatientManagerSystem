@@ -145,9 +145,6 @@ create procedure SP_Eliminar
 as
 Delete Usuarios where Id=@Id
 
-
-insert into Usuarios values('Jose', 'Cayetano', 'Cayetano@gmail.com','JCaye','123','0')
-
 create procedure SP_AgregarPaciente 
 @Nombre nvarchar(70),
 @Apellido nvarchar(70),
@@ -207,7 +204,6 @@ begin
 	where
 		Id = @Id
 end
-
 
 create procedure SP_Listar_Resultados
 as
@@ -342,3 +338,27 @@ inner join
 Pruebas_Laboratorios
 on Pruebas_Laboratorios.Id=Resultados_Laboratorios.IdPruebaLaboratorio
 where IdPaciente=@IdPacientes and IdCita=@IdCitas
+
+
+create procedure SP_ListadoPruebasCompletadas
+@IdPacientes int,
+@IdCitas int
+as
+select Pruebas_Laboratorios.Nombre as 'Nombre de la prueba',Resultados_Pruebas as 'Resultado total' from Resultados_Laboratorios
+inner join
+Pruebas_Laboratorios
+on Pruebas_Laboratorios.Id=Resultados_Laboratorios.IdPruebaLaboratorio
+where IdPaciente=@IdPacientes and IdCita=@IdCitas and Estados_Resultados=2
+
+create procedure SP_ObtenerPacientesPorId
+@Id int
+as
+select Nombre + ' ' + Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento 'Fecha Nacimiento' from Pacientes
+Where Id=@Id
+
+create procedure SP_BuscarPacientes
+@Buscar nvarchar(70)
+as
+select Id,Nombre,Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento 'Fecha Nacimiento',Fumador,Alergias,Foto from Pacientes
+where
+Cedula LIKE @Buscar + '%'
