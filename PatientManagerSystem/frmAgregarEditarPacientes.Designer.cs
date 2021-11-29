@@ -182,10 +182,10 @@ namespace PatientManagerSystem
             // txtAlergias
             // 
             this.txtAlergias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAlergias.Location = new System.Drawing.Point(238, 315);
+            this.txtAlergias.Location = new System.Drawing.Point(238, 317);
             this.txtAlergias.Multiline = true;
             this.txtAlergias.Name = "txtAlergias";
-            this.txtAlergias.Size = new System.Drawing.Size(229, 30);
+            this.txtAlergias.Size = new System.Drawing.Size(229, 26);
             this.txtAlergias.TabIndex = 22;
             // 
             // label7
@@ -404,7 +404,7 @@ namespace PatientManagerSystem
             this.btnConfirmar.TabIndex = 9;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.btnConfirmar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // panel5
             // 
@@ -418,7 +418,7 @@ namespace PatientManagerSystem
             // chkFumador
             // 
             this.chkFumador.AutoSize = true;
-            this.chkFumador.Location = new System.Drawing.Point(13, 11);
+            this.chkFumador.Location = new System.Drawing.Point(12, 3);
             this.chkFumador.Name = "chkFumador";
             this.chkFumador.Size = new System.Drawing.Size(15, 14);
             this.chkFumador.TabIndex = 0;

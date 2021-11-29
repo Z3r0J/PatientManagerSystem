@@ -14,7 +14,7 @@ namespace PatientManagerSystem
         private int id;
         public bool IsOnCitas { get; set; }
         public char BlackAndLight { get; set; } = 'L';
-        public FrmListadoPacientes(string mensaje,char Tema)
+        public FrmListadoPacientes(string mensaje, char Tema)
         {
             InitializeComponent();
             SqlConnection _conexion = new SqlConnection(connectionString);
@@ -47,8 +47,8 @@ namespace PatientManagerSystem
             Deseleccionar();
             paciente = new frmAgregarEditarPacientes();
             paciente._id = 0;
-            paciente.Show();
-
+            paciente.ShowDialog();
+            CargarPacientes();
         }
 
         private void FrmListadoPacientes_Load(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace PatientManagerSystem
         {
             if (dgvPacientes.SelectedRows.Count > 0)
             {
-                FrmListadoDoctor frm = new FrmListadoDoctor("",'B');
+                FrmListadoDoctor frm = new FrmListadoDoctor("", 'B');
                 frm.IdPaciente = Convert.ToInt32(dgvPacientes.CurrentRow.Cells[0].Value.ToString());
                 frm.NombreApellidoPacientes = $"{dgvPacientes.CurrentRow.Cells[1].Value.ToString()} {dgvPacientes.CurrentRow.Cells[2].Value.ToString()}";
                 frm.IsOnCitas = true;
@@ -139,6 +139,7 @@ namespace PatientManagerSystem
                 Deseleccionar();
                 this.Show();
                 paciente._id = 0;
+                CargarPacientes();
             }
             else
             {
@@ -156,7 +157,7 @@ namespace PatientManagerSystem
                     if (result)
                     {
                         MessageBox.Show("El paciente se ha eliminado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CargarPacientes();
+
                         Deseleccionar();
                     }
                     else
@@ -170,6 +171,7 @@ namespace PatientManagerSystem
             {
                 MessageBox.Show("Seleccione una fila", "Notificacion");
             }
+            CargarPacientes();
         }
 
         private void Deseleccionar()

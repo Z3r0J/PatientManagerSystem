@@ -55,16 +55,7 @@ namespace PatientManagerSystem
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (_id == 0)
-            {
-                AgregarPaciente();
-                this.Close();
-            }
-            else
-            {
-                EditarPaciente();
-                this.Close();
-            }
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -219,5 +210,18 @@ namespace PatientManagerSystem
         }
         #endregion
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (_id == 0)
+            {
+                AgregarPaciente();
+                this.Close();
+            }
+            else
+            {
+                EditarPaciente();
+                this.Close();
+            }
+        }
     }
 }

@@ -355,5 +355,10 @@ namespace PatientManagerSystem
         private void BtnConsultar_Click_1(object sender, EventArgs e)
         {
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
