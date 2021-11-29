@@ -20,11 +20,14 @@ namespace BusinessLayer
         {
             return citas.ListadoCitas();
         }
-
-
         public bool AgregarCitas(Citas Citas)
         {
             return citas.AgregarCitas(Citas);
+        }
+
+        public bool ActualizarEstado(Citas Citas)
+        {
+            return citas.ActualizarEstado(Citas);
         }
     }
 }

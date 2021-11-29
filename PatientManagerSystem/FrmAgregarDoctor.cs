@@ -197,5 +197,10 @@ namespace PatientManagerSystem
         {
             pictureBox1.ImageLocation = NombreArchivo;
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

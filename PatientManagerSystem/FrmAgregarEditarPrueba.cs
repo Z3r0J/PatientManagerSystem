@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using BusinessLayer;
+﻿using BusinessLayer;
 using DataLayer.Modelos;
+using System;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 namespace PatientManagerSystem
 {
     public partial class FrmAgregarEditarPrueba : Form
     {
+        #region Variables & Instancia
+
         ServicePruebasLaboratorio _servicioPruebas;
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
         public int id;
+
+        #endregion
         public FrmAgregarEditarPrueba()
         {
             InitializeComponent();
@@ -24,8 +23,19 @@ namespace PatientManagerSystem
             id = 0;
 
         }
-
+        #region Eventos
         private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            AgregarEditar();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+        #region Metodos
+        private void AgregarEditar()
         {
             PruebasLaboratorios prueba = new PruebasLaboratorios();
             prueba.Id = id;
@@ -33,7 +43,7 @@ namespace PatientManagerSystem
 
             bool resultado = false;
 
-            if(prueba.Nombre == "")
+            if (prueba.Nombre == "")
             {
                 MessageBox.Show("El campo nombre no puede estar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -43,7 +53,7 @@ namespace PatientManagerSystem
 
             if (id <= 0)
             {
-               resultado = _servicioPruebas.CrearPrueba(prueba);
+                resultado = _servicioPruebas.CrearPrueba(prueba);
                 mensajeBien = "creado";
                 mensajeError = "crear";
             }
@@ -64,6 +74,7 @@ namespace PatientManagerSystem
             if (resultado)
             {
                 MessageBox.Show($"Se ha {mensajeBien} la prueba con exito.");
+                this.Close();
             }
             else
             {
@@ -71,6 +82,6 @@ namespace PatientManagerSystem
 
             }
         }
-
+        #endregion
     }
 }

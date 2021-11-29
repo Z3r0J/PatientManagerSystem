@@ -15,6 +15,62 @@ namespace DataLayer
         {
             _conexion = conexion;
         }
+
+        public DataTable Buscar(string Buscar)
+        {
+            SqlCommand comando = new SqlCommand("SP_BuscarPacientes", _conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Buscar", Buscar);
+            _conexion.Open();
+
+            DataTable ListarFilas = new DataTable();
+            SqlDataReader Datos = comando.ExecuteReader();
+            ListarFilas.Load(Datos);
+            Datos.Close();
+            Datos.Dispose();
+            _conexion.Close();
+
+            return ListarFilas;
+        }
+
+        public Pacientes InformacionPacientesID(int ID)
+        {
+            try
+            {
+                _conexion.Open();
+                SqlCommand comando = new SqlCommand("SP_ObtenerPacientesPorId", _conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@Id", ID);
+
+                Pacientes datos = new Pacientes();
+
+                SqlDataReader LeerDatos = comando.ExecuteReader();
+
+                if (LeerDatos.Read())
+                {
+                    datos.Nombre = LeerDatos.IsDBNull(0) ? "" : LeerDatos.GetString(0);
+                    datos.Telefono = LeerDatos.IsDBNull(1) ? "" : LeerDatos.GetString(1);
+                    datos.Direccion = LeerDatos.IsDBNull(2) ? "" : LeerDatos.GetString(2);
+                    datos.Cedula = LeerDatos.IsDBNull(3) ? "" : LeerDatos.GetString(3);
+                    datos.FechaNacimiento = LeerDatos.IsDBNull(4) ? DateTime.Now : LeerDatos.GetDateTime(4);
+                    _conexion.Close();
+                    return datos;
+                }
+                else
+                {
+                    _conexion.Close();
+                    return null;
+                }
+
+            }
+            catch
+            {
+                _conexion.Close();
+
+                return null;
+            }
+        }
         public bool AgregarPaciente(Pacientes paciente)
         {
 

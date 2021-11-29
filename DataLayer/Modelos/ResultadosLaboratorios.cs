@@ -7,10 +7,10 @@ namespace DataLayer.Modelos
     public class ResultadosLaboratorios
     {
         public int Id { get; set; }
-        public Medicos Medicos { get; set; }
-        public Pacientes Pacientes { get; set; }
-        public Citas Citas { get; set; }
-        public PruebasLaboratorios PruebasLaboratorios { get; set; }
+        public Medicos Medicos { get; set; } = new Medicos();
+        public Pacientes Pacientes { get; set; } = new Pacientes();
+        public Citas Citas { get; set; } = new Citas();
+        public PruebasLaboratorios PruebasLaboratorios { get; set; } = new PruebasLaboratorios();
         public string Resultados { get; set; }
         public int Estado { get; set; }
 

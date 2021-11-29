@@ -69,10 +69,12 @@ namespace DataLayer
 
             if (LeerDatos.Read())
             {
+                _conexion.Close();
                 return true;
             }
             else
             {
+                _conexion.Close();
                 return false;
             }
 

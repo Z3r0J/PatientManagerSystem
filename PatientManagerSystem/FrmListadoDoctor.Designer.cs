@@ -53,10 +53,10 @@ namespace PatientManagerSystem
             this.btnAgregar = new System.Windows.Forms.Button();
             this.DtgvDoctor = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.ptbFoto = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblWelcome = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -79,6 +79,7 @@ namespace PatientManagerSystem
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.ColumnCount = 6;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -111,6 +112,7 @@ namespace PatientManagerSystem
             // 
             // panel12
             // 
+            this.panel12.BackColor = System.Drawing.Color.Transparent;
             this.panel12.Controls.Add(this.label10);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(1143, 112);
@@ -130,6 +132,7 @@ namespace PatientManagerSystem
             // 
             // panel11
             // 
+            this.panel11.BackColor = System.Drawing.Color.Transparent;
             this.panel11.Controls.Add(this.label8);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(915, 112);
@@ -149,6 +152,7 @@ namespace PatientManagerSystem
             // 
             // panel10
             // 
+            this.panel10.BackColor = System.Drawing.Color.Transparent;
             this.panel10.Controls.Add(this.label6);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(687, 112);
@@ -168,6 +172,7 @@ namespace PatientManagerSystem
             // 
             // panel9
             // 
+            this.panel9.BackColor = System.Drawing.Color.Transparent;
             this.panel9.Controls.Add(this.label5);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(459, 112);
@@ -187,6 +192,7 @@ namespace PatientManagerSystem
             // 
             // panel8
             // 
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.Controls.Add(this.label4);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(231, 112);
@@ -206,7 +212,7 @@ namespace PatientManagerSystem
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Controls.Add(this.btnClaro);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.ForeColor = System.Drawing.Color.Black;
@@ -228,10 +234,11 @@ namespace PatientManagerSystem
             this.btnClaro.TabIndex = 0;
             this.btnClaro.Text = "Claro";
             this.btnClaro.UseVisualStyleBackColor = true;
+            this.btnClaro.Click += new System.EventHandler(this.btnClaro_Click);
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.btnDeseleccionar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.ForeColor = System.Drawing.Color.Black;
@@ -247,18 +254,20 @@ namespace PatientManagerSystem
             this.btnDeseleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeseleccionar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDeseleccionar.ForeColor = System.Drawing.Color.Black;
+            this.btnDeseleccionar.Image = global::PatientManagerSystem.Properties.Resources.deselect_white;
+            this.btnDeseleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeseleccionar.Location = new System.Drawing.Point(25, 18);
             this.btnDeseleccionar.Name = "btnDeseleccionar";
             this.btnDeseleccionar.Size = new System.Drawing.Size(163, 64);
             this.btnDeseleccionar.TabIndex = 0;
-            this.btnDeseleccionar.Text = "Deseleccionar";
+            this.btnDeseleccionar.Text = "      Deseleccionar";
             this.btnDeseleccionar.UseVisualStyleBackColor = true;
             this.btnDeseleccionar.Visible = false;
             this.btnDeseleccionar.Click += new System.EventHandler(this.btnDeseleccionar_Click);
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.btnEliminar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.ForeColor = System.Drawing.Color.Black;
@@ -274,17 +283,19 @@ namespace PatientManagerSystem
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEliminar.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminar.Image = global::PatientManagerSystem.Properties.Resources.deletedoc_white;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(19, 18);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(163, 64);
             this.btnEliminar.TabIndex = 0;
-            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Text = "           Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.ForeColor = System.Drawing.Color.Black;
@@ -300,17 +311,19 @@ namespace PatientManagerSystem
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEditar.ForeColor = System.Drawing.Color.Black;
+            this.btnEditar.Image = global::PatientManagerSystem.Properties.Resources.editdoc_white;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Location = new System.Drawing.Point(15, 18);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(163, 64);
             this.btnEditar.TabIndex = 0;
-            this.btnEditar.Text = "Editar";
+            this.btnEditar.Text = "        Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.ForeColor = System.Drawing.Color.Black;
@@ -322,16 +335,19 @@ namespace PatientManagerSystem
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAgregar.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregar.Image = global::PatientManagerSystem.Properties.Resources.adddoc_white;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.Location = new System.Drawing.Point(12, 18);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(163, 64);
             this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Text = "           Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // DtgvDoctor
@@ -372,55 +388,59 @@ namespace PatientManagerSystem
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.button1);
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.textBox1);
             this.panel6.Controls.Add(this.ptbFoto);
-            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.LblWelcome);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(1143, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(224, 103);
             this.panel6.TabIndex = 8;
             // 
-            // button1
+            // label1
             // 
-            this.button1.Location = new System.Drawing.Point(161, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 24);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "🔎";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Buscar por cedula:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 56);
+            this.textBox1.Location = new System.Drawing.Point(3, 77);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 23);
+            this.textBox1.Size = new System.Drawing.Size(189, 23);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // ptbFoto
             // 
             this.ptbFoto.Image = global::PatientManagerSystem.Properties.Resources.usuario;
             this.ptbFoto.Location = new System.Drawing.Point(2, 3);
             this.ptbFoto.Name = "ptbFoto";
-            this.ptbFoto.Size = new System.Drawing.Size(28, 33);
+            this.ptbFoto.Size = new System.Drawing.Size(32, 33);
             this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbFoto.TabIndex = 1;
             this.ptbFoto.TabStop = false;
             // 
-            // label1
+            // LblWelcome
             // 
-            this.label1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(32, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "   Welcome";
+            this.LblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.LblWelcome.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblWelcome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LblWelcome.Location = new System.Drawing.Point(35, 6);
+            this.LblWelcome.Name = "LblWelcome";
+            this.LblWelcome.Size = new System.Drawing.Size(189, 52);
+            this.LblWelcome.TabIndex = 0;
+            this.LblWelcome.Text = "   Welcome";
             // 
             // panel7
             // 
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
             this.panel7.Controls.Add(this.label3);
             this.panel7.Controls.Add(this.label2);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -453,6 +473,7 @@ namespace PatientManagerSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 515);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -501,7 +522,7 @@ namespace PatientManagerSystem
         private System.Windows.Forms.DataGridView DtgvDoctor;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox ptbFoto;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblWelcome;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel10;
@@ -513,12 +534,9 @@ namespace PatientManagerSystem
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -98,14 +98,14 @@ primary key(Id)
 
 create procedure SP_ListadoUsuarios
 as
-select us.Id as codigo, us.Nombre, us.Apellido,us.Correo,us.UserName as Usuario, us.Password as Contraseña, tu.Nombre as 'Tipo Usuario' from Usuarios us inner join
+select us.Id as codigo, us.Nombre, us.Apellido,us.Correo,us.UserName as Usuario, us.Password as Contrase�a, tu.Nombre as 'Tipo Usuario' from Usuarios us inner join
 TipoUsuario tu on tu.Id=us.TipoDeUsuario
 
 Create procedure SP_Login
 @Usuario nvarchar(150),
-@Contraseña nvarchar(30)
+@Contrase�a nvarchar(30)
 as
-Select * from Usuarios where UserName = @Usuario and Password=@Contraseña
+Select * from Usuarios where UserName = @Usuario and Password=@Contrase�a
 
 
 create procedure SP_Agregar
@@ -145,7 +145,7 @@ Delete Usuarios where Id=@Id
 
 insert into Usuarios values('Jose', 'Cayetano', 'Cayetano@gmail.com','JCaye','123','0')
 
-alter procedure SistemaGestorPacientes.dbo.SP_AgregarPaciente 
+create procedure SP_AgregarPaciente 
 @Nombre nvarchar(70),
 @Apellido nvarchar(70),
 @Telefono nvarchar(25),
@@ -204,9 +204,15 @@ begin
 		Id = @Id
 end
 
-select * from Pacientes
-SELECT max(ID) from Pacientes
 
+create procedure SP_Listar_Resultados
+as
+select rl.Id,pa.Nombre + ' ' + pa.Apellido as 'Nombre y Apellido', pa.Cedula, pl.Nombre as Prueba from Resultados_Laboratorios rl
+inner join Pacientes pa on
+rl.IdPaciente = pa.Id
+inner join Pruebas_Laboratorios pl
+on rl.IdPruebaLaboratorio = pl.Id
+where Estados_Resultados=1
 
 create procedure SP_ObtenerPruebas
 as
@@ -234,8 +240,26 @@ end
 create procedure SP_EliminarPrueba
 @id int
 as
-begin
-	delete Pruebas_Laboratorios where Id=@id
-end
-	
-	
+Select * from Medicos where Cedula LIKE @Buscar+'%'
+
+create procedure SP_ListarCitas
+as
+Select Citas.Id,Pacientes.Nombre+' '+Pacientes.Apellido as 'Nombre Paciente',Medicos.Nombre+' '+Medicos.Apellido as 'Nombre Doctor', 
+Citas.Fecha_Cita,
+Citas.Hora_Cita,Causa_Cita,Estados_Citas.Nombre as 'Estados de la cita', IdPaciente,IdDoctor,Estado_Citas from Citas
+inner join Pacientes
+on Pacientes.Id = Citas.IdPaciente
+inner join Medicos
+on Medicos.Id = Citas.IdDoctor
+inner join Estados_Citas
+on Estados_Citas.Id = Citas.Estado_Citas
+
+create procedure SP_AgregarCitas
+@IdPacientes int, 
+@IdDoctor int,
+@Fecha_Cita date,
+@Hora_Cita time, 
+@Causa_Cita text,
+@Estado_Citas int
+as
+Insert into Citas values(@IdPacientes,@IdDoctor,@Fecha_Cita,@Hora_Cita,@Causa_Cita,@Estado_Citas)

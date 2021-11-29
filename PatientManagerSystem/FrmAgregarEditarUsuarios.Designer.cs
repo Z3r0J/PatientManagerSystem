@@ -30,9 +30,6 @@ namespace PatientManagerSystem
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Restaurar_vlogin = new System.Windows.Forms.PictureBox();
-            this.Minimizar_vlogin = new System.Windows.Forms.PictureBox();
-            this.Maximizar_vlogin = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.restaurar_v2 = new System.Windows.Forms.PictureBox();
             this.pminizar_v2 = new System.Windows.Forms.PictureBox();
@@ -63,9 +60,6 @@ namespace PatientManagerSystem
             this.TxtContraseña = new System.Windows.Forms.TextBox();
             this.TxtConfirmarContraseña = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Restaurar_vlogin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Minimizar_vlogin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Maximizar_vlogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restaurar_v2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pminizar_v2)).BeginInit();
@@ -84,9 +78,6 @@ namespace PatientManagerSystem
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.panel1.Controls.Add(this.Restaurar_vlogin);
-            this.panel1.Controls.Add(this.Minimizar_vlogin);
-            this.panel1.Controls.Add(this.Maximizar_vlogin);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.restaurar_v2);
             this.panel1.Controls.Add(this.pminizar_v2);
@@ -97,43 +88,6 @@ namespace PatientManagerSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(451, 39);
             this.panel1.TabIndex = 1;
-            // 
-            // Restaurar_vlogin
-            // 
-            this.Restaurar_vlogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Restaurar_vlogin.Image = global::PatientManagerSystem.Properties.Resources.minimizar__6_;
-            this.Restaurar_vlogin.Location = new System.Drawing.Point(394, 0);
-            this.Restaurar_vlogin.Name = "Restaurar_vlogin";
-            this.Restaurar_vlogin.Size = new System.Drawing.Size(25, 25);
-            this.Restaurar_vlogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Restaurar_vlogin.TabIndex = 7;
-            this.Restaurar_vlogin.TabStop = false;
-            this.Restaurar_vlogin.Visible = false;
-            this.Restaurar_vlogin.Click += new System.EventHandler(this.Restaurar_vlogin_Click);
-            // 
-            // Minimizar_vlogin
-            // 
-            this.Minimizar_vlogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Minimizar_vlogin.Image = global::PatientManagerSystem.Properties.Resources.signo_menos;
-            this.Minimizar_vlogin.Location = new System.Drawing.Point(363, 3);
-            this.Minimizar_vlogin.Name = "Minimizar_vlogin";
-            this.Minimizar_vlogin.Size = new System.Drawing.Size(25, 25);
-            this.Minimizar_vlogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Minimizar_vlogin.TabIndex = 6;
-            this.Minimizar_vlogin.TabStop = false;
-            this.Minimizar_vlogin.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // Maximizar_vlogin
-            // 
-            this.Maximizar_vlogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Maximizar_vlogin.Image = global::PatientManagerSystem.Properties.Resources.maximizar__1_;
-            this.Maximizar_vlogin.Location = new System.Drawing.Point(393, 3);
-            this.Maximizar_vlogin.Name = "Maximizar_vlogin";
-            this.Maximizar_vlogin.Size = new System.Drawing.Size(25, 25);
-            this.Maximizar_vlogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Maximizar_vlogin.TabIndex = 5;
-            this.Maximizar_vlogin.TabStop = false;
-            this.Maximizar_vlogin.Click += new System.EventHandler(this.Maximizar_vlogin_Click);
             // 
             // pictureBox5
             // 
@@ -253,6 +207,7 @@ namespace PatientManagerSystem
             // 
             // TxtNombre
             // 
+            this.TxtNombre.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtNombre.Location = new System.Drawing.Point(228, 3);
             this.TxtNombre.Multiline = true;
             this.TxtNombre.Name = "TxtNombre";
@@ -282,6 +237,7 @@ namespace PatientManagerSystem
             // 
             // TxtApellido
             // 
+            this.TxtApellido.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtApellido.Location = new System.Drawing.Point(228, 49);
             this.TxtApellido.Multiline = true;
             this.TxtApellido.Name = "TxtApellido";
@@ -420,15 +376,16 @@ namespace PatientManagerSystem
             // 
             // CbxTipoUsuario
             // 
-            this.CbxTipoUsuario.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxTipoUsuario.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CbxTipoUsuario.FormattingEnabled = true;
             this.CbxTipoUsuario.Location = new System.Drawing.Point(228, 279);
             this.CbxTipoUsuario.Name = "CbxTipoUsuario";
-            this.CbxTipoUsuario.Size = new System.Drawing.Size(211, 33);
+            this.CbxTipoUsuario.Size = new System.Drawing.Size(211, 30);
             this.CbxTipoUsuario.TabIndex = 15;
             // 
             // TxtCorreo
             // 
+            this.TxtCorreo.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtCorreo.Location = new System.Drawing.Point(228, 95);
             this.TxtCorreo.Multiline = true;
             this.TxtCorreo.Name = "TxtCorreo";
@@ -437,6 +394,7 @@ namespace PatientManagerSystem
             // 
             // TxtUsuario
             // 
+            this.TxtUsuario.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtUsuario.Location = new System.Drawing.Point(228, 141);
             this.TxtUsuario.Multiline = true;
             this.TxtUsuario.Name = "TxtUsuario";
@@ -445,17 +403,21 @@ namespace PatientManagerSystem
             // 
             // TxtContraseña
             // 
+            this.TxtContraseña.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtContraseña.Location = new System.Drawing.Point(228, 187);
             this.TxtContraseña.Multiline = true;
             this.TxtContraseña.Name = "TxtContraseña";
+            this.TxtContraseña.PasswordChar = '*';
             this.TxtContraseña.Size = new System.Drawing.Size(211, 32);
             this.TxtContraseña.TabIndex = 18;
             // 
             // TxtConfirmarContraseña
             // 
+            this.TxtConfirmarContraseña.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtConfirmarContraseña.Location = new System.Drawing.Point(228, 233);
             this.TxtConfirmarContraseña.Multiline = true;
             this.TxtConfirmarContraseña.Name = "TxtConfirmarContraseña";
+            this.TxtConfirmarContraseña.PasswordChar = '*';
             this.TxtConfirmarContraseña.Size = new System.Drawing.Size(211, 32);
             this.TxtConfirmarContraseña.TabIndex = 19;
             // 
@@ -469,11 +431,7 @@ namespace PatientManagerSystem
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAgregarEditarUsuarios";
             this.Text = "FrmAgregar";
-            this.Load += new System.EventHandler(this.FrmAgregarEditarUsuarios_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Restaurar_vlogin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Minimizar_vlogin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Maximizar_vlogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.restaurar_v2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pminizar_v2)).EndInit();
@@ -499,9 +457,6 @@ namespace PatientManagerSystem
         private System.Windows.Forms.PictureBox pminizar_v2;
         private System.Windows.Forms.PictureBox maximizar_v2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox Restaurar_vlogin;
-        private System.Windows.Forms.PictureBox Minimizar_vlogin;
-        private System.Windows.Forms.PictureBox Maximizar_vlogin;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblContraseña;

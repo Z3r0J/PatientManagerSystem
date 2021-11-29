@@ -32,6 +32,44 @@ namespace DataLayer
             return ListarFilas;
         }
 
+        public DataTable ListadoResultadosPacientes(int IdPacientes, int IdCitas)
+        {
+
+            SqlCommand comando = new SqlCommand("SP_EstadosPruebas", _conexion);
+
+            comando.CommandType = CommandType.StoredProcedure;
+            _conexion.Open();
+            comando.Parameters.AddWithValue("@IdPacientes", IdPacientes);
+            comando.Parameters.AddWithValue("@IdCitas", IdCitas);
+            DataTable ListarFilas = new DataTable();
+            SqlDataReader Datos = comando.ExecuteReader();
+            ListarFilas.Load(Datos);
+            Datos.Close();
+            Datos.Dispose();
+            _conexion.Close();
+
+            return ListarFilas;
+        }
+
+        public DataTable ListadoResultadoCompletados(int IdPacientes, int IdCitas)
+        {
+
+            SqlCommand comando = new SqlCommand("SP_ListadoPruebasCompletadas", _conexion);
+
+            comando.CommandType = CommandType.StoredProcedure;
+            _conexion.Open();
+            comando.Parameters.AddWithValue("@IdPacientes", IdPacientes);
+            comando.Parameters.AddWithValue("@IdCitas", IdCitas);
+            DataTable ListarFilas = new DataTable();
+            SqlDataReader Datos = comando.ExecuteReader();
+            ListarFilas.Load(Datos);
+            Datos.Close();
+            Datos.Dispose();
+            _conexion.Close();
+
+            return ListarFilas;
+        }
+
         public DataTable Buscar_Resultados(string Buscar)
         {
 
@@ -57,6 +95,22 @@ namespace DataLayer
             comando.Parameters.AddWithValue("@Id", resultados.Id);
             comando.Parameters.AddWithValue("@Resultados", resultados.Resultados);
             comando.Parameters.AddWithValue("@Estados_Resultados", resultados.Estado);
+
+            return ExecuteProc(comando);
+        }
+
+
+        public bool AgregarPruebas(ResultadosLaboratorios resultados)
+        {
+            SqlCommand comando = new SqlCommand("SP_AgregarResultados", _conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.AddWithValue("@IdPacientes",resultados.Pacientes.Id);
+            comando.Parameters.AddWithValue("@IdCitas",resultados.Citas.Id);
+            comando.Parameters.AddWithValue("@IdPruebas",resultados.PruebasLaboratorios.Id);
+            comando.Parameters.AddWithValue("@IdDoctor",resultados.Medicos.Id);
+            comando.Parameters.AddWithValue("@Resultados",resultados.Resultados);
+            comando.Parameters.AddWithValue("@Estados_Resultados",resultados.Estado);
 
             return ExecuteProc(comando);
         }

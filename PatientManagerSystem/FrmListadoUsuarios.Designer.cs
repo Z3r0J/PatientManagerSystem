@@ -125,7 +125,7 @@ namespace PatientManagerSystem
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Controls.Add(this.button5);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.ForeColor = System.Drawing.Color.Black;
@@ -143,14 +143,15 @@ namespace PatientManagerSystem
             this.button5.ForeColor = System.Drawing.Color.Black;
             this.button5.Location = new System.Drawing.Point(25, 18);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(190, 67);
+            this.button5.Size = new System.Drawing.Size(163, 64);
             this.button5.TabIndex = 0;
             this.button5.Text = "Claro";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.BtnDeseleccionar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.ForeColor = System.Drawing.Color.Black;
@@ -166,18 +167,20 @@ namespace PatientManagerSystem
             this.BtnDeseleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDeseleccionar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnDeseleccionar.ForeColor = System.Drawing.Color.Black;
-            this.BtnDeseleccionar.Location = new System.Drawing.Point(25, 18);
+            this.BtnDeseleccionar.Image = global::PatientManagerSystem.Properties.Resources.deselect_white;
+            this.BtnDeseleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnDeseleccionar.Location = new System.Drawing.Point(15, 15);
             this.BtnDeseleccionar.Name = "BtnDeseleccionar";
-            this.BtnDeseleccionar.Size = new System.Drawing.Size(190, 67);
+            this.BtnDeseleccionar.Size = new System.Drawing.Size(163, 64);
             this.BtnDeseleccionar.TabIndex = 0;
-            this.BtnDeseleccionar.Text = "Deseleccionar";
+            this.BtnDeseleccionar.Text = "     Deseleccionar";
             this.BtnDeseleccionar.UseVisualStyleBackColor = true;
             this.BtnDeseleccionar.Visible = false;
             this.BtnDeseleccionar.Click += new System.EventHandler(this.BtnDeseleccionar_Click);
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.BtnEliminar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.ForeColor = System.Drawing.Color.Black;
@@ -193,17 +196,19 @@ namespace PatientManagerSystem
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnEliminar.ForeColor = System.Drawing.Color.Black;
+            this.BtnEliminar.Image = global::PatientManagerSystem.Properties.Resources.deleteuser_white;
+            this.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEliminar.Location = new System.Drawing.Point(25, 18);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(190, 67);
+            this.BtnEliminar.Size = new System.Drawing.Size(163, 64);
             this.BtnEliminar.TabIndex = 0;
-            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.Text = "         Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.BtnEditar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.ForeColor = System.Drawing.Color.Black;
@@ -219,9 +224,11 @@ namespace PatientManagerSystem
             this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnEditar.ForeColor = System.Drawing.Color.Black;
+            this.BtnEditar.Image = global::PatientManagerSystem.Properties.Resources.edituser_white;
+            this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEditar.Location = new System.Drawing.Point(25, 18);
             this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(190, 67);
+            this.BtnEditar.Size = new System.Drawing.Size(163, 64);
             this.BtnEditar.TabIndex = 0;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = true;
@@ -229,7 +236,7 @@ namespace PatientManagerSystem
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.BtnAgregar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.ForeColor = System.Drawing.Color.Black;
@@ -245,11 +252,13 @@ namespace PatientManagerSystem
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAgregar.ForeColor = System.Drawing.Color.Black;
+            this.BtnAgregar.Image = global::PatientManagerSystem.Properties.Resources.adduser_white;
+            this.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAgregar.Location = new System.Drawing.Point(12, 18);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(190, 67);
+            this.BtnAgregar.Size = new System.Drawing.Size(163, 64);
             this.BtnAgregar.TabIndex = 0;
-            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.Text = "  Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
@@ -291,7 +300,7 @@ namespace PatientManagerSystem
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.Controls.Add(this.pictureBox1);
             this.panel6.Controls.Add(this.LblWelcome);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -316,13 +325,13 @@ namespace PatientManagerSystem
             this.LblWelcome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LblWelcome.Location = new System.Drawing.Point(30, 4);
             this.LblWelcome.Name = "LblWelcome";
-            this.LblWelcome.Size = new System.Drawing.Size(194, 54);
+            this.LblWelcome.Size = new System.Drawing.Size(194, 95);
             this.LblWelcome.TabIndex = 0;
             this.LblWelcome.Text = "Welcome";
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
             this.panel7.Controls.Add(this.label3);
             this.panel7.Controls.Add(this.label2);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -412,6 +421,7 @@ namespace PatientManagerSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1386, 554);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -1,26 +1,24 @@
 ﻿using BusinessLayer;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
 using DataLayer.Modelos;
+using System;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.IO;
+using System.Windows.Forms;
 
 namespace PatientManagerSystem
 {
     public partial class frmAgregarEditarPacientes : Form
     {
+        #region Variables & Instancias
         ServicePacientes _servicioPacientes;
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
 
         public string _filename;
         public int _id;
         public Pacientes _paciente;
+
+        #endregion
         public frmAgregarEditarPacientes()
         {
             InitializeComponent();
@@ -32,55 +30,50 @@ namespace PatientManagerSystem
             _filename = "";
             _paciente = new Pacientes();
         }
-        private void AddPhoto()
+
+        #region Eventos
+        private void frmAgregarEditarPacientes_Load(object sender, EventArgs e)
         {
-            DialogResult result = FotoDialog.ShowDialog();
-
-            if (result == DialogResult.OK)
+            if (_id != 0)
             {
-                string file = FotoDialog.FileName;
 
-                _filename = file;
+                TxtNombre.Text = _paciente.Nombre;
+                TxtApellido.Text = _paciente.Apellido;
+                txtCedula.Text = _paciente.Cedula;
+                txtTelefono.Text = _paciente.Telefono;
+                txtDireccion.Text = _paciente.Direccion;
+                chkFumador.Checked = _paciente.Fumador;
+                txtAlergias.Text = _paciente.Alergias;
                 PbxFoto.ImageLocation = _filename;
 
             }
         }
-
-        private void SavePhoto()
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(_filename))
-            {
-                int id = _id == 0 ? _servicioPacientes.GetLastId() : _id;
-
-
-                string directory = @"Images\Pacientes\" + id + "\\";
-
-                string[] fileNameSplit = _filename.Split('\\');
-                string filename = fileNameSplit[(fileNameSplit.Length - 1)];
-
-                CreateDirectory(directory);
-
-                string destination = directory + filename;
-                try
-                {
-
-                    File.Copy(_filename, destination, true);
-                }
-                catch { }
-
-                _servicioPacientes.SavePhoto(id, destination);
-            }
-
-
-        }
-        private void CreateDirectory(string directory)
-        {
-            if (!Directory.Exists(directory))
-            {
-                Directory.CreateDirectory(directory);
-            }
+            this.Close();
         }
 
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (_id == 0)
+            {
+                AgregarPaciente();
+                this.Close();
+            }
+            else
+            {
+                EditarPaciente();
+                this.Close();
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddPhoto();
+        }
+
+        #endregion
+
+        #region Metodos
         private void AgregarPaciente()
         {
 
@@ -114,7 +107,6 @@ namespace PatientManagerSystem
 
 
         }
-
         private void EditarPaciente()
         {
 
@@ -164,44 +156,54 @@ namespace PatientManagerSystem
 
             return paciente;
         }
-
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        private void AddPhoto()
         {
-            if (_id == 0)
+            DialogResult result = FotoDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
             {
-                AgregarPaciente();
-                this.Close();
-            }
-            else
-            {
-                EditarPaciente();
-                this.Close();
-            }
-        }
+                string file = FotoDialog.FileName;
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddPhoto();
-        }
-
-        private void frmAgregarEditarPacientes_Load(object sender, EventArgs e)
-        {
-            if (_id != 0)
-            {
-
-                TxtNombre.Text = _paciente.Nombre;
-                TxtApellido.Text = _paciente.Apellido;
-                txtCedula.Text = _paciente.Cedula;
-                txtTelefono.Text = _paciente.Telefono;
-                txtDireccion.Text = _paciente.Direccion;
-                chkFumador.Checked = _paciente.Fumador;
-                txtAlergias.Text = _paciente.Alergias;
+                _filename = file;
                 PbxFoto.ImageLocation = _filename;
 
             }
         }
 
+        private void SavePhoto()
+        {
+            if (!string.IsNullOrEmpty(_filename))
+            {
+                int id = _id == 0 ? _servicioPacientes.GetLastId() : _id;
+
+
+                string directory = @"Images\Pacientes\" + id + "\\";
+
+                string[] fileNameSplit = _filename.Split('\\');
+                string filename = fileNameSplit[(fileNameSplit.Length - 1)];
+
+                CreateDirectory(directory);
+
+                string destination = directory + filename;
+                try
+                {
+
+                    File.Copy(_filename, destination, true);
+                }
+                catch { }
+
+                _servicioPacientes.SavePhoto(id, destination);
+            }
+
+
+        }
+        private void CreateDirectory(string directory)
+        {
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+        }
         private void LimpiarCampos()
         {
             TxtNombre.Clear();
@@ -210,10 +212,12 @@ namespace PatientManagerSystem
             txtDireccion.Clear();
             txtTelefono.Clear();
             txtAlergias.Clear();
-            PbxFoto.ImageLocation="";
+            PbxFoto.ImageLocation = "";
             dtFecha_Nacimiento.Value = DateTime.Now;
             chkFumador.Checked = false;
             _id = 0;
         }
+        #endregion
+
     }
 }

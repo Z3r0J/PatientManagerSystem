@@ -30,8 +30,6 @@ namespace PatientManagerSystem
         private void InitializeComponent()
         {
             this.panel10 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Restaurar_vlogin = new System.Windows.Forms.PictureBox();
             this.Minimizar_vlogin = new System.Windows.Forms.PictureBox();
@@ -48,8 +46,6 @@ namespace PatientManagerSystem
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtPrueba = new System.Windows.Forms.TextBox();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Restaurar_vlogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar_vlogin)).BeginInit();
@@ -66,8 +62,6 @@ namespace PatientManagerSystem
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(80)))));
-            this.panel10.Controls.Add(this.pictureBox2);
-            this.panel10.Controls.Add(this.pictureBox3);
             this.panel10.Controls.Add(this.pictureBox4);
             this.panel10.Controls.Add(this.Restaurar_vlogin);
             this.panel10.Controls.Add(this.Minimizar_vlogin);
@@ -83,29 +77,6 @@ namespace PatientManagerSystem
             this.panel10.Size = new System.Drawing.Size(435, 39);
             this.panel10.TabIndex = 5;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = global::PatientManagerSystem.Properties.Resources.minimizar__6_;
-            this.pictureBox2.Location = new System.Drawing.Point(355, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 39);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox3.Image = global::PatientManagerSystem.Properties.Resources.signo_menos;
-            this.pictureBox3.Location = new System.Drawing.Point(385, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 39);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
@@ -116,6 +87,7 @@ namespace PatientManagerSystem
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox4.TabIndex = 8;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // Restaurar_vlogin
             // 
@@ -278,6 +250,7 @@ namespace PatientManagerSystem
             // txtPrueba
             // 
             this.txtPrueba.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtPrueba.Font = new System.Drawing.Font("Dubai", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPrueba.Location = new System.Drawing.Point(220, 34);
             this.txtPrueba.Multiline = true;
             this.txtPrueba.Name = "txtPrueba";
@@ -295,8 +268,6 @@ namespace PatientManagerSystem
             this.Name = "FrmAgregarEditarPrueba";
             this.Text = "FrmAgregarEditarPrueba";
             this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Restaurar_vlogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar_vlogin)).EndInit();
@@ -316,8 +287,6 @@ namespace PatientManagerSystem
         #endregion
 
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox Restaurar_vlogin;
         private System.Windows.Forms.PictureBox Minimizar_vlogin;

@@ -17,6 +17,11 @@ namespace BusinessLayer
             data = new DataPacientes(conexion);
         }
 
+        public DataTable BuscarPacientes(string Buscar)
+        {
+            return data.Buscar(Buscar);
+        }
+
         public DataTable ObtenerPacientes()
         {
             return data.ObtenerPacientes();
@@ -45,6 +50,10 @@ namespace BusinessLayer
         public bool SavePhoto(int id, string destination)
         {
             return data.SavePhoto(id, destination);
+        }
+        public Pacientes ObtenerPacientesPorID(int ID)
+        {
+            return data.InformacionPacientesID(ID);
         }
 
     }

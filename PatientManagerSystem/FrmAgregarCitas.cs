@@ -1,20 +1,15 @@
 ﻿using BusinessLayer;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
 using DataLayer.Modelos;
+using System;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace PatientManagerSystem
 {
     public partial class FrmAgregarCitas : Form
     {
+        #region Variables & Instancia
         ServiceCitas _servicioCitas;
         public string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
 
@@ -22,13 +17,14 @@ namespace PatientManagerSystem
         public string NombreApellidoPacientes { get; set; }
         public int IdDoctor { get; set; }
         public string NombreApellidoDoctor { get; set; }
+        #endregion
         public FrmAgregarCitas()
         {
             InitializeComponent();
             SqlConnection conexion = new SqlConnection(connectionString);
             _servicioCitas = new ServiceCitas(conexion);
         }
-
+        #region Eventos
         private void FrmAgregarCitas_Load(object sender, EventArgs e)
         {
             DTPHora.Format = DateTimePickerFormat.Time;
@@ -38,6 +34,24 @@ namespace PatientManagerSystem
             TxtNombreDoctor.Text = NombreApellidoDoctor;
         }
 
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (AgregarCitas())
+            {
+                MessageBox.Show("Se ha agregado correctamente", "Notificacion");
+                Clear();
+                this.Close();
+
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+        #region Metodos
         private bool AgregarCitas()
         {
             string Hora = $"{DTPHora.Value.Hour}:{DTPHora.Value.Minute}:{DTPHora.Value.Second}";
@@ -52,31 +66,20 @@ namespace PatientManagerSystem
 
             bool Add = _servicioCitas.AgregarCitas(citas);
 
-                return Add;
+            return Add;
 
         }
-
         private void Clear()
         {
             IdDoctor = 0;
             IdPaciente = 0;
             TxtCausas.Clear();
             NombreApellidoDoctor = "";
-            NombreApellidoPacientes="";
+            NombreApellidoPacientes = "";
             TxtNombreDoctor.Clear();
             TxtNombrePaciente.Clear();
 
         }
-
-        private void btnConfirmar_Click(object sender, EventArgs e)
-        {
-            if (AgregarCitas())
-            {
-                MessageBox.Show("Se ha agregado correctamente", "Notificacion");
-                Clear();
-                this.Close();
-
-            }
-        }
+        #endregion
     }
 }
