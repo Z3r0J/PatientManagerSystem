@@ -153,6 +153,7 @@ namespace DataLayer
             SqlDataReader LeerID = comando.ExecuteReader();
             if (LeerID.Read())
             {
+               
                 id = LeerID.IsDBNull(0) ? 0 : LeerID.GetInt32(0);
                 _conexion.Close();
 

@@ -51,7 +51,7 @@ Apellido nvarchar(80) not null,
 Correo nvarchar(90) not null,
 Telefono nvarchar(25) not null,
 Cedula nvarchar(70) not null,
-Foto nvarchar(MAX) not null
+Foto nvarchar(MAX) null
 
 primary key(Id)
 )
@@ -95,18 +95,21 @@ Estados_Resultados int foreign key references Estados_Resultados(Id)
 primary key(Id)
 )
 
-
 create procedure SP_ListadoUsuarios
 as
-select us.Id as codigo, us.Nombre, us.Apellido,us.Correo,us.UserName as Usuario, us.Password as Contrase�a, tu.Nombre as 'Tipo Usuario' from Usuarios us inner join
+select us.Id as codigo, us.Nombre, us.Apellido,us.Correo,us.UserName as Usuario, us.Password as Contraseña, tu.Nombre as 'Tipo Usuario' from Usuarios us inner join
 TipoUsuario tu on tu.Id=us.TipoDeUsuario
 
 Create procedure SP_Login
 @Usuario nvarchar(150),
-@Contrase�a nvarchar(30)
+@Contraseña nvarchar(30)
 as
-Select * from Usuarios where UserName = @Usuario and Password=@Contrase�a
+Select * from Usuarios where UserName = 'Good' and Password='123'
 
+create procedure SP_Existe
+@Usuario nvarchar(150)
+as
+Select * from Usuarios where UserName = @Usuario
 
 create procedure SP_Agregar
 @Nombre nvarchar(50),
@@ -142,9 +145,6 @@ create procedure SP_Eliminar
 as
 Delete Usuarios where Id=@Id
 
-
-insert into Usuarios values('Jose', 'Cayetano', 'Cayetano@gmail.com','JCaye','123','0')
-
 create procedure SP_AgregarPaciente 
 @Nombre nvarchar(70),
 @Apellido nvarchar(70),
@@ -153,20 +153,21 @@ create procedure SP_AgregarPaciente
 @Cedula nvarchar(40),
 @Fecha_Nacimiento datetime,
 @Fumador bit,
-@Alergias text
+@Alergias text,
+@Foto nvarchar (max)
 as
 begin
 	insert into 
 		Pacientes 
-		(Nombre,Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento,Fumador,Alergias) 
+		(Nombre,Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento,Fumador,Alergias,Foto) 
 	values 
-		(@Nombre,@Apellido,@Telefono,@Direccion,@Cedula,@Fecha_Nacimiento,@Fumador,@Alergias)
+		(@Nombre,@Apellido,@Telefono,@Direccion,@Cedula,@Fecha_Nacimiento,@Fumador,@Alergias,@Foto)
 end
 
 create procedure SP_ObtenerPacientes
 as
 begin
-	select Id, Nombre,Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento 'Fecha Nacimiento',Fumador,Alergias,Foto from Pacientes
+	select Id,Nombre,Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento 'Fecha Nacimiento',Fumador,Alergias,Foto from Pacientes
 end
 
 create procedure SP_EliminarPaciente 
@@ -204,7 +205,6 @@ begin
 		Id = @Id
 end
 
-
 create procedure SP_Listar_Resultados
 as
 select rl.Id,pa.Nombre + ' ' + pa.Apellido as 'Nombre y Apellido', pa.Cedula, pl.Nombre as Prueba from Resultados_Laboratorios rl
@@ -214,31 +214,57 @@ inner join Pruebas_Laboratorios pl
 on rl.IdPruebaLaboratorio = pl.Id
 where Estados_Resultados=1
 
-create procedure SP_ObtenerPruebas
+create procedure SP_Buscar_Resultados
+@Buscar nvarchar(40)
 as
-begin
-	select * from Pruebas_Laboratorios
-end
+select rl.Id,pa.Nombre + ' ' + pa.Apellido as 'Nombre y Apellido', pa.Cedula, pl.Nombre as Prueba from Resultados_Laboratorios rl
+inner join Pacientes pa on
+rl.IdPaciente = pa.Id
+inner join Pruebas_Laboratorios pl
+on rl.IdPruebaLaboratorio = pl.Id
+where Estados_Resultados=1 and pa.Cedula LIKE @Buscar+'%'
 
-create procedure SP_CrearPrueba
-@nombre nvarchar(70)
+create procedure SP_ReportarResultados
+@Id int,
+@Resultados nvarchar(100),
+@Estados_Resultados int
 as
-begin
-	insert into Pruebas_Laboratorios (Nombre) values (@nombre)
-end
+Update Resultados_Laboratorios set Resultados_Pruebas = @Resultados, Estados_Resultados=@Estados_Resultados where
+Id=@Id
 
-create procedure SP_EditarPrueba
-@id int,
-@nombre nvarchar(70)
+
+create procedure SP_AgregarDoctor
+@Nombre nvarchar(80),
+@Apellido nvarchar(80),
+@Correo nvarchar(90),
+@Telefono nvarchar(25),
+@Cedula nvarchar(70),
+@Foto nvarchar(MAX)
 as
-begin
-	update Pruebas_Laboratorios 
-	set  Nombre = @nombre 
-	where Id = @id
-end
+Insert into Medicos values(@Nombre,@Apellido,@Correo,@Telefono,@Cedula,@Foto)
 
-create procedure SP_EliminarPrueba
-@id int
+create procedure SP_ActualizarDoctor
+@Id int,
+@Nombre nvarchar(80),
+@Apellido nvarchar(80),
+@Correo nvarchar(90),
+@Telefono nvarchar(25),
+@Cedula nvarchar(70),
+@Foto nvarchar(MAX)
+as
+Update Medicos set Nombre=@Nombre,Apellido=@Apellido,Correo=@Correo,Telefono=@Telefono,Cedula=@Cedula, Foto=@Foto where Id=@Id
+
+create procedure SP_EliminarDoctor
+@Id int
+as
+Delete Medicos where Id =@Id
+
+create procedure SP_ListarDoctor
+as
+Select * from Medicos
+
+create procedure SP_BuscarDoctor
+@Buscar  nvarchar(70)
 as
 Select * from Medicos where Cedula LIKE @Buscar+'%'
 
@@ -263,3 +289,76 @@ create procedure SP_AgregarCitas
 @Estado_Citas int
 as
 Insert into Citas values(@IdPacientes,@IdDoctor,@Fecha_Cita,@Hora_Cita,@Causa_Cita,@Estado_Citas)
+
+create procedure SP_ActualizarEstadoCitas
+@Id int,
+@Estado_Cita int
+as
+Update Citas set Estado_Citas=@Estado_Cita where Id=@Id
+
+create procedure SP_CrearPrueba
+@nombre nvarchar(70)
+as
+insert into Pruebas_Laboratorios values(@nombre)
+
+create procedure SP_ObtenerPruebas
+as
+Select * from Pruebas_Laboratorios
+
+create procedure SP_EditarPrueba
+@id int,
+@nombre nvarchar(70)
+as
+Update Pruebas_Laboratorios set Nombre=@nombre where Id=@id
+
+create procedure SP_EliminarPrueba
+@id int
+as
+Delete Pruebas_Laboratorios where Id=@id
+
+create procedure SP_AgregarResultados
+@IdPacientes int,
+@IdCitas int,
+@IdPruebas int,
+@IdDoctor int,
+@Resultados nvarchar(100),
+@Estados_Resultados int
+as
+insert into Resultados_Laboratorios values(@IdPacientes,@IdCitas,@IdPruebas,@IdDoctor,@Resultados,@Estados_Resultados)
+
+create procedure SP_EstadosPruebas
+@IdPacientes int,
+@IdCitas int
+as
+select Pruebas_Laboratorios.Nombre as 'Nombre de la prueba',Estados_Resultados.Nombre as 'Estado' from Resultados_Laboratorios
+inner join
+Estados_Resultados
+on Estados_Resultados.Id=Resultados_Laboratorios.Estados_Resultados
+inner join
+Pruebas_Laboratorios
+on Pruebas_Laboratorios.Id=Resultados_Laboratorios.IdPruebaLaboratorio
+where IdPaciente=@IdPacientes and IdCita=@IdCitas
+
+
+create procedure SP_ListadoPruebasCompletadas
+@IdPacientes int,
+@IdCitas int
+as
+select Pruebas_Laboratorios.Nombre as 'Nombre de la prueba',Resultados_Pruebas as 'Resultado total' from Resultados_Laboratorios
+inner join
+Pruebas_Laboratorios
+on Pruebas_Laboratorios.Id=Resultados_Laboratorios.IdPruebaLaboratorio
+where IdPaciente=@IdPacientes and IdCita=@IdCitas and Estados_Resultados=2
+
+create procedure SP_ObtenerPacientesPorId
+@Id int
+as
+select Nombre + ' ' + Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento 'Fecha Nacimiento' from Pacientes
+Where Id=@Id
+
+create procedure SP_BuscarPacientes
+@Buscar nvarchar(70)
+as
+select Id,Nombre,Apellido,Telefono,Direccion,Cedula,Fecha_Nacimiento 'Fecha Nacimiento',Fumador,Alergias,Foto from Pacientes
+where
+Cedula LIKE @Buscar + '%'
